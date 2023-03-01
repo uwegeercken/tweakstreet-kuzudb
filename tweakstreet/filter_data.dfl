@@ -85,102 +85,6 @@
             }
           },
           {
-            "name": "geonamesDatabase",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.geonamesDatabase",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.geonamesDatabase"
-            }
-          },
-          {
-            "name": "geonamesDatabaseTable",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.geonamesDatabaseTable",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.geonamesDatabaseTable"
-            }
-          },
-          {
-            "name": "feature_code_admin1",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.feature_code_admin1",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.feature_code_admin1"
-            }
-          },
-          {
-            "name": "feature_code_admin2",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.feature_code_admin2",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.feature_code_admin2"
-            }
-          },
-          {
-            "name": "feature_code_admin3",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.feature_code_admin3",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.feature_code_admin3"
-            }
-          },
-          {
-            "name": "feature_code_admin4",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.feature_code_admin4",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.feature_code_admin4"
-            }
-          },
-          {
             "name": "allCountriesFile",
             "type": "any",
             "value": {
@@ -194,6 +98,38 @@
                 "syntax": "tweakflow"
               },
               "code": "$config.vars.allCountriesFile"
+            }
+          },
+          {
+            "name": "featureClassesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.featureClassesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.featureClassesFile"
+            }
+          },
+          {
+            "name": "featureCodesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.featureCodesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.featureCodesFile"
             }
           },
           {
@@ -245,35 +181,35 @@
             }
           },
           {
-            "name": "featureClassesFile",
+            "name": "geonamesDatabase",
             "type": "any",
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "$config.vars.featureClassesFile",
+                "text": "$config.vars.geonamesDatabase",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "$config.vars.featureClassesFile"
+              "code": "$config.vars.geonamesDatabase"
             }
           },
           {
-            "name": "featureCodesFile",
+            "name": "geonamesDatabaseTable",
             "type": "any",
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "$config.vars.featureCodesFile",
+                "text": "$config.vars.geonamesDatabaseTable",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "$config.vars.featureCodesFile"
+              "code": "$config.vars.geonamesDatabaseTable"
             }
           }
         ]
