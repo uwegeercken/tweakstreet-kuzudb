@@ -2,7 +2,7 @@
 Tweakstreet ETL to load data to Kuzudb
 
 ## General
-The main fokus is on loading data into Kuzudb using the command client. The Tweakstreet ETL tool is used to prepare the geonames.org data, so it can efficiently be loaded into Kuzudb.
+The main fokus is on loading data into Kuzudb using the command client. The Tweakstreet ETL tool - https://tweakstreet.io - is used to prepare the https://www.geonames.org data, so it can efficiently be loaded into Kuzudb - https://kuzudb.com.
 
 From the goenames data following nodes are created:
 - Geoname
@@ -12,6 +12,8 @@ From the goenames data following nodes are created:
 - Feature
 
 Data is processed into corresponding csv files, which can then be loaded into Kuzudb.
+
+All data originates from: http://download.geonames.org/export/dump
 
 ## Tweakstreet Data Pipeline
 The first part of the pipeline reads the allCountries.txt geonames file, filters the data by certain feature codes and stores the data in multiple tables in a local Sqlite database.
