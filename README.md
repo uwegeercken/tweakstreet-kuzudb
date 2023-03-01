@@ -32,6 +32,7 @@ Data is devided into following categories:
 
 The second part prepares the data to produces node and relations information.
 - Data from the feature class and feature code text file is converted into nodes
+- Data from the admin table is converted into nodes
 - Data from the geonames table is converted into nodes
 - Data from the geonames table is matched against Admin1 to Admin4 divisions from the admin table to produce relations between geonames and aadmin divisions
 - Data from the geonames tables is matched against the country table to produce relations between geonames and allCountries

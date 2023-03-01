@@ -63,14 +63,14 @@
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "rootFolder .. \"/output_data\"",
+                "text": "rootFolder .. \"/data\"",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "rootFolder .. \"/output_data\""
+              "code": "rootFolder .. \"/data\""
             }
           },
           {
