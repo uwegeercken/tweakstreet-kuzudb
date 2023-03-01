@@ -493,9 +493,9 @@
           "widgetType": "expression/string",
           "widgetData": {
             "interpolation": true,
-            "text": ""
+            "text": "\""
           },
-          "code": "''"
+          "code": "'\"'"
         },
         "lineEndings": {
           "widgetType": "expression/line-ending",
@@ -3215,9 +3215,9 @@
           "widgetType": "expression/string",
           "widgetData": {
             "interpolation": true,
-            "text": ""
+            "text": "\""
           },
-          "code": "''"
+          "code": "'\"'"
         },
         "lineEndings": {
           "widgetType": "expression/line-ending",
@@ -3675,9 +3675,9 @@
           "widgetType": "expression/string",
           "widgetData": {
             "interpolation": true,
-            "text": ""
+            "text": "\""
           },
-          "code": "''"
+          "code": "'\"'"
         },
         "lineEndings": {
           "widgetType": "expression/line-ending",
@@ -3927,9 +3927,9 @@
           "widgetType": "expression/string",
           "widgetData": {
             "interpolation": true,
-            "text": ""
+            "text": "\""
           },
-          "code": "''"
+          "code": "'\"'"
         },
         "lineEndings": {
           "widgetType": "expression/line-ending",
@@ -4949,9 +4949,9 @@
           "widgetType": "expression/string",
           "widgetData": {
             "interpolation": true,
-            "text": ""
+            "text": "\""
           },
-          "code": "''"
+          "code": "'\"'"
         },
         "lineEndings": {
           "widgetType": "expression/line-ending",
@@ -5554,9 +5554,9 @@
           "widgetType": "expression/string",
           "widgetData": {
             "interpolation": true,
-            "text": ""
+            "text": "\""
           },
-          "code": "''"
+          "code": "'\"'"
         },
         "lineEndings": {
           "widgetType": "expression/line-ending",
@@ -5568,9 +5568,9 @@
         "writeHeaderLine": {
           "widgetType": "expression/checkbox-boolean",
           "widgetData": {
-            "value": true
+            "value": false
           },
-          "code": "true"
+          "code": "false"
         },
         "whenFileExists": {
           "widgetType": "expression/select",
@@ -5976,6 +5976,40 @@
                 }
               },
               {
+                "name": "feature_class",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "feature_class"
+                  },
+                  "code": "'feature_class'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "feature_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "feature_code"
+                  },
+                  "code": "'feature_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
                 "name": "country_code",
                 "type": "string",
                 "mapping": {
@@ -6149,9 +6183,9 @@
           "widgetType": "expression/string",
           "widgetData": {
             "interpolation": true,
-            "text": ""
+            "text": "\""
           },
-          "code": "''"
+          "code": "'\"'"
         },
         "lineEndings": {
           "widgetType": "expression/line-ending",
@@ -6163,9 +6197,9 @@
         "writeHeaderLine": {
           "widgetType": "expression/checkbox-boolean",
           "widgetData": {
-            "value": true
+            "value": false
           },
-          "code": "true"
+          "code": "false"
         },
         "whenFileExists": {
           "widgetType": "expression/select",
@@ -6249,38 +6283,18 @@
                 }
               },
               {
-                "name": "feature_class",
+                "name": "code",
                 "value": {
                   "widgetType": "expression/field-value-ref",
                   "widgetData": {
                     "fieldSelect": {
                       "value": {
                         "gate": "in",
-                        "name": "feature_class"
+                        "name": "country_code"
                       }
                     }
                   },
-                  "code": "::in.feature_class"
-                },
-                "formatter": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
-                "name": "feature_code",
-                "value": {
-                  "widgetType": "expression/field-value-ref",
-                  "widgetData": {
-                    "fieldSelect": {
-                      "value": {
-                        "gate": "in",
-                        "name": "feature_code"
-                      }
-                    }
-                  },
-                  "code": "::in.feature_code"
+                  "code": "::in.country_code"
                 },
                 "formatter": {
                   "widgetType": "expression/nil",

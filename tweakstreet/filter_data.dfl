@@ -2538,7 +2538,7 @@
           }
         },
         "sqlEditor": {
-          "text": "CREATE TABLE geonames (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)",
+          "text": "CREATE TABLE country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
           "size": {
             "width": 0,
             "height": 180
@@ -2815,7 +2815,7 @@
           }
         },
         "sqlEditor": {
-          "text": "ALTER TABLE continent DROP COLUMN modification_date\n\nALTER TABLE continent ADD modification_date TIMESTAMP",
+          "text": "CREATE TABLE continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
           "size": {
             "width": 0,
             "height": 180

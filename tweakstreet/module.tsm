@@ -157,12 +157,16 @@
             "name": "geonamesDatabase",
             "type": "any",
             "value": {
-              "widgetType": "expression/string",
+              "widgetType": "expression/code",
               "widgetData": {
-                "interpolation": true,
-                "text": "geonames-01.db"
+                "text": "geonamesFolder .. \"/geonames-01.db\"",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
               },
-              "code": "'geonames-01.db'"
+              "code": "geonamesFolder .. \"/geonames-01.db\""
             }
           },
           {
@@ -207,9 +211,9 @@
                     "widgetType": "expression/string",
                     "widgetData": {
                       "interpolation": true,
-                      "text": "jdbc:sqlite:${vars.geonamesFolder}/${vars.geonamesDatabase}"
+                      "text": "jdbc:sqlite:${vars.geonamesDatabase}"
                     },
-                    "code": "let {\n  string literal_0: 'jdbc:sqlite:';\n  string interpolation_1: vars.geonamesFolder;\n  string literal_2: '/';\n  string interpolation_3: vars.geonamesDatabase;\n}\nliteral_0 .. interpolation_1 .. literal_2 .. interpolation_3"
+                    "code": "let {\n  string literal_0: 'jdbc:sqlite:';\n  string interpolation_1: vars.geonamesDatabase;\n}\nliteral_0 .. interpolation_1"
                   },
                   "properties": {
                     "widgetType": "expression/dict",
@@ -246,7 +250,7 @@
                 },
                 "summary": true
               },
-              "code": "{\n  :type 'com.twineworks.tweakstreet.library.jdbc.generic',\n  :db {\n    :driverClass 'org.sqlite.JDBC',\n    :jdbcUrl let {\n  string literal_0: 'jdbc:sqlite:';\n  string interpolation_1: vars.geonamesFolder;\n  string literal_2: '/';\n  string interpolation_3: vars.geonamesDatabase;\n}\nliteral_0 .. interpolation_1 .. literal_2 .. interpolation_3,\n    :properties {},\n    :defaultTz 'Europe/Zurich',\n    :connectSql ''\n  }\n}"
+              "code": "{\n  :type 'com.twineworks.tweakstreet.library.jdbc.generic',\n  :db {\n    :driverClass 'org.sqlite.JDBC',\n    :jdbcUrl let {\n  string literal_0: 'jdbc:sqlite:';\n  string interpolation_1: vars.geonamesDatabase;\n}\nliteral_0 .. interpolation_1,\n    :properties {},\n    :defaultTz 'Europe/Zurich',\n    :connectSql ''\n  }\n}"
             }
           }
         ]
