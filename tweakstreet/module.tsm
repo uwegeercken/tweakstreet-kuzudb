@@ -1,0 +1,323 @@
+{
+  "type": "module",
+  "appVersion": "1.20.0",
+  "properties": {
+    "meta": {
+      "showingComment": true,
+      "comment": {
+        "markdown": {
+          "text": {
+            "text": "",
+            "syntax": "markdown",
+            "size": {
+              "width": "100%",
+              "height": "100%"
+            }
+          },
+          "size": {
+            "width": null,
+            "height": 160
+          },
+          "view": "edit"
+        },
+        "editor": {
+          "collapsed": true
+        }
+      },
+      "role": "config"
+    },
+    "variables": {
+      "variables": {
+        "list": [
+          {
+            "name": "rootFolder",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/string",
+              "widgetData": {
+                "interpolation": true,
+                "text": "/home/uwe/development/tweakstreet-flows/kuzudb"
+              },
+              "code": "'/home/uwe/development/tweakstreet-flows/kuzudb'"
+            }
+          },
+          {
+            "name": "geonamesFolder",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "rootFolder .. \"/geonames\"",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "rootFolder .. \"/geonames\""
+            }
+          },
+          {
+            "name": "dataOutputFolder",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "rootFolder .. \"/output_data\"",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "rootFolder .. \"/output_data\""
+            }
+          },
+          {
+            "name": "geonamesDatabase",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/string",
+              "widgetData": {
+                "interpolation": true,
+                "text": "geonames-1.db"
+              },
+              "code": "'geonames-1.db'"
+            }
+          },
+          {
+            "name": "geonamesDatabaseTable",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/string",
+              "widgetData": {
+                "interpolation": true,
+                "text": "allcountries"
+              },
+              "code": "'allcountries'"
+            }
+          },
+          {
+            "name": "feature_code_admin1",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/string",
+              "widgetData": {
+                "interpolation": true,
+                "text": "ADM1"
+              },
+              "code": "'ADM1'"
+            }
+          },
+          {
+            "name": "feature_code_admin2",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/string",
+              "widgetData": {
+                "interpolation": true,
+                "text": "ADM2"
+              },
+              "code": "'ADM2'"
+            }
+          },
+          {
+            "name": "feature_code_admin3",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/string",
+              "widgetData": {
+                "interpolation": true,
+                "text": "ADM3"
+              },
+              "code": "'ADM3'"
+            }
+          },
+          {
+            "name": "feature_code_admin4",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/string",
+              "widgetData": {
+                "interpolation": true,
+                "text": "ADM4"
+              },
+              "code": "'ADM4'"
+            }
+          },
+          {
+            "name": "allCountriesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "geonamesFolder .. \"/allCountries.txt\"",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "geonamesFolder .. \"/allCountries.txt\""
+            }
+          },
+          {
+            "name": "featureClassesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "geonamesFolder .. \"/feature_classes.txt\"",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "geonamesFolder .. \"/feature_classes.txt\""
+            }
+          },
+          {
+            "name": "featureCodesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "geonamesFolder .. \"/feature_codes_en.txt\"",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "geonamesFolder .. \"/feature_codes_en.txt\""
+            }
+          },
+          {
+            "name": "admin1codesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "geonamesFolder .. \"/admin1codes.csv\"",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "geonamesFolder .. \"/admin1codes.csv\""
+            }
+          },
+          {
+            "name": "admin2codesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "geonamesFolder .. \"/admin2codes.csv\"",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "geonamesFolder .. \"/admin2codes.csv\""
+            }
+          }
+        ]
+      },
+      "editor": {
+        "collapsed": false
+      }
+    },
+    "services": {
+      "services": {
+        "list": [
+          {
+            "name": "sqlite-geonames",
+            "type": "any",
+            "category": "jdbc",
+            "value": {
+              "widgetType": "expression/database",
+              "widgetData": {
+                "type": "com.twineworks.tweakstreet.library.jdbc.generic",
+                "db": {
+                  "driverClass": {
+                    "widgetType": "expression/string",
+                    "widgetData": {
+                      "interpolation": true,
+                      "text": "org.sqlite.JDBC"
+                    },
+                    "code": "'org.sqlite.JDBC'"
+                  },
+                  "jdbcUrl": {
+                    "widgetType": "expression/string",
+                    "widgetData": {
+                      "interpolation": true,
+                      "text": "jdbc:sqlite:${vars.geonamesFolder}/${vars.geonamesDatabase}"
+                    },
+                    "code": "let {\n  string literal_0: 'jdbc:sqlite:';\n  string interpolation_1: vars.geonamesFolder;\n  string literal_2: '/';\n  string interpolation_3: vars.geonamesDatabase;\n}\nliteral_0 .. interpolation_1 .. literal_2 .. interpolation_3"
+                  },
+                  "properties": {
+                    "widgetType": "expression/dict",
+                    "widgetData": {
+                      "table": {
+                        "list": []
+                      }
+                    },
+                    "code": "{}"
+                  },
+                  "defaultTz": {
+                    "widgetType": "expression/timezone",
+                    "widgetData": {
+                      "value": "Europe/Zurich"
+                    },
+                    "code": "'Europe/Zurich'"
+                  },
+                  "connectSql": {
+                    "widgetType": "expression/text",
+                    "widgetData": {
+                      "text": "",
+                      "size": {
+                        "width": 0,
+                        "height": 60
+                      },
+                      "syntax": "sql",
+                      "lineSeparator": "\n",
+                      "interpolation": false
+                    },
+                    "code": "''"
+                  },
+                  "editor": {},
+                  "model": {}
+                },
+                "summary": false
+              },
+              "code": "{\n  :type 'com.twineworks.tweakstreet.library.jdbc.generic',\n  :db {\n    :driverClass 'org.sqlite.JDBC',\n    :jdbcUrl let {\n  string literal_0: 'jdbc:sqlite:';\n  string interpolation_1: vars.geonamesFolder;\n  string literal_2: '/';\n  string interpolation_3: vars.geonamesDatabase;\n}\nliteral_0 .. interpolation_1 .. literal_2 .. interpolation_3,\n    :properties {},\n    :defaultTz 'Europe/Zurich',\n    :connectSql ''\n  }\n}"
+            }
+          }
+        ]
+      },
+      "editor": {
+        "collapsed": false
+      }
+    },
+    "imports": {
+      "code": "# import the standard library\nimport core, data, strings, time, math, fun, locale, regex, bin, decimals from 'std';\n",
+      "size": {
+        "width": 0,
+        "height": 102
+      },
+      "editor": {
+        "collapsed": false
+      }
+    },
+    "editor": {
+      "showVariables": true,
+      "showServices": true,
+      "dialogWidth": "wide"
+    },
+    "model": {}
+  }
+}
