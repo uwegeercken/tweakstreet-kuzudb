@@ -1,0 +1,1139 @@
+{
+  "type": "control-flow",
+  "appVersion": "1.20.0",
+  "properties": {
+    "meta": {
+      "comment": {
+        "markdown": {
+          "text": {
+            "text": "",
+            "syntax": "markdown",
+            "size": {
+              "width": "100%",
+              "height": "100%"
+            }
+          },
+          "size": {
+            "width": null,
+            "height": 160
+          },
+          "view": "edit"
+        },
+        "editor": {
+          "collapsed": true
+        }
+      },
+      "showingComment": true
+    },
+    "editor": {
+      "showParameters": true,
+      "showVariables": true,
+      "showServices": true,
+      "dialogWidth": "wide"
+    },
+    "imports": {
+      "code": "# import the standard library\n# import core, data, strings, time, math, fun, locale, regex, bin, decimals from 'std';\n",
+      "size": {
+        "width": 0,
+        "height": 102
+      },
+      "editor": {
+        "collapsed": false
+      }
+    },
+    "parameters": {
+      "parameters": {
+        "list": [
+          {
+            "name": "loadDatabase",
+            "description": "If the load database flow should run",
+            "type": "boolean",
+            "defaultValue": {
+              "widgetType": "expression/string",
+              "widgetData": {
+                "interpolation": true,
+                "text": "false"
+              },
+              "code": "'false'"
+            }
+          }
+        ]
+      },
+      "editor": {
+        "collapsed": false
+      }
+    },
+    "variables": {
+      "variables": {
+        "list": []
+      },
+      "editor": {
+        "collapsed": false
+      }
+    },
+    "services": {
+      "services": {
+        "list": [
+          {
+            "name": "sqlite-geonames",
+            "type": "any",
+            "category": "jdbc",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.services.`sqlite-geonames`",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.services.`sqlite-geonames`"
+            }
+          }
+        ]
+      },
+      "editor": {
+        "collapsed": false
+      }
+    }
+  },
+  "steps": [
+    {
+      "id": "start",
+      "name": "Start",
+      "type": "com.twineworks.tweakstreet.library.steps.start.start",
+      "data": {
+        "meta": {
+          "name": "Start"
+        }
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 234,
+        "y": 186
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.runflow_25f04566-1942-4b79-a471-0666383cd165",
+      "name": "Run Flow: load database",
+      "type": "com.twineworks.tweakstreet.library.steps.map.runflow",
+      "data": {
+        "meta": {
+          "name": "Run Flow: load database",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "flowPath": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "./load_database.dfl",
+            "dialogIntent": "openFile"
+          },
+          "code": "'./load_database.dfl'"
+        },
+        "params": {
+          "widgetType": "expression/dict",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "{}"
+        },
+        "propagateErrors": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": true
+          },
+          "code": "true"
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "success",
+                "type": "boolean",
+                "value": {
+                  "widgetType": "expression/result-ref",
+                  "widgetData": {
+                    "value": "::results.flow_success"
+                  },
+                  "code": "::results.flow_success"
+                }
+              },
+              {
+                "name": "result",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/result-ref",
+                  "widgetData": {
+                    "value": "::results.flow_result"
+                  },
+                  "code": "::results.flow_result"
+                }
+              },
+              {
+                "name": "error",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/result-ref",
+                  "widgetData": {
+                    "value": "::results.flow_error"
+                  },
+                  "code": "::results.flow_error"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 1018,
+        "y": 378
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.runflow_9a9f1d1e-f53a-4663-8a50-3a28bef6c612",
+      "name": "Run Flow: create node files",
+      "type": "com.twineworks.tweakstreet.library.steps.map.runflow",
+      "data": {
+        "meta": {
+          "name": "Run Flow: create node files",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "flowPath": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "./create_node_files.dfl",
+            "dialogIntent": "openFile"
+          },
+          "code": "'./create_node_files.dfl'"
+        },
+        "params": {
+          "widgetType": "expression/dict",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "{}"
+        },
+        "propagateErrors": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": true
+          },
+          "code": "true"
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "success",
+                "type": "boolean",
+                "value": {
+                  "widgetType": "expression/result-ref",
+                  "widgetData": {
+                    "value": "::results.flow_success"
+                  },
+                  "code": "::results.flow_success"
+                }
+              },
+              {
+                "name": "result",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/result-ref",
+                  "widgetData": {
+                    "value": "::results.flow_result"
+                  },
+                  "code": "::results.flow_result"
+                }
+              },
+              {
+                "name": "error",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/result-ref",
+                  "widgetData": {
+                    "value": "::results.flow_error"
+                  },
+                  "code": "::results.flow_error"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 1018,
+        "y": 186
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.runflow_e1b21047-2cee-4113-9758-a9cdcb9665af",
+      "name": "Run Flow: create relation files",
+      "type": "com.twineworks.tweakstreet.library.steps.map.runflow",
+      "data": {
+        "meta": {
+          "name": "Run Flow: create relation files",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "flowPath": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "./create_relation_files.dfl",
+            "dialogIntent": "openFile"
+          },
+          "code": "'./create_relation_files.dfl'"
+        },
+        "params": {
+          "widgetType": "expression/dict",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "{}"
+        },
+        "propagateErrors": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": true
+          },
+          "code": "true"
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "success",
+                "type": "boolean",
+                "value": {
+                  "widgetType": "expression/result-ref",
+                  "widgetData": {
+                    "value": "::results.flow_success"
+                  },
+                  "code": "::results.flow_success"
+                }
+              },
+              {
+                "name": "result",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/result-ref",
+                  "widgetData": {
+                    "value": "::results.flow_result"
+                  },
+                  "code": "::results.flow_result"
+                }
+              },
+              {
+                "name": "error",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/result-ref",
+                  "widgetData": {
+                    "value": "::results.flow_error"
+                  },
+                  "code": "::results.flow_error"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 1290,
+        "y": 186
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.end.finish_35713ec1-af4c-47dc-8d37-196d9c868227",
+      "name": "Finish",
+      "type": "com.twineworks.tweakstreet.library.steps.end.finish",
+      "data": {
+        "meta": {
+          "name": "Finish",
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": ""
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "editor": {
+                "collapsed": true
+              }
+            }
+          },
+          "showingComment": false
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "result": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "row"
+          },
+          "code": "row"
+        },
+        "editor": {
+          "showEntryVariables": false
+        }
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 1562,
+        "y": 186
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.sqlscript_a8f0f1c7-f156-4094-a011-3be68ae9f6bb",
+      "name": "SQL Script: create geoname table",
+      "type": "com.twineworks.tweakstreet.library.steps.map.sqlscript",
+      "data": {
+        "meta": {
+          "name": "SQL Script: create geoname table",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "sql": {
+          "widgetType": "expression/text",
+          "widgetData": {
+            "text": "CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)",
+            "size": {
+              "width": 0,
+              "height": 200
+            },
+            "syntax": "sql",
+            "lineSeparator": "\n",
+            "interpolation": false
+          },
+          "code": "'CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)'"
+        },
+        "jdbcParams": {
+          "widgetType": "expression/list",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "getGeneratedKeys": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "onSqlErrors": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "com.twineworks.tweakstreet.library.steps.map.sqlscript/onSqlErrors",
+            "value": "error"
+          },
+          "code": "'error'"
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 442,
+        "y": 378
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.sqlscript_67091dc4-6347-454e-bef8-063113746ba7",
+      "name": "SQL Script: create country table",
+      "type": "com.twineworks.tweakstreet.library.steps.map.sqlscript",
+      "data": {
+        "meta": {
+          "name": "SQL Script: create country table",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "sql": {
+          "widgetType": "expression/text",
+          "widgetData": {
+            "text": "CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+            "size": {
+              "width": 0,
+              "height": 200
+            },
+            "syntax": "sql",
+            "lineSeparator": "\n",
+            "interpolation": false
+          },
+          "code": "'CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
+        },
+        "jdbcParams": {
+          "widgetType": "expression/list",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "getGeneratedKeys": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "onSqlErrors": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "com.twineworks.tweakstreet.library.steps.map.sqlscript/onSqlErrors",
+            "value": "error"
+          },
+          "code": "'error'"
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 442,
+        "y": 570
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.sqlscript_d4bb4c13-6880-4eaa-a210-f66e6e1d3e44",
+      "name": "SQL Script: create continent table",
+      "type": "com.twineworks.tweakstreet.library.steps.map.sqlscript",
+      "data": {
+        "meta": {
+          "name": "SQL Script: create continent table",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "sql": {
+          "widgetType": "expression/text",
+          "widgetData": {
+            "text": "CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+            "size": {
+              "width": 0,
+              "height": 200
+            },
+            "syntax": "sql",
+            "lineSeparator": "\n",
+            "interpolation": false
+          },
+          "code": "'CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
+        },
+        "jdbcParams": {
+          "widgetType": "expression/list",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "getGeneratedKeys": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "onSqlErrors": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "com.twineworks.tweakstreet.library.steps.map.sqlscript/onSqlErrors",
+            "value": "error"
+          },
+          "code": "'error'"
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 746,
+        "y": 378
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.sqlscript_0c5f4d14-c3f4-4fbf-bff9-e6e6d517ccd7",
+      "name": "SQL Script: create admindivision table",
+      "type": "com.twineworks.tweakstreet.library.steps.map.sqlscript",
+      "data": {
+        "meta": {
+          "name": "SQL Script: create admindivision table",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "sql": {
+          "widgetType": "expression/text",
+          "widgetData": {
+            "text": "CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+            "size": {
+              "width": 0,
+              "height": 200
+            },
+            "syntax": "sql",
+            "lineSeparator": "\n",
+            "interpolation": false
+          },
+          "code": "'CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
+        },
+        "jdbcParams": {
+          "widgetType": "expression/list",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "getGeneratedKeys": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "onSqlErrors": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "com.twineworks.tweakstreet.library.steps.map.sqlscript/onSqlErrors",
+            "value": "error"
+          },
+          "code": "'error'"
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 746,
+        "y": 554
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.decision.decision_0ea5dfca-29a1-451a-a878-27a7ead26ecf",
+      "name": "Decision: load database",
+      "type": "com.twineworks.tweakstreet.library.steps.decision.decision",
+      "data": {
+        "meta": {
+          "name": "Decision: load database",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputGates": {
+          "outputGates": {
+            "list": [
+              {
+                "name": "yes"
+              },
+              {
+                "name": "no"
+              }
+            ]
+          }
+        },
+        "gate": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "if flow.params.loadDatabase==true then 'yes' else 'no'",
+            "size": {
+              "width": 0,
+              "height": 36
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "if flow.params.loadDatabase==true then 'yes' else 'no'"
+        },
+        "editor": {
+          "showEntryVariables": false
+        },
+        "model": {}
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 442,
+        "y": 186
+      }
+    }
+  ],
+  "hops": [
+    {
+      "id": "4a12647a-e867-4cca-bd07-f77a67678f78",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.runflow_25f04566-1942-4b79-a471-0666383cd165",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_9a9f1d1e-f53a-4663-8a50-3a28bef6c612",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "aa20e4a3-6036-4826-aec8-6d1b50c7d0d4",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.runflow_9a9f1d1e-f53a-4663-8a50-3a28bef6c612",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_e1b21047-2cee-4113-9758-a9cdcb9665af",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "a56c5690-1b50-49a4-8a40-8daef15f88f9",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.runflow_e1b21047-2cee-4113-9758-a9cdcb9665af",
+      "toStep": "com.twineworks.tweakstreet.library.steps.end.finish_35713ec1-af4c-47dc-8d37-196d9c868227",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "f21927ad-144a-4bb2-b690-69c78133fa0f",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_a8f0f1c7-f156-4094-a011-3be68ae9f6bb",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_67091dc4-6347-454e-bef8-063113746ba7",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "23a04800-56e8-4a0e-bb12-cb5d64a6fca7",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_67091dc4-6347-454e-bef8-063113746ba7",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_d4bb4c13-6880-4eaa-a210-f66e6e1d3e44",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "d5d3cb97-529a-46e4-ac26-6afdd7984ace",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_d4bb4c13-6880-4eaa-a210-f66e6e1d3e44",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_0c5f4d14-c3f4-4fbf-bff9-e6e6d517ccd7",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "72776ace-b2f9-4f16-b6ec-785a581df693",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_0c5f4d14-c3f4-4fbf-bff9-e6e6d517ccd7",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_25f04566-1942-4b79-a471-0666383cd165",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "682c57bc-056b-45e2-bf39-c6f6c62fa499",
+      "fromStep": "start",
+      "toStep": "com.twineworks.tweakstreet.library.steps.decision.decision_0ea5dfca-29a1-451a-a878-27a7ead26ecf",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "6f4654d4-234f-4b82-a064-58c667307f6d",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_0ea5dfca-29a1-451a-a878-27a7ead26ecf",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_a8f0f1c7-f156-4094-a011-3be68ae9f6bb",
+      "fromGate": "yes",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "085b6451-e3e5-47a7-861f-34a6d4e7786d",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_0ea5dfca-29a1-451a-a878-27a7ead26ecf",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_9a9f1d1e-f53a-4663-8a50-3a28bef6c612",
+      "fromGate": "no",
+      "toGate": "in",
+      "disabled": false
+    }
+  ]
+}

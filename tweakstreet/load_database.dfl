@@ -1,0 +1,3436 @@
+{
+  "type": "data-flow",
+  "appVersion": "1.20.0",
+  "properties": {
+    "meta": {
+      "comment": {
+        "markdown": {
+          "text": {
+            "text": "",
+            "syntax": "markdown",
+            "size": {
+              "width": "100%",
+              "height": "100%"
+            }
+          },
+          "size": {
+            "width": null,
+            "height": 160
+          },
+          "view": "edit"
+        },
+        "editor": {
+          "collapsed": true
+        }
+      },
+      "showingComment": true
+    },
+    "editor": {
+      "showParameters": true,
+      "showVariables": true,
+      "showServices": true,
+      "dialogWidth": "wide"
+    },
+    "imports": {
+      "code": "# import the standard library\nimport core, data, strings, time, math, fun, locale, regex, bin, decimals from 'std';\n",
+      "size": {
+        "width": 0,
+        "height": 102
+      },
+      "editor": {
+        "collapsed": false
+      }
+    },
+    "parameters": {
+      "parameters": {
+        "list": []
+      },
+      "editor": {
+        "collapsed": false
+      }
+    },
+    "variables": {
+      "variables": {
+        "list": [
+          {
+            "name": "rootFolder",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.rootFolder",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.rootFolder"
+            }
+          },
+          {
+            "name": "geonamesFolder",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.geonamesFolder",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.geonamesFolder"
+            }
+          },
+          {
+            "name": "allCountriesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.allCountriesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.allCountriesFile"
+            }
+          },
+          {
+            "name": "featureClassesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.featureClassesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.featureClassesFile"
+            }
+          },
+          {
+            "name": "featureCodesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.featureCodesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.featureCodesFile"
+            }
+          },
+          {
+            "name": "admin1codesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.admin1codesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.admin1codesFile"
+            }
+          },
+          {
+            "name": "admin2codesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.admin2codesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.admin2codesFile"
+            }
+          },
+          {
+            "name": "dataOutputFolder",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.dataOutputFolder",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.dataOutputFolder"
+            }
+          },
+          {
+            "name": "geonamesDatabase",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.geonamesDatabase",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.geonamesDatabase"
+            }
+          },
+          {
+            "name": "geonamesDatabaseTable",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.geonamesDatabaseTable",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.geonamesDatabaseTable"
+            }
+          }
+        ]
+      },
+      "editor": {
+        "collapsed": false
+      }
+    },
+    "services": {
+      "services": {
+        "list": [
+          {
+            "name": "sqlite-geonames",
+            "type": "any",
+            "category": "jdbc",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.services.`sqlite-geonames`",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.services.`sqlite-geonames`"
+            }
+          }
+        ]
+      },
+      "editor": {
+        "collapsed": false
+      }
+    }
+  },
+  "steps": [
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.decision.decision_fc82fbd8-455e-4903-a3da-74ae6ae8f276",
+      "name": "Decision",
+      "type": "com.twineworks.tweakstreet.library.steps.decision.decision",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Decision",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputGates": {
+          "outputGates": {
+            "list": [
+              {
+                "name": "regular"
+              },
+              {
+                "name": "admin"
+              },
+              {
+                "name": "country"
+              },
+              {
+                "name": "continent"
+              }
+            ]
+          }
+        },
+        "gate": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "if in.feature_code==\"CONT\" then 'continent'\nelse if in.feature_code==\"PCLI\" then \"country\"\nelse if in.feature_code==\"ADM1\" \n  || in.feature_code==\"ADM1H\"\n  || in.feature_code==\"ADM2\"\n  || in.feature_code==\"ADM2H\"\n  || in.feature_code==\"ADM3\"\n  || in.feature_code==\"ADM3H\"\n  || in.feature_code==\"ADM4\"\n  || in.feature_code==\"ADM4H\"\n  || in.feature_code==\"ADM5\"\n  || in.feature_code==\"ADM5H\"\n  || in.feature_code==\"ADMD\"\n  || in.feature_code==\"ADMDH\" then \"admin\"\nelse \"regular\"",
+            "size": {
+              "width": 0,
+              "height": 477
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "if in.feature_code==\"CONT\" then 'continent'\nelse if in.feature_code==\"PCLI\" then \"country\"\nelse if in.feature_code==\"ADM1\" \n  || in.feature_code==\"ADM1H\"\n  || in.feature_code==\"ADM2\"\n  || in.feature_code==\"ADM2H\"\n  || in.feature_code==\"ADM3\"\n  || in.feature_code==\"ADM3H\"\n  || in.feature_code==\"ADM4\"\n  || in.feature_code==\"ADM4H\"\n  || in.feature_code==\"ADM5\"\n  || in.feature_code==\"ADM5H\"\n  || in.feature_code==\"ADMD\"\n  || in.feature_code==\"ADMDH\" then \"admin\"\nelse \"regular\""
+        },
+        "editor": {
+          "showEntryVariables": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 410,
+        "y": 314
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.dummy_c748f69f-bbeb-4ce8-b3ea-f4bf84f6bbbc",
+      "name": "Dummy",
+      "type": "com.twineworks.tweakstreet.library.steps.map.dummy",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Dummy",
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": ""
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "editor": {
+                "collapsed": true
+              }
+            }
+          },
+          "showingComment": false
+        },
+        "editor": {}
+      },
+      "pos": {
+        "x": 986,
+        "y": 170
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.dummy_d4740661-cab3-4300-b659-0da6d98c6aae",
+      "name": "Dummy",
+      "type": "com.twineworks.tweakstreet.library.steps.map.dummy",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Dummy",
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": ""
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "editor": {
+                "collapsed": true
+              }
+            }
+          },
+          "showingComment": false
+        },
+        "editor": {}
+      },
+      "pos": {
+        "x": 986,
+        "y": 314
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.dummy_0b68186f-c066-40ab-b2bb-565466c6af53",
+      "name": "Dummy",
+      "type": "com.twineworks.tweakstreet.library.steps.map.dummy",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Dummy",
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": ""
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "editor": {
+                "collapsed": true
+              }
+            }
+          },
+          "showingComment": false
+        },
+        "editor": {}
+      },
+      "pos": {
+        "x": 986,
+        "y": 474
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.pickfields_987e5ff0-3680-43a0-a805-99d5375640ea",
+      "name": "Pick Fields",
+      "type": "com.twineworks.tweakstreet.library.steps.map.pickfields",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Pick Fields",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "mode": {
+          "value": "whitelist"
+        },
+        "fieldRefs": {
+          "fieldRefs": {
+            "list": [
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "geonameid"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "name"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "feature_class"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "feature_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "country_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "population"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "modification_date"
+                  }
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {},
+        "model": {}
+      },
+      "pos": {
+        "x": 746,
+        "y": 314
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.pickfields_435ccd27-84f0-4f5b-b293-278a2266a602",
+      "name": "Pick Fields",
+      "type": "com.twineworks.tweakstreet.library.steps.map.pickfields",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Pick Fields",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "mode": {
+          "value": "whitelist"
+        },
+        "fieldRefs": {
+          "fieldRefs": {
+            "list": [
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "geonameid"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "name"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "feature_class"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "feature_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "population"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "modification_date"
+                  }
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {},
+        "model": {}
+      },
+      "pos": {
+        "x": 746,
+        "y": 474
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.pickfields_e38e6c66-5c0d-426e-a8e6-f5a75680a586",
+      "name": "Pick Fields",
+      "type": "com.twineworks.tweakstreet.library.steps.map.pickfields",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Pick Fields",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "mode": {
+          "value": "whitelist"
+        },
+        "fieldRefs": {
+          "fieldRefs": {
+            "list": [
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "geonameid"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "name"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "asciiname"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "latitude"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "longitude"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "feature_class"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "feature_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "country_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "cc2"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "admin1_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "admin2_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "admin3_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "admin4_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "population"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "elevation"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "dem"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "timezone"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "modification_date"
+                  }
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {},
+        "model": {}
+      },
+      "pos": {
+        "x": 746,
+        "y": 170
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.pickfields_3bbb8eba-4115-4596-8781-43787c498bbd",
+      "name": "Pick Fields",
+      "type": "com.twineworks.tweakstreet.library.steps.map.pickfields",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Pick Fields",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "mode": {
+          "value": "whitelist"
+        },
+        "fieldRefs": {
+          "fieldRefs": {
+            "list": [
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "geonameid"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "name"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "latitude"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "longitude"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "feature_class"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "feature_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "country_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "admin1_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "admin2_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "admin3_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "admin4_code"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "population"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "value": {
+                    "gate": "in",
+                    "name": "modification_date"
+                  }
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {},
+        "model": {}
+      },
+      "pos": {
+        "x": 746,
+        "y": 618
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.dummy_deb8e462-fc11-4720-a585-f1d102d8e7b0",
+      "name": "Dummy",
+      "type": "com.twineworks.tweakstreet.library.steps.map.dummy",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Dummy",
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": ""
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "editor": {
+                "collapsed": true
+              }
+            }
+          },
+          "showingComment": false
+        },
+        "editor": {}
+      },
+      "pos": {
+        "x": 986,
+        "y": 618
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_3865e51a-76dd-4f07-bba2-ae00bd5b863f",
+      "name": "SQL Insert: geonames",
+      "type": "com.twineworks.tweakstreet.library.steps.output.sqlinsert",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "SQL Insert: geonames",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "schema": {
+          "widgetType": "expression/database-schema",
+          "widgetData": {
+            "interpolation": true,
+            "text": ""
+          },
+          "code": "''"
+        },
+        "table": {
+          "widgetType": "expression/database-table",
+          "widgetData": {
+            "interpolation": true,
+            "text": "geoname"
+          },
+          "code": "'geoname'"
+        },
+        "batchSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1000"
+          },
+          "code": "1000"
+        },
+        "commitSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1000"
+          },
+          "code": "1000"
+        },
+        "getGeneratedKeys": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "pkField": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": "geonameid"
+          },
+          "code": "'geonameid'"
+        },
+        "fieldMode": {
+          "value": "fixed"
+        },
+        "dataDrivenColumns": {
+          "widgetType": "expression/data-grid",
+          "widgetData": {
+            "fields": [
+              {
+                "id": "type",
+                "name": "type"
+              },
+              {
+                "id": "name",
+                "name": "name"
+              }
+            ],
+            "gen": {
+              "as": "rows",
+              "of": "dict",
+              "meta": false
+            },
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "dataDrivenValues": {
+          "widgetType": "expression/field-value-ref",
+          "widgetData": {
+            "fieldSelect": {
+              "value": null
+            }
+          },
+          "code": "nil"
+        },
+        "writeFields": {
+          "writeFields": {
+            "list": [
+              {
+                "name": "geonameid",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "geonameid"
+                      }
+                    }
+                  },
+                  "code": "::in.geonameid"
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "name"
+                      }
+                    }
+                  },
+                  "code": "::in.name"
+                }
+              },
+              {
+                "name": "asciiname",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "asciiname"
+                      }
+                    }
+                  },
+                  "code": "::in.asciiname"
+                }
+              },
+              {
+                "name": "latitude",
+                "type": "decimal",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "latitude"
+                      }
+                    }
+                  },
+                  "code": "::in.latitude"
+                }
+              },
+              {
+                "name": "longitude",
+                "type": "decimal",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "longitude"
+                      }
+                    }
+                  },
+                  "code": "::in.longitude"
+                }
+              },
+              {
+                "name": "feature_class",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "feature_class"
+                      }
+                    }
+                  },
+                  "code": "::in.feature_class"
+                }
+              },
+              {
+                "name": "feature_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "feature_code"
+                      }
+                    }
+                  },
+                  "code": "::in.feature_code"
+                }
+              },
+              {
+                "name": "country_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "country_code"
+                      }
+                    }
+                  },
+                  "code": "::in.country_code"
+                }
+              },
+              {
+                "name": "cc2",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "cc2"
+                      }
+                    }
+                  },
+                  "code": "::in.cc2"
+                }
+              },
+              {
+                "name": "admin1_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "admin1_code"
+                      }
+                    }
+                  },
+                  "code": "::in.admin1_code"
+                }
+              },
+              {
+                "name": "admin2_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "admin2_code"
+                      }
+                    }
+                  },
+                  "code": "::in.admin2_code"
+                }
+              },
+              {
+                "name": "admin3_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "admin3_code"
+                      }
+                    }
+                  },
+                  "code": "::in.admin3_code"
+                }
+              },
+              {
+                "name": "admin4_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "admin4_code"
+                      }
+                    }
+                  },
+                  "code": "::in.admin4_code"
+                }
+              },
+              {
+                "name": "population",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "population"
+                      }
+                    }
+                  },
+                  "code": "::in.population"
+                }
+              },
+              {
+                "name": "elevation",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "elevation"
+                      }
+                    }
+                  },
+                  "code": "::in.elevation"
+                }
+              },
+              {
+                "name": "dem",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "dem"
+                      }
+                    }
+                  },
+                  "code": "::in.dem"
+                }
+              },
+              {
+                "name": "timezone",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "timezone"
+                      }
+                    }
+                  },
+                  "code": "::in.timezone"
+                }
+              },
+              {
+                "name": "modification_date",
+                "type": "datetime",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "modification_date"
+                      }
+                    }
+                  },
+                  "code": "::in.modification_date"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "sqlEditor": {
+          "text": "CREATE TABLE geonames (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)",
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showWriteFields": true,
+          "showSqlEditor": true,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1226,
+        "y": 170
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_18886815-06c2-4267-ad22-d14d9b906aa6",
+      "name": "CSV Input: allCountries file",
+      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "CSV Input: allCountries file",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "fs": {
+          "widgetType": "expression/storage-ref",
+          "widgetData": {
+            "name": ""
+          },
+          "code": "nil"
+        },
+        "file": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "${$config.vars.allCountriesFile}",
+            "dialogIntent": "openFile"
+          },
+          "code": "let {\n  string interpolation_0: $config.vars.allCountriesFile;\n}\ninterpolation_0"
+        },
+        "compression": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "expression/select/compression",
+            "value": "none"
+          },
+          "code": "'none'"
+        },
+        "charset": {
+          "widgetType": "expression/charset",
+          "widgetData": {
+            "value": "UTF-8"
+          },
+          "code": "'UTF-8'"
+        },
+        "textFileContent": {
+          "text": "",
+          "fetchButton": {
+            "value": "100"
+          },
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": true
+          }
+        },
+        "skipLines": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "0"
+          },
+          "code": "0"
+        },
+        "rowLimit": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": ""
+          },
+          "code": "nil"
+        },
+        "fieldSeparator": {
+          "widgetType": "expression/separator",
+          "widgetData": {
+            "value": "tab"
+          },
+          "code": "\"\\t\""
+        },
+        "fieldEncloser": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": ""
+          },
+          "code": "''"
+        },
+        "hasHeaderLine": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "geonameid",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "0"
+                  },
+                  "code": "0"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": false
+                      },
+                      "code": "false"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "1"
+                  },
+                  "code": "1"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "asciiname",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "2"
+                  },
+                  "code": "2"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "alternatenames",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "3"
+                  },
+                  "code": "3"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "latitude",
+                "type": "decimal",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "4"
+                  },
+                  "code": "4"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "#,##0.#"
+                      },
+                      "code": "'#,##0.#'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('#,##0.#', 'en-US', true, '', true)\n"
+                }
+              },
+              {
+                "name": "longitude",
+                "type": "decimal",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "5"
+                  },
+                  "code": "5"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "#,##0.#"
+                      },
+                      "code": "'#,##0.#'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('#,##0.#', 'en-US', true, '', true)\n"
+                }
+              },
+              {
+                "name": "feature_class",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "6"
+                  },
+                  "code": "6"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "feature_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "7"
+                  },
+                  "code": "7"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "country_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "8"
+                  },
+                  "code": "8"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "cc2",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "9"
+                  },
+                  "code": "9"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "admin1_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "10"
+                  },
+                  "code": "10"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "admin2_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "11"
+                  },
+                  "code": "11"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "admin3_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "12"
+                  },
+                  "code": "12"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "admin4_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "13"
+                  },
+                  "code": "13"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "population",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "14"
+                  },
+                  "code": "14"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": false
+                      },
+                      "code": "false"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
+                }
+              },
+              {
+                "name": "elevation",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "15"
+                  },
+                  "code": "15"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": false
+                      },
+                      "code": "false"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
+                }
+              },
+              {
+                "name": "dem",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "16"
+                  },
+                  "code": "16"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": false
+                      },
+                      "code": "false"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
+                }
+              },
+              {
+                "name": "timezone",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "17"
+                  },
+                  "code": "17"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "modification_date",
+                "type": "datetime",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "18"
+                  },
+                  "code": "18"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-datetime",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/datetime-pattern",
+                      "widgetData": {
+                        "value": "uuuu-MM-dd"
+                      },
+                      "code": "'uuuu-MM-dd'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "defaultTz": {
+                      "widgetType": "expression/timezone",
+                      "widgetData": {
+                        "value": "Europe/Berlin"
+                      },
+                      "code": "'Europe/Berlin'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, string default_tz, boolean trim, string nilValue) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$datetime_parser'};\n}\nmake_parser('uuuu-MM-dd', 'en-US', 'Europe/Berlin', true, '')\n"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 170,
+        "y": 314
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_1b2c7db7-cc6e-4992-b684-7405e37b69d0",
+      "name": "SQL Insert: countries",
+      "type": "com.twineworks.tweakstreet.library.steps.output.sqlinsert",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "SQL Insert: countries",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "schema": {
+          "widgetType": "expression/database-schema",
+          "widgetData": {
+            "interpolation": true,
+            "text": ""
+          },
+          "code": "''"
+        },
+        "table": {
+          "widgetType": "expression/database-table",
+          "widgetData": {
+            "interpolation": true,
+            "text": "country"
+          },
+          "code": "'country'"
+        },
+        "batchSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1000"
+          },
+          "code": "1000"
+        },
+        "commitSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1000"
+          },
+          "code": "1000"
+        },
+        "getGeneratedKeys": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "pkField": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": "geonameid"
+          },
+          "code": "'geonameid'"
+        },
+        "fieldMode": {
+          "value": "fixed"
+        },
+        "dataDrivenColumns": {
+          "widgetType": "expression/data-grid",
+          "widgetData": {
+            "fields": [
+              {
+                "id": "type",
+                "name": "type"
+              },
+              {
+                "id": "name",
+                "name": "name"
+              }
+            ],
+            "gen": {
+              "as": "rows",
+              "of": "dict",
+              "meta": false
+            },
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "dataDrivenValues": {
+          "widgetType": "expression/field-value-ref",
+          "widgetData": {
+            "fieldSelect": {
+              "value": null
+            }
+          },
+          "code": "nil"
+        },
+        "writeFields": {
+          "writeFields": {
+            "list": [
+              {
+                "name": "geonameid",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "geonameid"
+                      }
+                    }
+                  },
+                  "code": "::in.geonameid"
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "name"
+                      }
+                    }
+                  },
+                  "code": "::in.name"
+                }
+              },
+              {
+                "name": "feature_class",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "feature_class"
+                      }
+                    }
+                  },
+                  "code": "::in.feature_class"
+                }
+              },
+              {
+                "name": "feature_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "feature_code"
+                      }
+                    }
+                  },
+                  "code": "::in.feature_code"
+                }
+              },
+              {
+                "name": "country_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "country_code"
+                      }
+                    }
+                  },
+                  "code": "::in.country_code"
+                }
+              },
+              {
+                "name": "population",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "population"
+                      }
+                    }
+                  },
+                  "code": "::in.population"
+                }
+              },
+              {
+                "name": "modification_date",
+                "type": "datetime",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "modification_date"
+                      }
+                    }
+                  },
+                  "code": "::in.modification_date"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "sqlEditor": {
+          "text": "CREATE TABLE country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showWriteFields": true,
+          "showSqlEditor": true,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1226,
+        "y": 314
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_bde98995-99c7-4805-a666-0c96e6ac2ecc",
+      "name": "SQL Insert: continents",
+      "type": "com.twineworks.tweakstreet.library.steps.output.sqlinsert",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "SQL Insert: continents",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "schema": {
+          "widgetType": "expression/database-schema",
+          "widgetData": {
+            "interpolation": true,
+            "text": ""
+          },
+          "code": "''"
+        },
+        "table": {
+          "widgetType": "expression/database-table",
+          "widgetData": {
+            "interpolation": true,
+            "text": "continent"
+          },
+          "code": "'continent'"
+        },
+        "batchSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1000"
+          },
+          "code": "1000"
+        },
+        "commitSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1000"
+          },
+          "code": "1000"
+        },
+        "getGeneratedKeys": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "pkField": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": "geonameid"
+          },
+          "code": "'geonameid'"
+        },
+        "fieldMode": {
+          "value": "fixed"
+        },
+        "dataDrivenColumns": {
+          "widgetType": "expression/data-grid",
+          "widgetData": {
+            "fields": [
+              {
+                "id": "type",
+                "name": "type"
+              },
+              {
+                "id": "name",
+                "name": "name"
+              }
+            ],
+            "gen": {
+              "as": "rows",
+              "of": "dict",
+              "meta": false
+            },
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "dataDrivenValues": {
+          "widgetType": "expression/field-value-ref",
+          "widgetData": {
+            "fieldSelect": {
+              "value": null
+            }
+          },
+          "code": "nil"
+        },
+        "writeFields": {
+          "writeFields": {
+            "list": [
+              {
+                "name": "geonameid",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "geonameid"
+                      }
+                    }
+                  },
+                  "code": "::in.geonameid"
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "name"
+                      }
+                    }
+                  },
+                  "code": "::in.name"
+                }
+              },
+              {
+                "name": "feature_class",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "feature_class"
+                      }
+                    }
+                  },
+                  "code": "::in.feature_class"
+                }
+              },
+              {
+                "name": "feature_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "feature_code"
+                      }
+                    }
+                  },
+                  "code": "::in.feature_code"
+                }
+              },
+              {
+                "name": "population",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "population"
+                      }
+                    }
+                  },
+                  "code": "::in.population"
+                }
+              },
+              {
+                "name": "modification_date",
+                "type": "datetime",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "modification_date"
+                      }
+                    }
+                  },
+                  "code": "::in.modification_date"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "sqlEditor": {
+          "text": "CREATE TABLE continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showWriteFields": true,
+          "showSqlEditor": true,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1226,
+        "y": 474
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_d570579e-ea43-4313-9466-bec246c76523",
+      "name": "SQL Insert: admins",
+      "type": "com.twineworks.tweakstreet.library.steps.output.sqlinsert",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "SQL Insert: admins",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "schema": {
+          "widgetType": "expression/database-schema",
+          "widgetData": {
+            "interpolation": true,
+            "text": ""
+          },
+          "code": "''"
+        },
+        "table": {
+          "widgetType": "expression/database-table",
+          "widgetData": {
+            "interpolation": true,
+            "text": "admindivision"
+          },
+          "code": "'admindivision'"
+        },
+        "batchSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1000"
+          },
+          "code": "1000"
+        },
+        "commitSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1000"
+          },
+          "code": "1000"
+        },
+        "getGeneratedKeys": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "pkField": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": "geonameid"
+          },
+          "code": "'geonameid'"
+        },
+        "fieldMode": {
+          "value": "fixed"
+        },
+        "dataDrivenColumns": {
+          "widgetType": "expression/data-grid",
+          "widgetData": {
+            "fields": [
+              {
+                "id": "type",
+                "name": "type"
+              },
+              {
+                "id": "name",
+                "name": "name"
+              }
+            ],
+            "gen": {
+              "as": "rows",
+              "of": "dict",
+              "meta": false
+            },
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "dataDrivenValues": {
+          "widgetType": "expression/field-value-ref",
+          "widgetData": {
+            "fieldSelect": {
+              "value": null
+            }
+          },
+          "code": "nil"
+        },
+        "writeFields": {
+          "writeFields": {
+            "list": [
+              {
+                "name": "geonameid",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "geonameid"
+                      }
+                    }
+                  },
+                  "code": "::in.geonameid"
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "name"
+                      }
+                    }
+                  },
+                  "code": "::in.name"
+                }
+              },
+              {
+                "name": "latitude",
+                "type": "decimal",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "latitude"
+                      }
+                    }
+                  },
+                  "code": "::in.latitude"
+                }
+              },
+              {
+                "name": "longitude",
+                "type": "decimal",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "longitude"
+                      }
+                    }
+                  },
+                  "code": "::in.longitude"
+                }
+              },
+              {
+                "name": "feature_class",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "feature_class"
+                      }
+                    }
+                  },
+                  "code": "::in.feature_class"
+                }
+              },
+              {
+                "name": "feature_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "feature_code"
+                      }
+                    }
+                  },
+                  "code": "::in.feature_code"
+                }
+              },
+              {
+                "name": "country_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "country_code"
+                      }
+                    }
+                  },
+                  "code": "::in.country_code"
+                }
+              },
+              {
+                "name": "admin1_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "admin1_code"
+                      }
+                    }
+                  },
+                  "code": "::in.admin1_code"
+                }
+              },
+              {
+                "name": "admin2_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "admin2_code"
+                      }
+                    }
+                  },
+                  "code": "::in.admin2_code"
+                }
+              },
+              {
+                "name": "admin3_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "admin3_code"
+                      }
+                    }
+                  },
+                  "code": "::in.admin3_code"
+                }
+              },
+              {
+                "name": "admin4_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "admin4_code"
+                      }
+                    }
+                  },
+                  "code": "::in.admin4_code"
+                }
+              },
+              {
+                "name": "population",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "population"
+                      }
+                    }
+                  },
+                  "code": "::in.population"
+                }
+              },
+              {
+                "name": "modification_date",
+                "type": "datetime",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "modification_date"
+                      }
+                    }
+                  },
+                  "code": "::in.modification_date"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "sqlEditor": {
+          "text": "CREATE TABLE admin (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showWriteFields": true,
+          "showSqlEditor": true,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1226,
+        "y": 618
+      }
+    }
+  ],
+  "hops": [
+    {
+      "id": "33124654-1629-4fd7-b9a9-a5ae1045f29e",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_fc82fbd8-455e-4903-a3da-74ae6ae8f276",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_987e5ff0-3680-43a0-a805-99d5375640ea",
+      "fromGate": "country",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "8a9e6743-3bff-4cf2-903a-f21337d4d221",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_987e5ff0-3680-43a0-a805-99d5375640ea",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_d4740661-cab3-4300-b659-0da6d98c6aae",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "2ee5d971-4624-4a35-968d-2d16dd56166d",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_fc82fbd8-455e-4903-a3da-74ae6ae8f276",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_435ccd27-84f0-4f5b-b293-278a2266a602",
+      "fromGate": "continent",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "423746fd-536d-4eec-8420-e4c674eee1c5",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_435ccd27-84f0-4f5b-b293-278a2266a602",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_0b68186f-c066-40ab-b2bb-565466c6af53",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "11c11ba6-d626-45b1-83e2-9e60fc7e7c73",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_fc82fbd8-455e-4903-a3da-74ae6ae8f276",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_e38e6c66-5c0d-426e-a8e6-f5a75680a586",
+      "fromGate": "regular",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "66e356ee-fb5b-42b6-a19f-48636d466732",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_e38e6c66-5c0d-426e-a8e6-f5a75680a586",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_c748f69f-bbeb-4ce8-b3ea-f4bf84f6bbbc",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "e0984fa9-fbbe-479e-afde-6e6111aa52b6",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_fc82fbd8-455e-4903-a3da-74ae6ae8f276",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_3bbb8eba-4115-4596-8781-43787c498bbd",
+      "fromGate": "admin",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "b259094c-16a7-46ec-aa62-61804e1b0a49",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_3bbb8eba-4115-4596-8781-43787c498bbd",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_deb8e462-fc11-4720-a585-f1d102d8e7b0",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "29663a3a-602b-4b14-93cb-76a9d2aa327a",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.dummy_c748f69f-bbeb-4ce8-b3ea-f4bf84f6bbbc",
+      "toStep": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_3865e51a-76dd-4f07-bba2-ae00bd5b863f",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "daa1e2b8-825b-4637-9abc-62236aabcfe6",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_18886815-06c2-4267-ad22-d14d9b906aa6",
+      "toStep": "com.twineworks.tweakstreet.library.steps.decision.decision_fc82fbd8-455e-4903-a3da-74ae6ae8f276",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "0106525b-326c-4f36-9b5e-98301e1e453b",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.dummy_deb8e462-fc11-4720-a585-f1d102d8e7b0",
+      "toStep": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_d570579e-ea43-4313-9466-bec246c76523",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "c067535b-2d6d-4846-bcc0-69dcdc086f68",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.dummy_0b68186f-c066-40ab-b2bb-565466c6af53",
+      "toStep": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_bde98995-99c7-4805-a666-0c96e6ac2ecc",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "80c2cc1e-95be-4a24-bc40-39a58ac52d5d",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.dummy_d4740661-cab3-4300-b659-0da6d98c6aae",
+      "toStep": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_1b2c7db7-cc6e-4992-b684-7405e37b69d0",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    }
+  ]
+}
