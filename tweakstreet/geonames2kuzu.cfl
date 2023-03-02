@@ -235,7 +235,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1018,
+        "x": 1114,
         "y": 378
       }
     },
@@ -360,7 +360,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1018,
+        "x": 1114,
         "y": 186
       }
     },
@@ -485,7 +485,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1290,
+        "x": 1386,
         "y": 186
       }
     },
@@ -533,7 +533,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1562,
+        "x": 1658,
         "y": 186
       }
     },
@@ -644,7 +644,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 442,
+        "x": 538,
         "y": 378
       }
     },
@@ -755,7 +755,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 442,
+        "x": 538,
         "y": 570
       }
     },
@@ -866,7 +866,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 746,
+        "x": 842,
         "y": 378
       }
     },
@@ -977,7 +977,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 746,
+        "x": 842,
         "y": 554
       }
     },
@@ -1049,7 +1049,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 442,
+        "x": 538,
         "y": 186
       }
     }

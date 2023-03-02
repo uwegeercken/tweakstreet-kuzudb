@@ -550,7 +550,7 @@
         "model": {}
       },
       "pos": {
-        "x": 634,
+        "x": 906,
         "y": 138
       }
     },
@@ -744,7 +744,7 @@
         "model": {}
       },
       "pos": {
-        "x": 634,
+        "x": 906,
         "y": 314
       }
     },
@@ -1009,7 +1009,7 @@
         "model": {}
       },
       "pos": {
-        "x": 874,
+        "x": 1178,
         "y": 138
       }
     },
@@ -1089,7 +1089,7 @@
         "model": {}
       },
       "pos": {
-        "x": 426,
+        "x": 698,
         "y": 138
       }
     },
@@ -2415,7 +2415,7 @@
         "query": {
           "widgetType": "expression/text",
           "widgetData": {
-            "text": "select \n  *\nfrom\n  geoname\nwhere \n  country_code=\"DE\" and\n  name=\"Wyhlen\"",
+            "text": "select \n  *\nfrom\n  geoname\n",
             "size": {
               "width": 0,
               "height": 200
@@ -2424,7 +2424,7 @@
             "lineSeparator": "\n",
             "interpolation": false
           },
-          "code": "'select \n  *\nfrom\n  geoname\nwhere \n  country_code=\"DE\" and\n  name=\"Wyhlen\"'"
+          "code": "'select \n  *\nfrom\n  geoname\n'"
         },
         "jdbcParams": {
           "widgetType": "expression/list",
@@ -3297,39 +3297,112 @@
         "x": 586,
         "y": 842
       }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.bool.filter_634bd6d9-a088-48d7-8559-ce6c7cd68d9e",
+      "name": "Filter",
+      "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Filter",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "condition": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "in.feature_code!=\"null\" && in.feature_code!=\"\"",
+            "size": {
+              "width": 0,
+              "height": 36
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "in.feature_code!=\"null\" && in.feature_code!=\"\""
+        },
+        "editor": {
+          "showEntryVariables": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 458,
+        "y": 138
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.dummy_b7818744-f369-4a65-969b-ae0a59fc96ae",
+      "name": "Dummy",
+      "type": "com.twineworks.tweakstreet.library.steps.map.dummy",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Dummy",
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": ""
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "editor": {
+                "collapsed": true
+              }
+            }
+          },
+          "showingComment": false
+        },
+        "editor": {}
+      },
+      "pos": {
+        "x": 458,
+        "y": 314
+      }
     }
   ],
   "hops": [
-    {
-      "id": "646b46a2-923e-4528-aaac-5afff145161e",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_7ce53d61-bd2e-4eaa-8958-3dd308c8cc8f",
-      "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_56abb0cf-77a0-4bc6-8fbf-0e5bd06a8972",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
-      "id": "523d66fb-61a7-45e7-a392-c41a4e6fafdb",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_5f761f8c-a670-460d-be1e-a628bd77de8c",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.calculator_e24cc749-b0a2-4f4b-8416-c5466e64a845",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
     {
       "id": "9f55e6e2-e918-487d-8968-68081fea0aa0",
       "fromStep": "com.twineworks.tweakstreet.library.steps.map.calculator_e24cc749-b0a2-4f4b-8416-c5466e64a845",
@@ -3395,6 +3468,66 @@
       "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_59093094-5d6c-4107-a059-e676d622b2ab",
       "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_f014c56f-76cd-41cf-a869-2b73bb34c2af",
       "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "2081b716-0b5e-4609-8b81-6ca46b756b50",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_7ce53d61-bd2e-4eaa-8958-3dd308c8cc8f",
+      "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_56abb0cf-77a0-4bc6-8fbf-0e5bd06a8972",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "5e024ac2-7125-4698-96c0-1af037ec19fb",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_5f761f8c-a670-460d-be1e-a628bd77de8c",
+      "toStep": "com.twineworks.tweakstreet.library.steps.bool.filter_634bd6d9-a088-48d7-8559-ce6c7cd68d9e",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "e7959136-bbac-4621-ae68-61d6635c6651",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_634bd6d9-a088-48d7-8559-ce6c7cd68d9e",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.calculator_e24cc749-b0a2-4f4b-8416-c5466e64a845",
+      "fromGate": "yes",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "819aa45b-d13b-4736-9f56-87e46c246ff7",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_634bd6d9-a088-48d7-8559-ce6c7cd68d9e",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_b7818744-f369-4a65-969b-ae0a59fc96ae",
+      "fromGate": "no",
       "toGate": "in",
       "disabled": false,
       "partitioner": {

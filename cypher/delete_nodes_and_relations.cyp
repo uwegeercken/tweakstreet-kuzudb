@@ -5,3 +5,4 @@ drop table Geoname;
 drop table Feature;
 drop table AdminDivision;
 drop table Country;
+
