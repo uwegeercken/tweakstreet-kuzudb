@@ -400,7 +400,7 @@
         "model": {}
       },
       "pos": {
-        "x": 234,
+        "x": 218,
         "y": 138
       }
     },
@@ -679,7 +679,7 @@
         "model": {}
       },
       "pos": {
-        "x": 538,
+        "x": 730,
         "y": 138
       }
     },
@@ -1335,7 +1335,7 @@
         "model": {}
       },
       "pos": {
-        "x": 1098,
+        "x": 1066,
         "y": 650
       }
     },
@@ -1492,7 +1492,7 @@
         "model": {}
       },
       "pos": {
-        "x": 1098,
+        "x": 1066,
         "y": 458
       }
     },
@@ -1663,7 +1663,7 @@
         "model": {}
       },
       "pos": {
-        "x": 1338,
+        "x": 1306,
         "y": 458
       }
     },
@@ -1906,7 +1906,7 @@
         "model": {}
       },
       "pos": {
-        "x": 1338,
+        "x": 1306,
         "y": 650
       }
     },
@@ -2021,7 +2021,7 @@
         "model": {}
       },
       "pos": {
-        "x": 666,
+        "x": 634,
         "y": 458
       }
     },
@@ -2291,7 +2291,7 @@
         "model": {}
       },
       "pos": {
-        "x": 666,
+        "x": 634,
         "y": 650
       }
     },
@@ -2403,7 +2403,7 @@
         "model": {}
       },
       "pos": {
-        "x": 442,
+        "x": 426,
         "y": 458
       }
     },
@@ -2673,7 +2673,7 @@
         "model": {}
       },
       "pos": {
-        "x": 874,
+        "x": 842,
         "y": 650
       }
     },
@@ -2788,7 +2788,7 @@
         "model": {}
       },
       "pos": {
-        "x": 874,
+        "x": 842,
         "y": 458
       }
     },
@@ -2868,7 +2868,7 @@
         "model": {}
       },
       "pos": {
-        "x": 1546,
+        "x": 1514,
         "y": 458
       }
     },
@@ -2986,7 +2986,7 @@
         "model": {}
       },
       "pos": {
-        "x": 1738,
+        "x": 1690,
         "y": 250
       }
     },
@@ -3058,7 +3058,7 @@
         "model": {}
       },
       "pos": {
-        "x": 1546,
+        "x": 1514,
         "y": 250
       }
     },
@@ -3310,7 +3310,7 @@
         "model": {}
       },
       "pos": {
-        "x": 2154,
+        "x": 2138,
         "y": 250
       }
     },
@@ -3382,7 +3382,7 @@
         "model": {}
       },
       "pos": {
-        "x": 1546,
+        "x": 1690,
         "y": 650
       }
     },
@@ -3634,13 +3634,13 @@
         "model": {}
       },
       "pos": {
-        "x": 1770,
+        "x": 1946,
         "y": 650
       }
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.bool.filter_e83fee65-c461-4686-8cf6-1d06317651ce",
-      "name": "Filter",
+      "name": "Filter: nil values",
       "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3651,7 +3651,7 @@
       },
       "data": {
         "meta": {
-          "name": "Filter",
+          "name": "Filter: nil values",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -3700,7 +3700,7 @@
         "model": {}
       },
       "pos": {
-        "x": 1914,
+        "x": 1882,
         "y": 250
       }
     },
@@ -3737,8 +3737,214 @@
         "editor": {}
       },
       "pos": {
-        "x": 1914,
+        "x": 1882,
         "y": 426
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.bool.filter_3156f9d4-e710-4d58-9d99-d6dd99640bbe",
+      "name": "Filter: nil values",
+      "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Filter: nil values",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "condition": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "in.feature_class!=nil && in.feature_code!=nil && in.feature_code!=\"\"",
+            "size": {
+              "width": 0,
+              "height": 36
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "in.feature_class!=nil && in.feature_code!=nil && in.feature_code!=\"\""
+        },
+        "editor": {
+          "showEntryVariables": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1514,
+        "y": 650
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.dummy_69401011-9451-48b6-a88d-f9e1d92c5bd7",
+      "name": "Dummy",
+      "type": "com.twineworks.tweakstreet.library.steps.map.dummy",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Dummy",
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": ""
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "editor": {
+                "collapsed": true
+              }
+            }
+          },
+          "showingComment": false
+        },
+        "editor": {}
+      },
+      "pos": {
+        "x": 1514,
+        "y": 826
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.bool.filter_f49a9c66-25e8-41f6-b6d6-95157dd02f9b",
+      "name": "Filter: nil values",
+      "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Filter: nil values",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "condition": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "in.geonameid!=nil && in.countryId!=nil",
+            "size": {
+              "width": 0,
+              "height": 36
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "in.geonameid!=nil && in.countryId!=nil"
+        },
+        "editor": {
+          "showEntryVariables": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 442,
+        "y": 138
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.dummy_08f160f3-4623-4766-b702-0ba5710bb60d",
+      "name": "Dummy",
+      "type": "com.twineworks.tweakstreet.library.steps.map.dummy",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Dummy",
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": ""
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "editor": {
+                "collapsed": true
+              }
+            }
+          },
+          "showingComment": false
+        },
+        "editor": {}
+      },
+      "pos": {
+        "x": 442,
+        "y": 298
       }
     }
   ],
@@ -3822,21 +4028,6 @@
       "id": "07761e83-e30d-42f6-abfb-60260ffcc25b",
       "fromStep": "com.twineworks.tweakstreet.library.steps.map.calculator_6f30fe16-8d5a-4a8a-886b-2b869eafabc9",
       "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_abcef398-8cd6-42f7-a5c7-e6ba803601a7",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
-      "id": "03ff4b63-953b-4084-a85d-54007a57045d",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_cb6649bd-5ad0-4524-9a28-d457dd35bf42",
-      "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_c0265ec7-304a-4b44-8321-08c7f3446b30",
       "fromGate": "out",
       "toGate": "in",
       "disabled": false,
@@ -3939,21 +4130,6 @@
       }
     },
     {
-      "id": "f9e9baa8-8885-4347-a45b-4878c86bf5d7",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.map.calculator_6768b33c-8b7c-4c75-8b1f-ecdd9e423b70",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_1f65d87d-f165-41ac-bd54-fd16af9636e7",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
       "id": "69162b77-dcf0-4b6f-8189-43cf331d3132",
       "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_1f65d87d-f165-41ac-bd54-fd16af9636e7",
       "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_b00677d9-d64c-43a2-a762-8de34baef868",
@@ -4002,6 +4178,96 @@
       "id": "03633488-7899-4d1b-a022-7b5a44c13efa",
       "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_e83fee65-c461-4686-8cf6-1d06317651ce",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_cca5f9f1-d19f-4105-8029-74dba5b41750",
+      "fromGate": "no",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "15e6306f-313b-4146-a1ca-862276415a0f",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.calculator_6768b33c-8b7c-4c75-8b1f-ecdd9e423b70",
+      "toStep": "com.twineworks.tweakstreet.library.steps.bool.filter_3156f9d4-e710-4d58-9d99-d6dd99640bbe",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "63c6f0e6-87f8-4868-a043-541bf1b2fcc6",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_3156f9d4-e710-4d58-9d99-d6dd99640bbe",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_1f65d87d-f165-41ac-bd54-fd16af9636e7",
+      "fromGate": "yes",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "2a9b4084-0674-4950-8866-66a02032291b",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_3156f9d4-e710-4d58-9d99-d6dd99640bbe",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_69401011-9451-48b6-a88d-f9e1d92c5bd7",
+      "fromGate": "no",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "4cb70a3d-d55e-43f9-b8ff-55ea67c71f27",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_cb6649bd-5ad0-4524-9a28-d457dd35bf42",
+      "toStep": "com.twineworks.tweakstreet.library.steps.bool.filter_f49a9c66-25e8-41f6-b6d6-95157dd02f9b",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "7c225b03-94b1-4e86-9a9a-aed071060ccc",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_f49a9c66-25e8-41f6-b6d6-95157dd02f9b",
+      "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_c0265ec7-304a-4b44-8321-08c7f3446b30",
+      "fromGate": "yes",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "9b19c94e-6690-479d-8aa3-d6489713923f",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_f49a9c66-25e8-41f6-b6d6-95157dd02f9b",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_08f160f3-4623-4766-b702-0ba5710bb60d",
       "fromGate": "no",
       "toGate": "in",
       "disabled": false,
