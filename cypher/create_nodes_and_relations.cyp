@@ -6,7 +6,6 @@ create rel table belongsTo(from Geoname to AdminDivision);
 create rel table isTypeOf(from Geoname to Feature);
 create rel table isPartOf(from Geoname to Country);
 
-
 copy AdminDivision from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_admin_division.csv";
 copy Country from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_country.csv";
 copy Feature from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_feature.csv";
