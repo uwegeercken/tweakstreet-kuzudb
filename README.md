@@ -59,6 +59,9 @@ Put the data into a folder of your choice.
 
 To run the flows, you first need to install tweakstreet - it is available for Linux, Mac and WIndows. Once done, open the controlflow "geonames2kuzu.cfl". Connect the module "module.tsm" and open it. The module contains configuration details. Specifically you need to adjust the "rootFolder" variable to your needs. The "dataOutputFolder" variable defines where the resulting csv files will be generated.
 
+![grafik](https://user-images.githubusercontent.com/6207140/222886105-5033ec86-59f6-41ef-a1eb-d4010a10d161.png)
+
+
 Now run the control flow and wait until it finishes - hopefully without issues. At this point you can run the cypher script (adjust the path info according to your needs) to import the data.
 
 Let me know if you find bug but also if you want to participate in further extending the idea.
