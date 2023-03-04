@@ -47,6 +47,8 @@ The second part of the ETL pipeline prepares the data to produces node and relat
 ## Cypher
 A cypher script is available which creates the schemas for the nodes and relations and them imports the data. There is an additional script to delete the structures in kuzudb.
 
+![grafik](https://user-images.githubusercontent.com/6207140/222886182-171b3715-64fb-4a0c-b92e-76cae5a75d43.png)
+
 ## Processing the data
 First go to http://download.geonames.org/export/dump and download following files:
 - allCountries.txt
@@ -58,6 +60,8 @@ First go to http://download.geonames.org/export/dump and download following file
 Put the data into a folder of your choice.
 
 To run the flows, you first need to install tweakstreet - it is available for Linux, Mac and WIndows. Once done, open the controlflow "geonames2kuzu.cfl". Connect the module "module.tsm" and open it. The module contains configuration details. Specifically you need to adjust the "rootFolder" variable to your needs. The "dataOutputFolder" variable defines where the resulting csv files will be generated.
+
+![grafik](https://user-images.githubusercontent.com/6207140/222886105-5033ec86-59f6-41ef-a1eb-d4010a10d161.png)
 
 Now run the control flow and wait until it finishes - hopefully without issues. At this point you can run the cypher script (adjust the path info according to your needs) to import the data.
 
