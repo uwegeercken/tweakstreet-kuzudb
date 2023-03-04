@@ -1098,18 +1098,78 @@
           "code": "::flow.services.`sqlite-geonames`"
         },
         "sql": {
-          "widgetType": "expression/text",
+          "widgetType": "expression/list",
           "widgetData": {
-            "text": "delete from geoname;\ndelete from admindivision;\ndelete from country;\ndelete from continent;",
-            "size": {
-              "width": 0,
-              "height": 200
-            },
-            "syntax": "sql",
-            "lineSeparator": "\n",
-            "interpolation": false
+            "table": {
+              "list": [
+                {
+                  "value": {
+                    "widgetType": "expression/text",
+                    "widgetData": {
+                      "text": "delete from geoname;",
+                      "size": {
+                        "width": 0,
+                        "height": 36
+                      },
+                      "syntax": "sql",
+                      "lineSeparator": "\n",
+                      "interpolation": false
+                    },
+                    "code": "'delete from geoname;'"
+                  }
+                },
+                {
+                  "value": {
+                    "widgetType": "expression/text",
+                    "widgetData": {
+                      "text": "delete from admindivision;\n",
+                      "size": {
+                        "width": 0,
+                        "height": 36
+                      },
+                      "syntax": "sql",
+                      "lineSeparator": "\n",
+                      "interpolation": false
+                    },
+                    "code": "'delete from admindivision;\n'"
+                  }
+                },
+                {
+                  "value": {
+                    "widgetType": "expression/text",
+                    "widgetData": {
+                      "text": "delete from country;",
+                      "size": {
+                        "width": 0,
+                        "height": 36
+                      },
+                      "syntax": "sql",
+                      "lineSeparator": "\n",
+                      "interpolation": false
+                    },
+                    "code": "'delete from country;'"
+                  }
+                },
+                {
+                  "value": {
+                    "widgetType": "expression/text",
+                    "widgetData": {
+                      "text": "delete from continent;",
+                      "size": {
+                        "width": 0,
+                        "height": 36
+                      },
+                      "syntax": "sql",
+                      "lineSeparator": "\n",
+                      "interpolation": false
+                    },
+                    "code": "'delete from continent;'"
+                  }
+                }
+              ]
+            }
           },
-          "code": "'delete from geoname;\ndelete from admindivision;\ndelete from country;\ndelete from continent;'"
+          "code": "['delete from geoname;', 'delete from admindivision;\n', 'delete from country;', 'delete from continent;']"
         },
         "jdbcParams": {
           "widgetType": "expression/list",
