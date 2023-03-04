@@ -65,6 +65,16 @@ To run the flows, you first need to install tweakstreet - it is available for Li
 
 Now run the control flow and wait until it finishes - hopefully without issues. At this point you can run the cypher script (adjust the path info according to your needs) to import the data.
 
+Some statictics:
+- Node table Geoname: 11842832
+- Node Table Feature: 680
+- Node table Country: 193
+- Node table AdminDivision: 515024
+- Relation table isTypeOf: 11747765
+- Relation table isPartOf: 11734891
+- Relation table belongsTo: 21863415
+
+
 Let me know if you find bug but also if you want to participate in further extending the idea.
 
 last update: uwe.geercken@web.de - 2023-03-04
