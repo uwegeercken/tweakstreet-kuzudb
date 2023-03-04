@@ -1,6 +1,6 @@
 {
   "type": "data-flow",
-  "appVersion": "1.20.0",
+  "appVersion": "1.21.0",
   "properties": {
     "meta": {
       "comment": {
@@ -313,7 +313,7 @@
         "query": {
           "widgetType": "expression/text",
           "widgetData": {
-            "text": "select \n  geoname.geonameid as geonamesId,\n  country.geonameid as countryId\nfrom\n  geoname,\n  country\nwhere \n  geoname.country_code = country.country_code",
+            "text": "select \n  geoname.geonameid as geonameId,\n  country.geonameid as countryId\nfrom\n  geoname,\n  country\nwhere \n  geoname.country_code = country.country_code",
             "size": {
               "width": 0,
               "height": 252
@@ -322,7 +322,7 @@
             "lineSeparator": "\n",
             "interpolation": false
           },
-          "code": "'select \n  geoname.geonameid as geonamesId,\n  country.geonameid as countryId\nfrom\n  geoname,\n  country\nwhere \n  geoname.country_code = country.country_code'"
+          "code": "'select \n  geoname.geonameid as geonameId,\n  country.geonameid as countryId\nfrom\n  geoname,\n  country\nwhere \n  geoname.country_code = country.country_code'"
         },
         "jdbcParams": {
           "widgetType": "expression/list",
@@ -337,15 +337,15 @@
           "readFields": {
             "list": [
               {
-                "name": "geonamesId",
+                "name": "geonameId",
                 "type": "long",
                 "mapping": {
                   "widgetType": "expression/string",
                   "widgetData": {
                     "interpolation": true,
-                    "text": "geonamesId"
+                    "text": "geonameId"
                   },
-                  "code": "'geonamesId'"
+                  "code": "'geonameId'"
                 },
                 "conversion": {
                   "widgetType": "expression/nil",
@@ -526,18 +526,18 @@
           "stringWriteFields": {
             "list": [
               {
-                "name": "geonamesId",
+                "name": "geonameId",
                 "value": {
                   "widgetType": "expression/field-value-ref",
                   "widgetData": {
                     "fieldSelect": {
                       "value": {
                         "gate": "in",
-                        "name": "geonamesId"
+                        "name": "geonameId"
                       }
                     }
                   },
-                  "code": "::in.geonamesId"
+                  "code": "::in.geonameId"
                 },
                 "formatter": {
                   "widgetType": "expression/format-number",
@@ -3891,14 +3891,14 @@
         "condition": {
           "widgetType": "expression/code",
           "widgetData": {
-            "text": "in.geonameid!=nil && in.countryId!=nil",
+            "text": "in.geonameId!=nil && in.countryId!=nil",
             "size": {
               "width": 0,
               "height": 36
             },
             "syntax": "tweakflow"
           },
-          "code": "in.geonameid!=nil && in.countryId!=nil"
+          "code": "in.geonameId!=nil && in.countryId!=nil"
         },
         "editor": {
           "showEntryVariables": false

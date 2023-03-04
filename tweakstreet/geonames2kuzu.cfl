@@ -1,6 +1,6 @@
 {
   "type": "control-flow",
-  "appVersion": "1.20.0",
+  "appVersion": "1.21.0",
   "properties": {
     "meta": {
       "comment": {
@@ -45,8 +45,8 @@
       "parameters": {
         "list": [
           {
-            "name": "loadDatabase",
-            "description": "If the load database flow should run",
+            "name": "clearAndloadDatabase",
+            "description": "If the data should be wiped and then imported to the database",
             "type": "boolean",
             "defaultValue": {
               "widgetType": "expression/string",
@@ -110,8 +110,8 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 234,
-        "y": 186
+        "x": 106,
+        "y": 170
       }
     },
     {
@@ -235,8 +235,8 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1114,
-        "y": 378
+        "x": 1194,
+        "y": 330
       }
     },
     {
@@ -360,8 +360,8 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1114,
-        "y": 186
+        "x": 1194,
+        "y": 170
       }
     },
     {
@@ -485,8 +485,8 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1386,
-        "y": 186
+        "x": 1450,
+        "y": 170
       }
     },
     {
@@ -533,8 +533,8 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1658,
-        "y": 186
+        "x": 1642,
+        "y": 170
       }
     },
     {
@@ -644,8 +644,8 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 538,
-        "y": 378
+        "x": 330,
+        "y": 170
       }
     },
     {
@@ -755,8 +755,8 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 538,
-        "y": 570
+        "x": 330,
+        "y": 330
       }
     },
     {
@@ -866,8 +866,8 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 842,
-        "y": 378
+        "x": 618,
+        "y": 330
       }
     },
     {
@@ -977,17 +977,17 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 842,
-        "y": 554
+        "x": 618,
+        "y": 170
       }
     },
     {
-      "id": "com.twineworks.tweakstreet.library.steps.decision.decision_0ea5dfca-29a1-451a-a878-27a7ead26ecf",
-      "name": "Decision: load database",
+      "id": "com.twineworks.tweakstreet.library.steps.decision.decision_45679345-687f-446d-bb2b-e60bf750b36a",
+      "name": "Decision: clear and load database",
       "type": "com.twineworks.tweakstreet.library.steps.decision.decision",
       "data": {
         "meta": {
-          "name": "Decision: load database",
+          "name": "Decision: clear and load database",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -1033,14 +1033,14 @@
         "gate": {
           "widgetType": "expression/code",
           "widgetData": {
-            "text": "if flow.params.loadDatabase==true then 'yes' else 'no'",
+            "text": "if flow.params.clearAndloadDatabase==true then 'yes' else 'no'",
             "size": {
               "width": 0,
               "height": 36
             },
             "syntax": "tweakflow"
           },
-          "code": "if flow.params.loadDatabase==true then 'yes' else 'no'"
+          "code": "if flow.params.clearAndloadDatabase==true then 'yes' else 'no'"
         },
         "editor": {
           "showEntryVariables": false
@@ -1049,8 +1049,119 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 538,
-        "y": 186
+        "x": 906,
+        "y": 170
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.sqlscript_89a87d80-836e-484b-9633-ee5722992d08",
+      "name": "SQL Script: empty all tables",
+      "type": "com.twineworks.tweakstreet.library.steps.map.sqlscript",
+      "data": {
+        "meta": {
+          "name": "SQL Script: empty all tables",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "sql": {
+          "widgetType": "expression/text",
+          "widgetData": {
+            "text": "delete from geoname;\ndelete from admindivision;\ndelete from country;\ndelete from continent;",
+            "size": {
+              "width": 0,
+              "height": 200
+            },
+            "syntax": "sql",
+            "lineSeparator": "\n",
+            "interpolation": false
+          },
+          "code": "'delete from geoname;\ndelete from admindivision;\ndelete from country;\ndelete from continent;'"
+        },
+        "jdbcParams": {
+          "widgetType": "expression/list",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "getGeneratedKeys": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "onSqlErrors": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "com.twineworks.tweakstreet.library.steps.map.sqlscript/onSqlErrors",
+            "value": "error"
+          },
+          "code": "'error'"
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 906,
+        "y": 330
       }
     }
   ],
@@ -1104,34 +1215,42 @@
       "disabled": false
     },
     {
-      "id": "72776ace-b2f9-4f16-b6ec-785a581df693",
+      "id": "d5150a36-46b2-4ced-939c-4a2adb66c3fb",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_45679345-687f-446d-bb2b-e60bf750b36a",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_9a9f1d1e-f53a-4663-8a50-3a28bef6c612",
+      "fromGate": "no",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "f5ce45c8-0f63-4eb4-ae6b-3a86b9bcc6f3",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_45679345-687f-446d-bb2b-e60bf750b36a",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_89a87d80-836e-484b-9633-ee5722992d08",
+      "fromGate": "yes",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "a250abc0-bf4b-4e59-a26d-76e3d3776f50",
       "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_0c5f4d14-c3f4-4fbf-bff9-e6e6d517ccd7",
+      "toStep": "com.twineworks.tweakstreet.library.steps.decision.decision_45679345-687f-446d-bb2b-e60bf750b36a",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "a6466a34-fd56-468e-96bd-e0606c4f826f",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_89a87d80-836e-484b-9633-ee5722992d08",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_25f04566-1942-4b79-a471-0666383cd165",
       "fromGate": "out",
       "toGate": "in",
       "disabled": false
     },
     {
-      "id": "682c57bc-056b-45e2-bf39-c6f6c62fa499",
+      "id": "6382dfb6-0690-4c38-8846-0f2433264808",
       "fromStep": "start",
-      "toStep": "com.twineworks.tweakstreet.library.steps.decision.decision_0ea5dfca-29a1-451a-a878-27a7ead26ecf",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false
-    },
-    {
-      "id": "6f4654d4-234f-4b82-a064-58c667307f6d",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_0ea5dfca-29a1-451a-a878-27a7ead26ecf",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_a8f0f1c7-f156-4094-a011-3be68ae9f6bb",
-      "fromGate": "yes",
-      "toGate": "in",
-      "disabled": false
-    },
-    {
-      "id": "085b6451-e3e5-47a7-861f-34a6d4e7786d",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_0ea5dfca-29a1-451a-a878-27a7ead26ecf",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_9a9f1d1e-f53a-4663-8a50-3a28bef6c612",
-      "fromGate": "no",
+      "fromGate": "out",
       "toGate": "in",
       "disabled": false
     }
