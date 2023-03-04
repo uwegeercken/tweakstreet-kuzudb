@@ -235,7 +235,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1194,
+        "x": 906,
         "y": 330
       }
     },
@@ -360,7 +360,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1194,
+        "x": 906,
         "y": 170
       }
     },
@@ -485,7 +485,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1450,
+        "x": 1194,
         "y": 170
       }
     },
@@ -533,17 +533,17 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1642,
+        "x": 1418,
         "y": 170
       }
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.map.sqlscript_a8f0f1c7-f156-4094-a011-3be68ae9f6bb",
-      "name": "SQL Script: create geoname table",
+      "name": "SQL Script: create all tables",
       "type": "com.twineworks.tweakstreet.library.steps.map.sqlscript",
       "data": {
         "meta": {
-          "name": "SQL Script: create geoname table",
+          "name": "SQL Script: create all tables",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -582,18 +582,78 @@
           "code": "::flow.services.`sqlite-geonames`"
         },
         "sql": {
-          "widgetType": "expression/text",
+          "widgetType": "expression/list",
           "widgetData": {
-            "text": "CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)",
-            "size": {
-              "width": 0,
-              "height": 200
-            },
-            "syntax": "sql",
-            "lineSeparator": "\n",
-            "interpolation": false
+            "table": {
+              "list": [
+                {
+                  "value": {
+                    "widgetType": "expression/text",
+                    "widgetData": {
+                      "text": "CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)",
+                      "size": {
+                        "width": 0,
+                        "height": 200
+                      },
+                      "syntax": "sql",
+                      "lineSeparator": "\n",
+                      "interpolation": false
+                    },
+                    "code": "'CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)'"
+                  }
+                },
+                {
+                  "value": {
+                    "widgetType": "expression/text",
+                    "widgetData": {
+                      "text": "CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+                      "size": {
+                        "width": 0,
+                        "height": 200
+                      },
+                      "syntax": "sql",
+                      "lineSeparator": "\n",
+                      "interpolation": false
+                    },
+                    "code": "'CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
+                  }
+                },
+                {
+                  "value": {
+                    "widgetType": "expression/text",
+                    "widgetData": {
+                      "text": "CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+                      "size": {
+                        "width": 0,
+                        "height": 200
+                      },
+                      "syntax": "sql",
+                      "lineSeparator": "\n",
+                      "interpolation": false
+                    },
+                    "code": "'CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
+                  }
+                },
+                {
+                  "value": {
+                    "widgetType": "expression/text",
+                    "widgetData": {
+                      "text": "CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+                      "size": {
+                        "width": 0,
+                        "height": 200
+                      },
+                      "syntax": "sql",
+                      "lineSeparator": "\n",
+                      "interpolation": false
+                    },
+                    "code": "'CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
+                  }
+                }
+              ]
+            }
           },
-          "code": "'CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)'"
+          "code": "['CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)']"
         },
         "jdbcParams": {
           "widgetType": "expression/list",
@@ -645,339 +705,6 @@
       "wirelessInputs": false,
       "pos": {
         "x": 330,
-        "y": 170
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.map.sqlscript_67091dc4-6347-454e-bef8-063113746ba7",
-      "name": "SQL Script: create country table",
-      "type": "com.twineworks.tweakstreet.library.steps.map.sqlscript",
-      "data": {
-        "meta": {
-          "name": "SQL Script: create country table",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "connection": {
-          "widgetType": "expression/database-ref",
-          "widgetData": {
-            "name": "sqlite-geonames"
-          },
-          "code": "::flow.services.`sqlite-geonames`"
-        },
-        "sql": {
-          "widgetType": "expression/text",
-          "widgetData": {
-            "text": "CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
-            "size": {
-              "width": 0,
-              "height": 200
-            },
-            "syntax": "sql",
-            "lineSeparator": "\n",
-            "interpolation": false
-          },
-          "code": "'CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
-        },
-        "jdbcParams": {
-          "widgetType": "expression/list",
-          "widgetData": {
-            "table": {
-              "list": []
-            }
-          },
-          "code": "[]"
-        },
-        "getGeneratedKeys": {
-          "widgetType": "expression/checkbox-boolean",
-          "widgetData": {
-            "value": false
-          },
-          "code": "false"
-        },
-        "onSqlErrors": {
-          "widgetType": "expression/select",
-          "widgetData": {
-            "family": "com.twineworks.tweakstreet.library.steps.map.sqlscript/onSqlErrors",
-            "value": "error"
-          },
-          "code": "'error'"
-        },
-        "resultVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "editor": {
-          "showEntryVariables": false,
-          "showResultVariables": false,
-          "showOutputFields": true
-        },
-        "model": {}
-      },
-      "wirelessInputs": false,
-      "pos": {
-        "x": 330,
-        "y": 330
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.map.sqlscript_d4bb4c13-6880-4eaa-a210-f66e6e1d3e44",
-      "name": "SQL Script: create continent table",
-      "type": "com.twineworks.tweakstreet.library.steps.map.sqlscript",
-      "data": {
-        "meta": {
-          "name": "SQL Script: create continent table",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "connection": {
-          "widgetType": "expression/database-ref",
-          "widgetData": {
-            "name": "sqlite-geonames"
-          },
-          "code": "::flow.services.`sqlite-geonames`"
-        },
-        "sql": {
-          "widgetType": "expression/text",
-          "widgetData": {
-            "text": "CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
-            "size": {
-              "width": 0,
-              "height": 200
-            },
-            "syntax": "sql",
-            "lineSeparator": "\n",
-            "interpolation": false
-          },
-          "code": "'CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
-        },
-        "jdbcParams": {
-          "widgetType": "expression/list",
-          "widgetData": {
-            "table": {
-              "list": []
-            }
-          },
-          "code": "[]"
-        },
-        "getGeneratedKeys": {
-          "widgetType": "expression/checkbox-boolean",
-          "widgetData": {
-            "value": false
-          },
-          "code": "false"
-        },
-        "onSqlErrors": {
-          "widgetType": "expression/select",
-          "widgetData": {
-            "family": "com.twineworks.tweakstreet.library.steps.map.sqlscript/onSqlErrors",
-            "value": "error"
-          },
-          "code": "'error'"
-        },
-        "resultVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "editor": {
-          "showEntryVariables": false,
-          "showResultVariables": false,
-          "showOutputFields": true
-        },
-        "model": {}
-      },
-      "wirelessInputs": false,
-      "pos": {
-        "x": 618,
-        "y": 330
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.map.sqlscript_0c5f4d14-c3f4-4fbf-bff9-e6e6d517ccd7",
-      "name": "SQL Script: create admindivision table",
-      "type": "com.twineworks.tweakstreet.library.steps.map.sqlscript",
-      "data": {
-        "meta": {
-          "name": "SQL Script: create admindivision table",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "connection": {
-          "widgetType": "expression/database-ref",
-          "widgetData": {
-            "name": "sqlite-geonames"
-          },
-          "code": "::flow.services.`sqlite-geonames`"
-        },
-        "sql": {
-          "widgetType": "expression/text",
-          "widgetData": {
-            "text": "CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
-            "size": {
-              "width": 0,
-              "height": 200
-            },
-            "syntax": "sql",
-            "lineSeparator": "\n",
-            "interpolation": false
-          },
-          "code": "'CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
-        },
-        "jdbcParams": {
-          "widgetType": "expression/list",
-          "widgetData": {
-            "table": {
-              "list": []
-            }
-          },
-          "code": "[]"
-        },
-        "getGeneratedKeys": {
-          "widgetType": "expression/checkbox-boolean",
-          "widgetData": {
-            "value": false
-          },
-          "code": "false"
-        },
-        "onSqlErrors": {
-          "widgetType": "expression/select",
-          "widgetData": {
-            "family": "com.twineworks.tweakstreet.library.steps.map.sqlscript/onSqlErrors",
-            "value": "error"
-          },
-          "code": "'error'"
-        },
-        "resultVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "editor": {
-          "showEntryVariables": false,
-          "showResultVariables": false,
-          "showOutputFields": true
-        },
-        "model": {}
-      },
-      "wirelessInputs": false,
-      "pos": {
-        "x": 618,
         "y": 170
       }
     },
@@ -1049,7 +776,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 906,
+        "x": 618,
         "y": 170
       }
     },
@@ -1220,7 +947,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 906,
+        "x": 618,
         "y": 330
       }
     }
@@ -1251,30 +978,6 @@
       "disabled": false
     },
     {
-      "id": "f21927ad-144a-4bb2-b690-69c78133fa0f",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_a8f0f1c7-f156-4094-a011-3be68ae9f6bb",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_67091dc4-6347-454e-bef8-063113746ba7",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false
-    },
-    {
-      "id": "23a04800-56e8-4a0e-bb12-cb5d64a6fca7",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_67091dc4-6347-454e-bef8-063113746ba7",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_d4bb4c13-6880-4eaa-a210-f66e6e1d3e44",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false
-    },
-    {
-      "id": "d5d3cb97-529a-46e4-ac26-6afdd7984ace",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_d4bb4c13-6880-4eaa-a210-f66e6e1d3e44",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_0c5f4d14-c3f4-4fbf-bff9-e6e6d517ccd7",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false
-    },
-    {
       "id": "d5150a36-46b2-4ced-939c-4a2adb66c3fb",
       "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_45679345-687f-446d-bb2b-e60bf750b36a",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_9a9f1d1e-f53a-4663-8a50-3a28bef6c612",
@@ -1291,14 +994,6 @@
       "disabled": false
     },
     {
-      "id": "a250abc0-bf4b-4e59-a26d-76e3d3776f50",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_0c5f4d14-c3f4-4fbf-bff9-e6e6d517ccd7",
-      "toStep": "com.twineworks.tweakstreet.library.steps.decision.decision_45679345-687f-446d-bb2b-e60bf750b36a",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false
-    },
-    {
       "id": "a6466a34-fd56-468e-96bd-e0606c4f826f",
       "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_89a87d80-836e-484b-9633-ee5722992d08",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_25f04566-1942-4b79-a471-0666383cd165",
@@ -1310,6 +1005,14 @@
       "id": "6382dfb6-0690-4c38-8846-0f2433264808",
       "fromStep": "start",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_a8f0f1c7-f156-4094-a011-3be68ae9f6bb",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "a8b39ac2-3af9-48bd-9361-572d6caac6d1",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_a8f0f1c7-f156-4094-a011-3be68ae9f6bb",
+      "toStep": "com.twineworks.tweakstreet.library.steps.decision.decision_45679345-687f-446d-bb2b-e60bf750b36a",
       "fromGate": "out",
       "toGate": "in",
       "disabled": false
