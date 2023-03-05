@@ -195,22 +195,6 @@
               },
               "code": "$config.vars.geonamesDatabase"
             }
-          },
-          {
-            "name": "geonamesDatabaseTable",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.geonamesDatabaseTable",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.geonamesDatabaseTable"
-            }
           }
         ]
       },
@@ -3300,7 +3284,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.bool.filter_634bd6d9-a088-48d7-8559-ce6c7cd68d9e",
-      "name": "Filter",
+      "name": "Filter: valid codes",
       "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3311,7 +3295,7 @@
       },
       "data": {
         "meta": {
-          "name": "Filter",
+          "name": "Filter: valid codes",
           "showingComment": false,
           "comment": {
             "markdown": {

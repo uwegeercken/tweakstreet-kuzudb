@@ -168,18 +168,6 @@
               },
               "code": "geonamesFolder .. \"/geonames-01.db\""
             }
-          },
-          {
-            "name": "geonamesDatabaseTable",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/string",
-              "widgetData": {
-                "interpolation": true,
-                "text": "allcountries"
-              },
-              "code": "'allcountries'"
-            }
           }
         ]
       },

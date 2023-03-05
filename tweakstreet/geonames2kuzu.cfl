@@ -1,6 +1,6 @@
 {
   "type": "control-flow",
-  "appVersion": "1.21.0",
+  "appVersion": "1.20.0",
   "properties": {
     "meta": {
       "comment": {
@@ -49,12 +49,23 @@
             "description": "If the data should be wiped and then imported to the database",
             "type": "boolean",
             "defaultValue": {
-              "widgetType": "expression/string",
+              "widgetType": "expression/checkbox-boolean",
               "widgetData": {
-                "interpolation": true,
-                "text": "false"
+                "value": false
               },
-              "code": "'false'"
+              "code": "false"
+            }
+          },
+          {
+            "name": "createCsvFiles",
+            "description": "If the csv data files should be generated",
+            "type": "boolean",
+            "defaultValue": {
+              "widgetType": "expression/checkbox-boolean",
+              "widgetData": {
+                "value": false
+              },
+              "code": "false"
             }
           }
         ]
@@ -65,7 +76,152 @@
     },
     "variables": {
       "variables": {
-        "list": []
+        "list": [
+          {
+            "name": "rootFolder",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.rootFolder",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.rootFolder"
+            }
+          },
+          {
+            "name": "geonamesFolder",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.geonamesFolder",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.geonamesFolder"
+            }
+          },
+          {
+            "name": "allCountriesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.allCountriesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.allCountriesFile"
+            }
+          },
+          {
+            "name": "featureClassesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.featureClassesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.featureClassesFile"
+            }
+          },
+          {
+            "name": "featureCodesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.featureCodesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.featureCodesFile"
+            }
+          },
+          {
+            "name": "admin1codesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.admin1codesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.admin1codesFile"
+            }
+          },
+          {
+            "name": "admin2codesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.admin2codesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.admin2codesFile"
+            }
+          },
+          {
+            "name": "dataOutputFolder",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.dataOutputFolder",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.dataOutputFolder"
+            }
+          },
+          {
+            "name": "geonamesDatabase",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.geonamesDatabase",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.geonamesDatabase"
+            }
+          }
+        ]
       },
       "editor": {
         "collapsed": false
@@ -235,7 +391,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 906,
+        "x": 1098,
         "y": 330
       }
     },
@@ -360,7 +516,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 906,
+        "x": 1402,
         "y": 170
       }
     },
@@ -485,7 +641,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1194,
+        "x": 1674,
         "y": 170
       }
     },
@@ -533,8 +689,8 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 1418,
-        "y": 170
+        "x": 1674,
+        "y": 330
       }
     },
     {
@@ -704,7 +860,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 330,
+        "x": 522,
         "y": 170
       }
     },
@@ -776,7 +932,7 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 618,
+        "x": 794,
         "y": 170
       }
     },
@@ -947,20 +1103,159 @@
       },
       "wirelessInputs": false,
       "pos": {
-        "x": 618,
+        "x": 794,
         "y": 330
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.mkdir_44cedb1e-e139-47f7-b6d7-09a234c5c2a5",
+      "name": "Create Folder: data output",
+      "type": "com.twineworks.tweakstreet.library.steps.map.mkdir",
+      "data": {
+        "meta": {
+          "name": "Create Folder: data output",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "fs": {
+          "widgetType": "expression/storage-ref",
+          "widgetData": {
+            "name": ""
+          },
+          "code": "nil"
+        },
+        "path": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "flow.vars.dataOutputFolder",
+            "size": {
+              "width": 0,
+              "height": 36
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "flow.vars.dataOutputFolder"
+        },
+        "ifExists": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "com.twineworks.tweakstreet.library.steps.map.mkdir/ifExists",
+            "value": "continue"
+          },
+          "code": "'continue'"
+        },
+        "editor": {
+          "showEntryVariables": false
+        },
+        "model": {}
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 282,
+        "y": 170
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.decision.decision_bc7d63a6-24dd-4946-ab6f-9d0f2996d53f",
+      "name": "Decision: clear and load database",
+      "type": "com.twineworks.tweakstreet.library.steps.decision.decision",
+      "data": {
+        "meta": {
+          "name": "Decision: clear and load database",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputGates": {
+          "outputGates": {
+            "list": [
+              {
+                "name": "yes"
+              },
+              {
+                "name": "no"
+              }
+            ]
+          }
+        },
+        "gate": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "if flow.params.createCsvFiles==true then 'yes' else 'no'",
+            "size": {
+              "width": 0,
+              "height": 36
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "if flow.params.createCsvFiles==true then 'yes' else 'no'"
+        },
+        "editor": {
+          "showEntryVariables": false
+        },
+        "model": {}
+      },
+      "wirelessInputs": false,
+      "pos": {
+        "x": 1098,
+        "y": 170
       }
     }
   ],
   "hops": [
-    {
-      "id": "4a12647a-e867-4cca-bd07-f77a67678f78",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.map.runflow_25f04566-1942-4b79-a471-0666383cd165",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_9a9f1d1e-f53a-4663-8a50-3a28bef6c612",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false
-    },
     {
       "id": "aa20e4a3-6036-4826-aec8-6d1b50c7d0d4",
       "fromStep": "com.twineworks.tweakstreet.library.steps.map.runflow_9a9f1d1e-f53a-4663-8a50-3a28bef6c612",
@@ -974,14 +1269,6 @@
       "fromStep": "com.twineworks.tweakstreet.library.steps.map.runflow_e1b21047-2cee-4113-9758-a9cdcb9665af",
       "toStep": "com.twineworks.tweakstreet.library.steps.end.finish_35713ec1-af4c-47dc-8d37-196d9c868227",
       "fromGate": "out",
-      "toGate": "in",
-      "disabled": false
-    },
-    {
-      "id": "d5150a36-46b2-4ced-939c-4a2adb66c3fb",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_45679345-687f-446d-bb2b-e60bf750b36a",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_9a9f1d1e-f53a-4663-8a50-3a28bef6c612",
-      "fromGate": "no",
       "toGate": "in",
       "disabled": false
     },
@@ -1002,18 +1289,58 @@
       "disabled": false
     },
     {
-      "id": "6382dfb6-0690-4c38-8846-0f2433264808",
+      "id": "a8b39ac2-3af9-48bd-9361-572d6caac6d1",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_a8f0f1c7-f156-4094-a011-3be68ae9f6bb",
+      "toStep": "com.twineworks.tweakstreet.library.steps.decision.decision_45679345-687f-446d-bb2b-e60bf750b36a",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "677ebb92-031a-402b-a0d6-63d03533d498",
       "fromStep": "start",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.mkdir_44cedb1e-e139-47f7-b6d7-09a234c5c2a5",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "c7368167-4f64-4e59-874b-67c3daff46d6",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.mkdir_44cedb1e-e139-47f7-b6d7-09a234c5c2a5",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_a8f0f1c7-f156-4094-a011-3be68ae9f6bb",
       "fromGate": "out",
       "toGate": "in",
       "disabled": false
     },
     {
-      "id": "a8b39ac2-3af9-48bd-9361-572d6caac6d1",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.map.sqlscript_a8f0f1c7-f156-4094-a011-3be68ae9f6bb",
-      "toStep": "com.twineworks.tweakstreet.library.steps.decision.decision_45679345-687f-446d-bb2b-e60bf750b36a",
+      "id": "46c46779-6427-4f87-90c6-e7e12888bb76",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_45679345-687f-446d-bb2b-e60bf750b36a",
+      "toStep": "com.twineworks.tweakstreet.library.steps.decision.decision_bc7d63a6-24dd-4946-ab6f-9d0f2996d53f",
+      "fromGate": "no",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "72a39fb4-2642-4cda-aa93-3920871c49b0",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_bc7d63a6-24dd-4946-ab6f-9d0f2996d53f",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.runflow_9a9f1d1e-f53a-4663-8a50-3a28bef6c612",
+      "fromGate": "yes",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "42e35d46-7076-4fe7-a0e2-a369595250ba",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.runflow_25f04566-1942-4b79-a471-0666383cd165",
+      "toStep": "com.twineworks.tweakstreet.library.steps.decision.decision_bc7d63a6-24dd-4946-ab6f-9d0f2996d53f",
       "fromGate": "out",
+      "toGate": "in",
+      "disabled": false
+    },
+    {
+      "id": "14555692-9a24-4131-b6ad-e64689a7695d",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_bc7d63a6-24dd-4946-ab6f-9d0f2996d53f",
+      "toStep": "com.twineworks.tweakstreet.library.steps.end.finish_35713ec1-af4c-47dc-8d37-196d9c868227",
+      "fromGate": "no",
       "toGate": "in",
       "disabled": false
     }

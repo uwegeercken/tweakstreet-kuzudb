@@ -1,6 +1,6 @@
 {
   "type": "data-flow",
-  "appVersion": "1.21.0",
+  "appVersion": "1.20.0",
   "properties": {
     "meta": {
       "comment": {
@@ -194,22 +194,6 @@
                 "syntax": "tweakflow"
               },
               "code": "$config.vars.geonamesDatabase"
-            }
-          },
-          {
-            "name": "geonamesDatabaseTable",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.geonamesDatabaseTable",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.geonamesDatabaseTable"
             }
           }
         ]
@@ -2679,7 +2663,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_ad82d000-d1a9-44ea-ad1b-125bebc2788c",
-      "name": "Stream Lookup",
+      "name": "Stream Lookup: ADM2",
       "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -2690,7 +2674,7 @@
       },
       "data": {
         "meta": {
-          "name": "Stream Lookup",
+          "name": "Stream Lookup: ADM2",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -3640,7 +3624,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.bool.filter_e83fee65-c461-4686-8cf6-1d06317651ce",
-      "name": "Filter: nil values",
+      "name": "Filter: valid id value",
       "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3651,7 +3635,7 @@
       },
       "data": {
         "meta": {
-          "name": "Filter: nil values",
+          "name": "Filter: valid id value",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -3743,7 +3727,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.bool.filter_3156f9d4-e710-4d58-9d99-d6dd99640bbe",
-      "name": "Filter: nil values",
+      "name": "Filter: valid feature value",
       "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3754,7 +3738,7 @@
       },
       "data": {
         "meta": {
-          "name": "Filter: nil values",
+          "name": "Filter: valid feature value",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -3846,7 +3830,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.bool.filter_f49a9c66-25e8-41f6-b6d6-95157dd02f9b",
-      "name": "Filter: nil values",
+      "name": "Filter: valid id value",
       "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3857,7 +3841,7 @@
       },
       "data": {
         "meta": {
-          "name": "Filter: nil values",
+          "name": "Filter: valid id value",
           "showingComment": false,
           "comment": {
             "markdown": {
