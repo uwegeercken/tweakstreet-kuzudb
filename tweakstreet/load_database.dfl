@@ -527,7 +527,7 @@
       },
       "pos": {
         "x": 810,
-        "y": 426
+        "y": 586
       }
     },
     {
@@ -887,7 +887,7 @@
       },
       "pos": {
         "x": 810,
-        "y": 586
+        "y": 906
       }
     },
     {
@@ -2328,6 +2328,22 @@
                 }
               },
               {
+                "name": "continent_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "lookup_Continent"
+                      }
+                    }
+                  },
+                  "code": "::in.lookup_Continent"
+                }
+              },
+              {
                 "name": "population",
                 "type": "long",
                 "value": {
@@ -2374,7 +2390,7 @@
           }
         },
         "sqlEditor": {
-          "text": "CREATE TABLE country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+          "text": "CREATE TABLE country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  continent_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
           "size": {
             "width": 0,
             "height": 180
@@ -2401,7 +2417,7 @@
         "model": {}
       },
       "pos": {
-        "x": 1066,
+        "x": 1370,
         "y": 266
       }
     },
@@ -2573,6 +2589,22 @@
                 }
               },
               {
+                "name": "code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "lookup_continent_code"
+                      }
+                    }
+                  },
+                  "code": "::in.lookup_continent_code"
+                }
+              },
+              {
                 "name": "feature_class",
                 "type": "string",
                 "value": {
@@ -2651,7 +2683,7 @@
           }
         },
         "sqlEditor": {
-          "text": "CREATE TABLE continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+          "text": "CREATE TABLE continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  code VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
           "size": {
             "width": 0,
             "height": 180
@@ -2678,8 +2710,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1066,
-        "y": 426
+        "x": 1386,
+        "y": 586
       }
     },
     {
@@ -3068,7 +3100,725 @@
       },
       "pos": {
         "x": 1066,
+        "y": 906
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_79276d41-ed33-43f0-8691-94e5562cb7f8",
+      "name": "Stream Lookup",
+      "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Stream Lookup",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "keyFields": {
+          "fieldPairs": {
+            "list": [
+              {
+                "left": {
+                  "value": {
+                    "gate": "in",
+                    "name": "geonameid"
+                  }
+                },
+                "right": {
+                  "value": {
+                    "gate": "lookup",
+                    "name": "geonameid"
+                  }
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "lookup_Continent",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "results.lookup[:Continent] default nil",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "results.lookup[:Continent] default nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "fetchFields": {
+          "value": "lookup_"
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1066,
+        "y": 266
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_a9d0e0cf-ca96-4920-bff3-258bec4aa26d",
+      "name": "CSV Input: country info",
+      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "CSV Input: country info",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "fs": {
+          "widgetType": "expression/storage-ref",
+          "widgetData": {
+            "name": ""
+          },
+          "code": "nil"
+        },
+        "file": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "${$config.vars.countryInfoFile}",
+            "dialogIntent": "openFile"
+          },
+          "code": "let {\n  string interpolation_0: $config.vars.countryInfoFile;\n}\ninterpolation_0"
+        },
+        "compression": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "expression/select/compression",
+            "value": "none"
+          },
+          "code": "'none'"
+        },
+        "charset": {
+          "widgetType": "expression/charset",
+          "widgetData": {
+            "value": "UTF-8"
+          },
+          "code": "'UTF-8'"
+        },
+        "textFileContent": {
+          "text": "",
+          "fetchButton": {
+            "value": "100"
+          },
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": true
+          }
+        },
+        "skipLines": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "0"
+          },
+          "code": "0"
+        },
+        "rowLimit": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": ""
+          },
+          "code": "nil"
+        },
+        "fieldSeparator": {
+          "widgetType": "expression/separator",
+          "widgetData": {
+            "value": "tab"
+          },
+          "code": "\"\\t\""
+        },
+        "fieldEncloser": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": "\""
+          },
+          "code": "'\"'"
+        },
+        "hasHeaderLine": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": true
+          },
+          "code": "true"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "Continent",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "Continent"
+                  },
+                  "code": "'Continent'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "geonameid",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "geonameid"
+                  },
+                  "code": "'geonameid'"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": false
+                      },
+                      "code": "false"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1066,
+        "y": 442
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_24b6553d-e95d-4194-bb60-9328cd2cff15",
+      "name": "Stream Lookup",
+      "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Stream Lookup",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "keyFields": {
+          "fieldPairs": {
+            "list": [
+              {
+                "left": {
+                  "value": {
+                    "gate": "in",
+                    "name": "geonameid"
+                  }
+                },
+                "right": {
+                  "value": {
+                    "gate": "lookup",
+                    "name": "geonameid"
+                  }
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "lookup_continent_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "results.lookup[:continent_code] default nil",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "results.lookup[:continent_code] default nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "fetchFields": {
+          "value": "lookup_"
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1066,
         "y": 586
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_a8e7d9c1-440a-4636-b57f-215f85e0c4fa",
+      "name": "CSV Input: continent codes",
+      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "CSV Input: continent codes",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "fs": {
+          "widgetType": "expression/storage-ref",
+          "widgetData": {
+            "name": ""
+          },
+          "code": "nil"
+        },
+        "file": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "${$config.vars.continentCodesFile}",
+            "dialogIntent": "openFile"
+          },
+          "code": "let {\n  string interpolation_0: $config.vars.continentCodesFile;\n}\ninterpolation_0"
+        },
+        "compression": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "expression/select/compression",
+            "value": "none"
+          },
+          "code": "'none'"
+        },
+        "charset": {
+          "widgetType": "expression/charset",
+          "widgetData": {
+            "value": "UTF-8"
+          },
+          "code": "'UTF-8'"
+        },
+        "textFileContent": {
+          "text": "",
+          "fetchButton": {
+            "value": "100"
+          },
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": true
+          }
+        },
+        "skipLines": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "0"
+          },
+          "code": "0"
+        },
+        "rowLimit": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": ""
+          },
+          "code": "nil"
+        },
+        "fieldSeparator": {
+          "widgetType": "expression/separator",
+          "widgetData": {
+            "value": "tab"
+          },
+          "code": "\"\\t\""
+        },
+        "fieldEncloser": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": "\""
+          },
+          "code": "'\"'"
+        },
+        "hasHeaderLine": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "continent_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "0"
+                  },
+                  "code": "0"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "1"
+                  },
+                  "code": "1"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "geonameid",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "2"
+                  },
+                  "code": "2"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": false
+                      },
+                      "code": "false"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1066,
+        "y": 762
       }
     }
   ],
@@ -3164,9 +3914,9 @@
       }
     },
     {
-      "id": "64acc96d-2607-48c9-9710-077cf9f58cef",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_435ccd27-84f0-4f5b-b293-278a2266a602",
-      "toStep": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_bde98995-99c7-4805-a666-0c96e6ac2ecc",
+      "id": "630dfbd9-a2e8-40fd-9ab2-0e269d265686",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_e38e6c66-5c0d-426e-a8e6-f5a75680a586",
+      "toStep": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_3865e51a-76dd-4f07-bba2-ae00bd5b863f",
       "fromGate": "out",
       "toGate": "in",
       "disabled": false,
@@ -3179,8 +3929,23 @@
       }
     },
     {
-      "id": "a66241fa-c6e0-4fb6-9de2-849244ce253b",
+      "id": "642621bd-4100-4632-a31d-676564fed849",
       "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_987e5ff0-3680-43a0-a805-99d5375640ea",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_79276d41-ed33-43f0-8691-94e5562cb7f8",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "c8deb22c-ea28-441f-9d66-03bd3bb2164c",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_79276d41-ed33-43f0-8691-94e5562cb7f8",
       "toStep": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_1b2c7db7-cc6e-4992-b684-7405e37b69d0",
       "fromGate": "out",
       "toGate": "in",
@@ -3194,11 +3959,56 @@
       }
     },
     {
-      "id": "630dfbd9-a2e8-40fd-9ab2-0e269d265686",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_e38e6c66-5c0d-426e-a8e6-f5a75680a586",
-      "toStep": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_3865e51a-76dd-4f07-bba2-ae00bd5b863f",
+      "id": "ccfb802c-966e-49fc-b5eb-3daf66adfb0a",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_a9d0e0cf-ca96-4920-bff3-258bec4aa26d",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_79276d41-ed33-43f0-8691-94e5562cb7f8",
+      "fromGate": "out",
+      "toGate": "lookup",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "f8d61571-fa02-40fa-beb2-8586cc0f3e3f",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_435ccd27-84f0-4f5b-b293-278a2266a602",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_24b6553d-e95d-4194-bb60-9328cd2cff15",
       "fromGate": "out",
       "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "78088267-d121-46f9-ac16-069ec4f26032",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_24b6553d-e95d-4194-bb60-9328cd2cff15",
+      "toStep": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_bde98995-99c7-4805-a666-0c96e6ac2ecc",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "9102cc00-da23-4048-9112-3932feeb6d68",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_a8e7d9c1-440a-4636-b57f-215f85e0c4fa",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_24b6553d-e95d-4194-bb60-9328cd2cff15",
+      "fromGate": "out",
+      "toGate": "lookup",
       "disabled": false,
       "partitioner": {
         "widgetType": "expression/code",

@@ -90,6 +90,38 @@
             }
           },
           {
+            "name": "continentCodesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "geonamesFolder .. \"/continent_codes.txt\"",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "geonamesFolder .. \"/continent_codes.txt\""
+            }
+          },
+          {
+            "name": "countryInfoFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "geonamesFolder .. \"/countryInfo.txt\"",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "geonamesFolder .. \"/countryInfo.txt\""
+            }
+          },
+          {
             "name": "featureCodesFile",
             "type": "any",
             "value": {

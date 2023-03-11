@@ -746,7 +746,7 @@
                   "value": {
                     "widgetType": "expression/text",
                     "widgetData": {
-                      "text": "CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)",
+                      "text": "CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(40),\n  admin2_code VARCHAR(40),\n  admin3_code VARCHAR(40),\n  admin4_code VARCHAR(40),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)",
                       "size": {
                         "width": 0,
                         "height": 200
@@ -755,14 +755,14 @@
                       "lineSeparator": "\n",
                       "interpolation": false
                     },
-                    "code": "'CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)'"
+                    "code": "'CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(40),\n  admin2_code VARCHAR(40),\n  admin3_code VARCHAR(40),\n  admin4_code VARCHAR(40),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)'"
                   }
                 },
                 {
                   "value": {
                     "widgetType": "expression/text",
                     "widgetData": {
-                      "text": "CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+                      "text": "CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
                       "size": {
                         "width": 0,
                         "height": 200
@@ -771,14 +771,14 @@
                       "lineSeparator": "\n",
                       "interpolation": false
                     },
-                    "code": "'CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
+                    "code": "'CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
                   }
                 },
                 {
                   "value": {
                     "widgetType": "expression/text",
                     "widgetData": {
-                      "text": "CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+                      "text": "CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  code VARCHAR(2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
                       "size": {
                         "width": 0,
                         "height": 200
@@ -787,14 +787,14 @@
                       "lineSeparator": "\n",
                       "interpolation": false
                     },
-                    "code": "'CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
+                    "code": "'CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  code VARCHAR(2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
                   }
                 },
                 {
                   "value": {
                     "widgetType": "expression/text",
                     "widgetData": {
-                      "text": "CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+                      "text": "CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  admin1_code VARCHAR(40),\n  admin2_code VARCHAR(40),\n  admin3_code VARCHAR(40),\n  admin4_code VARCHAR(40),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
                       "size": {
                         "width": 0,
                         "height": 200
@@ -803,13 +803,13 @@
                       "lineSeparator": "\n",
                       "interpolation": false
                     },
-                    "code": "'CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
+                    "code": "'CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  admin1_code VARCHAR(40),\n  admin2_code VARCHAR(40),\n  admin3_code VARCHAR(40),\n  admin4_code VARCHAR(40),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
                   }
                 }
               ]
             }
           },
-          "code": "['CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)']"
+          "code": "['CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(40),\n  admin2_code VARCHAR(40),\n  admin3_code VARCHAR(40),\n  admin4_code VARCHAR(40),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  code VARCHAR(2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  admin1_code VARCHAR(40),\n  admin2_code VARCHAR(40),\n  admin3_code VARCHAR(40),\n  admin4_code VARCHAR(40),\n  population INTEGER,\n  modification_date TIMESTAMP\n)']"
         },
         "jdbcParams": {
           "widgetType": "expression/list",

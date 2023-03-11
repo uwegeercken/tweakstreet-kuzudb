@@ -4336,6 +4336,443 @@
         "x": 1354,
         "y": 218
       }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.sqlinput_e6e6d3a7-2706-4fad-96d9-4c019d0628dc",
+      "name": "SQL Input: country and continent",
+      "type": "com.twineworks.tweakstreet.library.steps.input.sqlinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "SQL Input: country and continent",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "fetchSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "10000"
+          },
+          "code": "10000"
+        },
+        "rowLimit": {
+          "widgetType": "expression/nil",
+          "widgetData": {},
+          "code": "nil"
+        },
+        "query": {
+          "widgetType": "expression/text",
+          "widgetData": {
+            "text": "select \n  country.geonameid as geonameId,\n  continent.geonameid as continentId\nfrom\n  country,\n  continent\nwhere \n  country.continent_code = continent.code",
+            "size": {
+              "width": 0,
+              "height": 252
+            },
+            "syntax": "sql",
+            "lineSeparator": "\n",
+            "interpolation": false
+          },
+          "code": "'select \n  country.geonameid as geonameId,\n  continent.geonameid as continentId\nfrom\n  country,\n  continent\nwhere \n  country.continent_code = continent.code'"
+        },
+        "jdbcParams": {
+          "widgetType": "expression/list",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "geonameId",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "geonameId"
+                  },
+                  "code": "'geonameId'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "continentId",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "continentId"
+                  },
+                  "code": "'continentId'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1498,
+        "y": 986
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_3ea9dcc5-2acb-4e96-a603-9e7516de0c7c",
+      "name": "CSV Output: relation countries continents",
+      "type": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "CSV Output: relation countries continents",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "fs": {
+          "widgetType": "expression/storage-ref",
+          "widgetData": {
+            "name": ""
+          },
+          "code": "nil"
+        },
+        "file": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "$config.vars.dataOutputFolder .. \"/relation_country_continent.csv\"",
+            "size": {
+              "width": 0,
+              "height": 36
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "$config.vars.dataOutputFolder .. \"/relation_country_continent.csv\""
+        },
+        "charset": {
+          "widgetType": "expression/charset",
+          "widgetData": {
+            "value": "UTF-8"
+          },
+          "code": "'UTF-8'"
+        },
+        "compression": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "expression/select/compression",
+            "value": "none"
+          },
+          "code": "'none'"
+        },
+        "fieldSeparator": {
+          "widgetType": "expression/separator",
+          "widgetData": {
+            "value": "comma"
+          },
+          "code": "\",\""
+        },
+        "fieldEncloser": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": "\""
+          },
+          "code": "'\"'"
+        },
+        "lineEndings": {
+          "widgetType": "expression/line-ending",
+          "widgetData": {
+            "value": "unix"
+          },
+          "code": "\"\\n\""
+        },
+        "writeHeaderLine": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "whenFileExists": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput/whenFileExists",
+            "value": "truncate"
+          },
+          "code": "'truncate'"
+        },
+        "fieldMode": {
+          "value": "fixed"
+        },
+        "stringWriteFields": {
+          "stringWriteFields": {
+            "list": [
+              {
+                "name": "geonameId",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "geonameId"
+                      }
+                    }
+                  },
+                  "code": "::in.geonameId"
+                },
+                "formatter": {
+                  "widgetType": "expression/format-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_formatter: (string pattern, string locale, string nilValue) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Formatters$number_formatter'};\n}\nmake_formatter('0', 'en-US', '')\n"
+                }
+              },
+              {
+                "name": "continentId",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "continentId"
+                      }
+                    }
+                  },
+                  "code": "::in.continentId"
+                },
+                "formatter": {
+                  "widgetType": "expression/format-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_formatter: (string pattern, string locale, string nilValue) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Formatters$number_formatter'};\n}\nmake_formatter('0', 'en-US', '')\n"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "dataDrivenColumns": {
+          "widgetType": "expression/data-grid",
+          "widgetData": {
+            "fields": [
+              {
+                "id": "name",
+                "name": "name"
+              }
+            ],
+            "gen": {
+              "as": "rows",
+              "of": "dict",
+              "meta": false
+            },
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "dataDrivenValues": {
+          "widgetType": "expression/list",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showStringWriteFields": true,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1866,
+        "y": 986
+      }
     }
   ],
   "hops": [
@@ -4704,6 +5141,21 @@
       "fromStep": "com.twineworks.tweakstreet.library.steps.flatmap.getitems_a92e3b86-536e-4296-ad14-f5236c820906",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_461cd1fe-26ba-48e5-9163-732e68b698cc",
       "fromGate": "error",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "6aa2836b-4b97-4673-8378-2de951ae110a",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_e6e6d3a7-2706-4fad-96d9-4c019d0628dc",
+      "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_3ea9dcc5-2acb-4e96-a603-9e7516de0c7c",
+      "fromGate": "out",
       "toGate": "in",
       "disabled": false,
       "partitioner": {
