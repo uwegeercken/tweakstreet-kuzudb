@@ -138,6 +138,22 @@
             }
           },
           {
+            "name": "admin5codesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "geonamesFolder .. \"/adminCode5.txt\"",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "geonamesFolder .. \"/adminCode5.txt\""
+            }
+          },
+          {
             "name": "dataOutputFolder",
             "type": "any",
             "value": {

@@ -165,6 +165,22 @@
             }
           },
           {
+            "name": "admin5codesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.admin5codesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.admin5codesFile"
+            }
+          },
+          {
             "name": "dataOutputFolder",
             "type": "any",
             "value": {
@@ -1094,7 +1110,7 @@
       },
       "pos": {
         "x": 218,
-        "y": 458
+        "y": 586
       }
     },
     {
@@ -1319,8 +1335,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1066,
-        "y": 650
+        "x": 666,
+        "y": 394
       }
     },
     {
@@ -1476,8 +1492,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1066,
-        "y": 458
+        "x": 666,
+        "y": 586
       }
     },
     {
@@ -1647,8 +1663,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1306,
-        "y": 458
+        "x": 906,
+        "y": 762
       }
     },
     {
@@ -1890,8 +1906,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1306,
-        "y": 650
+        "x": 906,
+        "y": 954
       }
     },
     {
@@ -2005,8 +2021,8 @@
         "model": {}
       },
       "pos": {
-        "x": 634,
-        "y": 458
+        "x": 426,
+        "y": 762
       }
     },
     {
@@ -2275,8 +2291,8 @@
         "model": {}
       },
       "pos": {
-        "x": 634,
-        "y": 650
+        "x": 426,
+        "y": 954
       }
     },
     {
@@ -2388,7 +2404,7 @@
       },
       "pos": {
         "x": 426,
-        "y": 458
+        "y": 586
       }
     },
     {
@@ -2657,8 +2673,8 @@
         "model": {}
       },
       "pos": {
-        "x": 842,
-        "y": 650
+        "x": 666,
+        "y": 954
       }
     },
     {
@@ -2772,8 +2788,8 @@
         "model": {}
       },
       "pos": {
-        "x": 842,
-        "y": 458
+        "x": 666,
+        "y": 762
       }
     },
     {
@@ -2829,14 +2845,14 @@
                 "value": {
                   "widgetType": "expression/code",
                   "widgetData": {
-                    "text": "[\n  in.lookup_geonameid_adm1,\n  in.lookup_geonameid_adm2,\n  in.lookup_geonameid_adm3,\n  in.lookup_geonameid_adm4\n]",
+                    "text": "[\n  in.lookup_geonameid_adm1,\n  in.lookup_geonameid_adm2,\n  in.lookup_geonameid_adm3,\n  in.lookup_geonameid_adm4,\n  in.lookup_geonameid_adm5\n]",
                     "size": {
                       "width": 0,
                       "height": 214
                     },
                     "syntax": "tweakflow"
                   },
-                  "code": "[\n  in.lookup_geonameid_adm1,\n  in.lookup_geonameid_adm2,\n  in.lookup_geonameid_adm3,\n  in.lookup_geonameid_adm4\n]"
+                  "code": "[\n  in.lookup_geonameid_adm1,\n  in.lookup_geonameid_adm2,\n  in.lookup_geonameid_adm3,\n  in.lookup_geonameid_adm4,\n  in.lookup_geonameid_adm5\n]"
                 }
               }
             ]
@@ -2852,8 +2868,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1514,
-        "y": 458
+        "x": 1162,
+        "y": 586
       }
     },
     {
@@ -2970,8 +2986,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1690,
-        "y": 250
+        "x": 1354,
+        "y": 394
       }
     },
     {
@@ -3042,8 +3058,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1514,
-        "y": 250
+        "x": 1162,
+        "y": 394
       }
     },
     {
@@ -3294,8 +3310,8 @@
         "model": {}
       },
       "pos": {
-        "x": 2138,
-        "y": 250
+        "x": 1866,
+        "y": 394
       }
     },
     {
@@ -3366,8 +3382,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1690,
-        "y": 650
+        "x": 1354,
+        "y": 762
       }
     },
     {
@@ -3618,8 +3634,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1946,
-        "y": 650
+        "x": 1578,
+        "y": 762
       }
     },
     {
@@ -3684,8 +3700,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1882,
-        "y": 250
+        "x": 1578,
+        "y": 394
       }
     },
     {
@@ -3721,8 +3737,8 @@
         "editor": {}
       },
       "pos": {
-        "x": 1882,
-        "y": 426
+        "x": 1578,
+        "y": 218
       }
     },
     {
@@ -3787,8 +3803,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1514,
-        "y": 650
+        "x": 1162,
+        "y": 762
       }
     },
     {
@@ -3824,8 +3840,8 @@
         "editor": {}
       },
       "pos": {
-        "x": 1514,
-        "y": 826
+        "x": 1162,
+        "y": 954
       }
     },
     {
@@ -3928,7 +3944,397 @@
       },
       "pos": {
         "x": 442,
-        "y": 298
+        "y": 314
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_139db797-72ea-47f6-97a7-e1beb3d2a21d",
+      "name": "Stream Lookup: ADM5",
+      "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Stream Lookup: ADM5",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "keyFields": {
+          "fieldPairs": {
+            "list": [
+              {
+                "left": {
+                  "value": {
+                    "gate": "in",
+                    "name": "geonameid"
+                  }
+                },
+                "right": {
+                  "value": {
+                    "gate": "lookup",
+                    "name": "geonameid"
+                  }
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "lookup_geonameid_adm5",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "results.lookup[:geonameid_adm5] default nil",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "results.lookup[:geonameid_adm5] default nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "fetchFields": {
+          "value": "lookup_"
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 906,
+        "y": 586
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_13ec07ce-b366-4456-beab-06c52a2172c4",
+      "name": "CSV Input: ADM5",
+      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "CSV Input: ADM5",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "fs": {
+          "widgetType": "expression/storage-ref",
+          "widgetData": {
+            "name": ""
+          },
+          "code": "nil"
+        },
+        "file": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "$config.vars.admin5codesFile",
+            "size": {
+              "width": 0,
+              "height": 36
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "$config.vars.admin5codesFile"
+        },
+        "compression": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "expression/select/compression",
+            "value": "none"
+          },
+          "code": "'none'"
+        },
+        "charset": {
+          "widgetType": "expression/charset",
+          "widgetData": {
+            "value": "UTF-8"
+          },
+          "code": "'UTF-8'"
+        },
+        "textFileContent": {
+          "text": "",
+          "fetchButton": {
+            "value": "100"
+          },
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": true
+          }
+        },
+        "skipLines": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "0"
+          },
+          "code": "0"
+        },
+        "rowLimit": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": ""
+          },
+          "code": "nil"
+        },
+        "fieldSeparator": {
+          "widgetType": "expression/separator",
+          "widgetData": {
+            "value": "tab"
+          },
+          "code": "\"\\t\""
+        },
+        "fieldEncloser": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": ""
+          },
+          "code": "''"
+        },
+        "hasHeaderLine": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "geonameid",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "0"
+                  },
+                  "code": "0"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": false
+                      },
+                      "code": "false"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
+                }
+              },
+              {
+                "name": "geonameid_adm5",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "1"
+                  },
+                  "code": "1"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 906,
+        "y": 394
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.dummy_461cd1fe-26ba-48e5-9163-732e68b698cc",
+      "name": "Dummy",
+      "type": "com.twineworks.tweakstreet.library.steps.map.dummy",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Dummy",
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": ""
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "editor": {
+                "collapsed": true
+              }
+            }
+          },
+          "showingComment": false
+        },
+        "editor": {}
+      },
+      "pos": {
+        "x": 1354,
+        "y": 218
       }
     }
   ],
@@ -4057,21 +4463,6 @@
       "id": "642ff16f-6a34-4298-a00d-4a8096f4145f",
       "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_ad82d000-d1a9-44ea-ad1b-125bebc2788c",
       "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_bfb6d763-81b6-4b27-8ee0-208e1eb3d695",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
-      "id": "92b3f84c-f102-4687-a28c-d7f8450fe18b",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_fb669551-6ab7-469a-ac47-71c4678a6629",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.calculator_6768b33c-8b7c-4c75-8b1f-ecdd9e423b70",
       "fromGate": "out",
       "toGate": "in",
       "disabled": false,
@@ -4253,6 +4644,66 @@
       "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_f49a9c66-25e8-41f6-b6d6-95157dd02f9b",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_08f160f3-4623-4766-b702-0ba5710bb60d",
       "fromGate": "no",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "2da4f965-6fd6-42cc-85b2-96aa17c90d5b",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_fb669551-6ab7-469a-ac47-71c4678a6629",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_139db797-72ea-47f6-97a7-e1beb3d2a21d",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "591fd6f4-9e12-4cca-be63-0ecb16c29c39",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_139db797-72ea-47f6-97a7-e1beb3d2a21d",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.calculator_6768b33c-8b7c-4c75-8b1f-ecdd9e423b70",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "044a5f58-66db-48cc-9826-e605cea7c066",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_13ec07ce-b366-4456-beab-06c52a2172c4",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_139db797-72ea-47f6-97a7-e1beb3d2a21d",
+      "fromGate": "out",
+      "toGate": "lookup",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "b87d0ae7-5eee-4d46-9575-c7391e141908",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.flatmap.getitems_a92e3b86-536e-4296-ad14-f5236c820906",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_461cd1fe-26ba-48e5-9163-732e68b698cc",
+      "fromGate": "error",
       "toGate": "in",
       "disabled": false,
       "partitioner": {

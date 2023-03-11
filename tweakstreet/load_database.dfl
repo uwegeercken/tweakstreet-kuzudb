@@ -295,14 +295,14 @@
         "gate": {
           "widgetType": "expression/code",
           "widgetData": {
-            "text": "if in.feature_code==\"CONT\" then 'continent'\nelse if in.feature_code==\"PCLI\" then \"country\"\nelse if in.feature_code==\"ADM1\" \n  || in.feature_code==\"ADM1H\"\n  || in.feature_code==\"ADM2\"\n  || in.feature_code==\"ADM2H\"\n  || in.feature_code==\"ADM3\"\n  || in.feature_code==\"ADM3H\"\n  || in.feature_code==\"ADM4\"\n  || in.feature_code==\"ADM4H\"\n  || in.feature_code==\"ADM5\"\n  || in.feature_code==\"ADM5H\"\n  || in.feature_code==\"ADMD\"\n  || in.feature_code==\"ADMDH\" then \"admin\"\nelse \"geoname\"",
+            "text": "if in.feature_code==\"CONT\" then 'continent'\nelse if in.feature_code==\"PCLI\" then \"country\"\nelse if in.feature_code==\"ADM1\" \n    || in.feature_code==\"ADM2\"\n    || in.feature_code==\"ADM3\"\n    || in.feature_code==\"ADM4\"\n    || in.feature_code==\"ADM5\" then \"admin\"\nelse \"geoname\"",
             "size": {
               "width": 0,
               "height": 477
             },
             "syntax": "tweakflow"
           },
-          "code": "if in.feature_code==\"CONT\" then 'continent'\nelse if in.feature_code==\"PCLI\" then \"country\"\nelse if in.feature_code==\"ADM1\" \n  || in.feature_code==\"ADM1H\"\n  || in.feature_code==\"ADM2\"\n  || in.feature_code==\"ADM2H\"\n  || in.feature_code==\"ADM3\"\n  || in.feature_code==\"ADM3H\"\n  || in.feature_code==\"ADM4\"\n  || in.feature_code==\"ADM4H\"\n  || in.feature_code==\"ADM5\"\n  || in.feature_code==\"ADM5H\"\n  || in.feature_code==\"ADMD\"\n  || in.feature_code==\"ADMDH\" then \"admin\"\nelse \"geoname\""
+          "code": "if in.feature_code==\"CONT\" then 'continent'\nelse if in.feature_code==\"PCLI\" then \"country\"\nelse if in.feature_code==\"ADM1\" \n    || in.feature_code==\"ADM2\"\n    || in.feature_code==\"ADM3\"\n    || in.feature_code==\"ADM4\"\n    || in.feature_code==\"ADM5\" then \"admin\"\nelse \"geoname\""
         },
         "editor": {
           "showEntryVariables": false
