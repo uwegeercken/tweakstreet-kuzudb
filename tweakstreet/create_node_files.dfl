@@ -247,527 +247,8 @@
   },
   "steps": [
     {
-      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_5f761f8c-a670-460d-be1e-a628bd77de8c",
-      "name": "CSV Input: feature codes file",
-      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
-      "instanceCount": {
-        "widgetType": "expression/number",
-        "widgetData": {
-          "text": "1"
-        },
-        "code": "1"
-      },
-      "data": {
-        "meta": {
-          "name": "CSV Input: feature codes file",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "tabs": {},
-        "fs": {
-          "widgetType": "expression/storage-ref",
-          "widgetData": {
-            "name": ""
-          },
-          "code": "nil"
-        },
-        "file": {
-          "widgetType": "expression/local-file",
-          "widgetData": {
-            "interpolation": true,
-            "text": "${$config.vars.featureCodesFile}",
-            "dialogIntent": "openFile"
-          },
-          "code": "let {\n  string interpolation_0: $config.vars.featureCodesFile;\n}\ninterpolation_0"
-        },
-        "compression": {
-          "widgetType": "expression/select",
-          "widgetData": {
-            "family": "expression/select/compression",
-            "value": "none"
-          },
-          "code": "'none'"
-        },
-        "charset": {
-          "widgetType": "expression/charset",
-          "widgetData": {
-            "value": "UTF-8"
-          },
-          "code": "'UTF-8'"
-        },
-        "textFileContent": {
-          "text": "",
-          "fetchButton": {
-            "value": "100"
-          },
-          "size": {
-            "width": 0,
-            "height": 180
-          },
-          "editor": {
-            "collapsed": true
-          }
-        },
-        "skipLines": {
-          "widgetType": "expression/number",
-          "widgetData": {
-            "text": "0"
-          },
-          "code": "0"
-        },
-        "rowLimit": {
-          "widgetType": "expression/number",
-          "widgetData": {
-            "text": ""
-          },
-          "code": "nil"
-        },
-        "fieldSeparator": {
-          "widgetType": "expression/separator",
-          "widgetData": {
-            "value": "tab"
-          },
-          "code": "\"\\t\""
-        },
-        "fieldEncloser": {
-          "widgetType": "expression/string",
-          "widgetData": {
-            "interpolation": true,
-            "text": "\""
-          },
-          "code": "'\"'"
-        },
-        "hasHeaderLine": {
-          "widgetType": "expression/checkbox-boolean",
-          "widgetData": {
-            "value": false
-          },
-          "code": "false"
-        },
-        "readFields": {
-          "readFields": {
-            "list": [
-              {
-                "name": "class_code",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "0"
-                  },
-                  "code": "0"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
-                "name": "name",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "1"
-                  },
-                  "code": "1"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
-                "name": "description",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "2"
-                  },
-                  "code": "2"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              }
-            ]
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "resultVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "editor": {
-          "showEntryVariables": false,
-          "showResultVariables": false,
-          "showOutputFields": false
-        },
-        "model": {}
-      },
-      "pos": {
-        "x": 218,
-        "y": 138
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_7ce53d61-bd2e-4eaa-8958-3dd308c8cc8f",
-      "name": "Stream Lookup",
-      "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
-      "instanceCount": {
-        "widgetType": "expression/number",
-        "widgetData": {
-          "text": "1"
-        },
-        "code": "1"
-      },
-      "data": {
-        "meta": {
-          "name": "Stream Lookup",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "keyFields": {
-          "fieldPairs": {
-            "list": [
-              {
-                "left": {
-                  "value": {
-                    "gate": "in",
-                    "name": "class"
-                  }
-                },
-                "right": {
-                  "value": {
-                    "gate": "lookup",
-                    "name": "class"
-                  }
-                }
-              }
-            ]
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "resultVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": [
-              {
-                "name": "lookup_class_description",
-                "type": "string",
-                "value": {
-                  "widgetType": "expression/code",
-                  "widgetData": {
-                    "text": "results.lookup[:class_description] default nil",
-                    "size": {
-                      "width": 0,
-                      "height": 36
-                    },
-                    "syntax": "tweakflow"
-                  },
-                  "code": "results.lookup[:class_description] default nil"
-                }
-              }
-            ]
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "fetchFields": {
-          "value": "lookup_"
-        },
-        "editor": {
-          "showEntryVariables": false,
-          "showResultVariables": false,
-          "showOutputFields": true
-        },
-        "model": {}
-      },
-      "pos": {
-        "x": 906,
-        "y": 138
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_733789bb-e5ee-465c-8efc-456a78660676",
-      "name": "CSV Input: feature classes file",
-      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
-      "instanceCount": {
-        "widgetType": "expression/number",
-        "widgetData": {
-          "text": "1"
-        },
-        "code": "1"
-      },
-      "data": {
-        "meta": {
-          "name": "CSV Input: feature classes file",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "tabs": {},
-        "fs": {
-          "widgetType": "expression/storage-ref",
-          "widgetData": {
-            "name": ""
-          },
-          "code": "nil"
-        },
-        "file": {
-          "widgetType": "expression/local-file",
-          "widgetData": {
-            "interpolation": true,
-            "text": "${$config.vars.featureClassesFile}",
-            "dialogIntent": "openFile"
-          },
-          "code": "let {\n  string interpolation_0: $config.vars.featureClassesFile;\n}\ninterpolation_0"
-        },
-        "compression": {
-          "widgetType": "expression/select",
-          "widgetData": {
-            "family": "expression/select/compression",
-            "value": "none"
-          },
-          "code": "'none'"
-        },
-        "charset": {
-          "widgetType": "expression/charset",
-          "widgetData": {
-            "value": "UTF-8"
-          },
-          "code": "'UTF-8'"
-        },
-        "textFileContent": {
-          "text": "",
-          "fetchButton": {
-            "value": "100"
-          },
-          "size": {
-            "width": 0,
-            "height": 180
-          },
-          "editor": {
-            "collapsed": true
-          }
-        },
-        "skipLines": {
-          "widgetType": "expression/number",
-          "widgetData": {
-            "text": "0"
-          },
-          "code": "0"
-        },
-        "rowLimit": {
-          "widgetType": "expression/number",
-          "widgetData": {
-            "text": ""
-          },
-          "code": "nil"
-        },
-        "fieldSeparator": {
-          "widgetType": "expression/separator",
-          "widgetData": {
-            "value": "tab"
-          },
-          "code": "\"\\t\""
-        },
-        "fieldEncloser": {
-          "widgetType": "expression/string",
-          "widgetData": {
-            "interpolation": true,
-            "text": "\""
-          },
-          "code": "'\"'"
-        },
-        "hasHeaderLine": {
-          "widgetType": "expression/checkbox-boolean",
-          "widgetData": {
-            "value": false
-          },
-          "code": "false"
-        },
-        "readFields": {
-          "readFields": {
-            "list": [
-              {
-                "name": "class",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "0"
-                  },
-                  "code": "0"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
-                "name": "class_description",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "1"
-                  },
-                  "code": "1"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              }
-            ]
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "resultVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "editor": {
-          "showEntryVariables": false,
-          "showResultVariables": false,
-          "showOutputFields": false
-        },
-        "model": {}
-      },
-      "pos": {
-        "x": 906,
-        "y": 314
-      }
-    },
-    {
       "id": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_56abb0cf-77a0-4bc6-8fbf-0e5bd06a8972",
-      "name": "CSV Output: node feature",
+      "name": "CSV Output: node Feature",
       "type": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -778,7 +259,7 @@
       },
       "data": {
         "meta": {
-          "name": "CSV Output: node feature",
+          "name": "CSV Output: node Feature",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -934,11 +415,11 @@
                     "fieldSelect": {
                       "value": {
                         "gate": "in",
-                        "name": "lookup_class_description"
+                        "name": "class_description"
                       }
                     }
                   },
-                  "code": "::in.lookup_class_description"
+                  "code": "::in.class_description"
                 },
                 "formatter": {
                   "widgetType": "expression/nil",
@@ -1066,104 +547,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1178,
-        "y": 138
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.map.calculator_e24cc749-b0a2-4f4b-8416-c5466e64a845",
-      "name": "Calculator",
-      "type": "com.twineworks.tweakstreet.library.steps.map.calculator",
-      "instanceCount": {
-        "widgetType": "expression/number",
-        "widgetData": {
-          "text": "1"
-        },
-        "code": "1"
-      },
-      "data": {
-        "meta": {
-          "name": "Calculator",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": [
-              {
-                "name": "class",
-                "type": "any",
-                "value": {
-                  "widgetType": "expression/code",
-                  "widgetData": {
-                    "text": "strings.substring(in.class_code,0,1)",
-                    "size": {
-                      "width": 0,
-                      "height": 36
-                    },
-                    "syntax": "tweakflow"
-                  },
-                  "code": "strings.substring(in.class_code,0,1)"
-                }
-              },
-              {
-                "name": "code",
-                "type": "any",
-                "value": {
-                  "widgetType": "expression/code",
-                  "widgetData": {
-                    "text": "strings.substring(in.class_code,2)",
-                    "size": {
-                      "width": 0,
-                      "height": 36
-                    },
-                    "syntax": "tweakflow"
-                  },
-                  "code": "strings.substring(in.class_code,2)"
-                }
-              }
-            ]
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "editor": {
-          "showEntryVariables": true,
-          "showOutputFields": true
-        },
-        "model": {}
-      },
-      "pos": {
-        "x": 698,
-        "y": 138
+        "x": 522,
+        "y": 122
       }
     },
     {
@@ -1439,8 +824,8 @@
         "model": {}
       },
       "pos": {
-        "x": 218,
-        "y": 522
+        "x": 266,
+        "y": 282
       }
     },
     {
@@ -1825,8 +1210,8 @@
         "model": {}
       },
       "pos": {
-        "x": 474,
-        "y": 522
+        "x": 522,
+        "y": 282
       }
     },
     {
@@ -2085,8 +1470,8 @@
         "model": {}
       },
       "pos": {
-        "x": 218,
-        "y": 682
+        "x": 266,
+        "y": 426
       }
     },
     {
@@ -2451,8 +1836,8 @@
         "model": {}
       },
       "pos": {
-        "x": 474,
-        "y": 682
+        "x": 522,
+        "y": 426
       }
     },
     {
@@ -2898,8 +2283,8 @@
         "model": {}
       },
       "pos": {
-        "x": 794,
-        "y": 522
+        "x": 266,
+        "y": 730
       }
     },
     {
@@ -3418,111 +2803,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1050,
-        "y": 522
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.bool.filter_634bd6d9-a088-48d7-8559-ce6c7cd68d9e",
-      "name": "Filter: valid codes",
-      "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
-      "instanceCount": {
-        "widgetType": "expression/number",
-        "widgetData": {
-          "text": "1"
-        },
-        "code": "1"
-      },
-      "data": {
-        "meta": {
-          "name": "Filter: valid codes",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "condition": {
-          "widgetType": "expression/code",
-          "widgetData": {
-            "text": "in.class_code!=\"null\" && in.class_code!=\"\"",
-            "size": {
-              "width": 0,
-              "height": 36
-            },
-            "syntax": "tweakflow"
-          },
-          "code": "in.class_code!=\"null\" && in.class_code!=\"\""
-        },
-        "editor": {
-          "showEntryVariables": false
-        },
-        "model": {}
-      },
-      "pos": {
-        "x": 458,
-        "y": 138
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.map.dummy_b7818744-f369-4a65-969b-ae0a59fc96ae",
-      "name": "Dummy",
-      "type": "com.twineworks.tweakstreet.library.steps.map.dummy",
-      "instanceCount": {
-        "widgetType": "expression/number",
-        "widgetData": {
-          "text": "1"
-        },
-        "code": "1"
-      },
-      "data": {
-        "meta": {
-          "name": "Dummy",
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": ""
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "editor": {
-                "collapsed": true
-              }
-            }
-          },
-          "showingComment": false
-        },
-        "editor": {}
-      },
-      "pos": {
-        "x": 458,
-        "y": 314
+        "x": 522,
+        "y": 730
       }
     },
     {
@@ -3764,8 +3046,8 @@
         "model": {}
       },
       "pos": {
-        "x": 218,
-        "y": 842
+        "x": 266,
+        "y": 586
       }
     },
     {
@@ -4130,42 +3412,238 @@
         "model": {}
       },
       "pos": {
-        "x": 474,
-        "y": 842
+        "x": 522,
+        "y": 586
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.sqlinput_f6d899ec-e974-4a53-a0e8-e3b348740580",
+      "name": "SQL Input: All Features",
+      "type": "com.twineworks.tweakstreet.library.steps.input.sqlinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "SQL Input: All Features",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "fetchSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "10000"
+          },
+          "code": "10000"
+        },
+        "rowLimit": {
+          "widgetType": "expression/nil",
+          "widgetData": {},
+          "code": "nil"
+        },
+        "query": {
+          "widgetType": "expression/text",
+          "widgetData": {
+            "text": "select * from feature",
+            "size": {
+              "width": 0,
+              "height": 98
+            },
+            "syntax": "sql",
+            "lineSeparator": "\n",
+            "interpolation": false
+          },
+          "code": "'select * from feature'"
+        },
+        "jdbcParams": {
+          "widgetType": "expression/list",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "class_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "class_code"
+                  },
+                  "code": "'class_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "name"
+                  },
+                  "code": "'name'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "description"
+                  },
+                  "code": "'description'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "class",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "class"
+                  },
+                  "code": "'class'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "code"
+                  },
+                  "code": "'code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "class_description",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "class_description"
+                  },
+                  "code": "'class_description'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 266,
+        "y": 122
       }
     }
   ],
   "hops": [
-    {
-      "id": "9f55e6e2-e918-487d-8968-68081fea0aa0",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.map.calculator_e24cc749-b0a2-4f4b-8416-c5466e64a845",
-      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_7ce53d61-bd2e-4eaa-8958-3dd308c8cc8f",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
-      "id": "f16896b8-c2e1-4655-8a93-2d71b30f3790",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_733789bb-e5ee-465c-8efc-456a78660676",
-      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_7ce53d61-bd2e-4eaa-8958-3dd308c8cc8f",
-      "fromGate": "out",
-      "toGate": "lookup",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
     {
       "id": "2fbc6fd7-b20c-48e6-8016-34613c06a4bd",
       "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_44101686-22d5-4040-968f-64422294d5d8",
@@ -4197,66 +3675,6 @@
       }
     },
     {
-      "id": "2081b716-0b5e-4609-8b81-6ca46b756b50",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_7ce53d61-bd2e-4eaa-8958-3dd308c8cc8f",
-      "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_56abb0cf-77a0-4bc6-8fbf-0e5bd06a8972",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
-      "id": "5e024ac2-7125-4698-96c0-1af037ec19fb",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_5f761f8c-a670-460d-be1e-a628bd77de8c",
-      "toStep": "com.twineworks.tweakstreet.library.steps.bool.filter_634bd6d9-a088-48d7-8559-ce6c7cd68d9e",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
-      "id": "e7959136-bbac-4621-ae68-61d6635c6651",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_634bd6d9-a088-48d7-8559-ce6c7cd68d9e",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.calculator_e24cc749-b0a2-4f4b-8416-c5466e64a845",
-      "fromGate": "yes",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
-      "id": "819aa45b-d13b-4736-9f56-87e46c246ff7",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_634bd6d9-a088-48d7-8559-ce6c7cd68d9e",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_b7818744-f369-4a65-969b-ae0a59fc96ae",
-      "fromGate": "no",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
       "id": "cc1c4281-9067-4f1c-917d-b5ab36b1563b",
       "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_6e7699a4-961f-4a8f-aba6-ad276b3f2b2c",
       "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_d52ef079-7b45-4a4a-a698-0d55a75b16ab",
@@ -4275,6 +3693,21 @@
       "id": "8c7692d8-5492-469b-b556-d80479f71c5f",
       "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_f1382627-2aa6-43b5-9016-aac36086bb60",
       "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_1fbd7516-7ff8-4630-a611-5d5336399475",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "7e08064b-ae87-46d7-b91e-996236196bfb",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_f6d899ec-e974-4a53-a0e8-e3b348740580",
+      "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_56abb0cf-77a0-4bc6-8fbf-0e5bd06a8972",
       "fromGate": "out",
       "toGate": "in",
       "disabled": false,

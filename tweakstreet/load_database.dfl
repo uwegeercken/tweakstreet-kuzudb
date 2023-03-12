@@ -278,8 +278,8 @@
         "model": {}
       },
       "pos": {
-        "x": 554,
-        "y": 330
+        "x": 586,
+        "y": 90
       }
     },
     {
@@ -390,8 +390,8 @@
         "model": {}
       },
       "pos": {
-        "x": 906,
-        "y": 458
+        "x": 938,
+        "y": 346
       }
     },
     {
@@ -494,8 +494,8 @@
         "model": {}
       },
       "pos": {
-        "x": 906,
-        "y": 778
+        "x": 938,
+        "y": 666
       }
     },
     {
@@ -702,8 +702,8 @@
         "model": {}
       },
       "pos": {
-        "x": 906,
-        "y": 202
+        "x": 938,
+        "y": 90
       }
     },
     {
@@ -870,8 +870,8 @@
         "model": {}
       },
       "pos": {
-        "x": 906,
-        "y": 330
+        "x": 938,
+        "y": 218
       }
     },
     {
@@ -1355,8 +1355,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1466,
-        "y": 202
+        "x": 1498,
+        "y": 90
       }
     },
     {
@@ -2108,8 +2108,8 @@
         "model": {}
       },
       "pos": {
-        "x": 154,
-        "y": 330
+        "x": 170,
+        "y": 266
       }
     },
     {
@@ -2417,8 +2417,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1466,
-        "y": 458
+        "x": 1498,
+        "y": 346
       }
     },
     {
@@ -2710,8 +2710,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1482,
-        "y": 778
+        "x": 1514,
+        "y": 666
       }
     },
     {
@@ -3115,8 +3115,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1466,
-        "y": 330
+        "x": 1498,
+        "y": 218
       }
     },
     {
@@ -3230,8 +3230,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1162,
-        "y": 458
+        "x": 1194,
+        "y": 346
       }
     },
     {
@@ -3467,8 +3467,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1162,
-        "y": 634
+        "x": 1194,
+        "y": 522
       }
     },
     {
@@ -3582,8 +3582,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1162,
-        "y": 778
+        "x": 1194,
+        "y": 666
       }
     },
     {
@@ -3833,8 +3833,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1162,
-        "y": 954
+        "x": 1194,
+        "y": 842
       }
     },
     {
@@ -3948,8 +3948,8 @@
         "model": {}
       },
       "pos": {
-        "x": 362,
-        "y": 330
+        "x": 378,
+        "y": 266
       }
     },
     {
@@ -4186,8 +4186,1003 @@
         "model": {}
       },
       "pos": {
-        "x": 362,
-        "y": 138
+        "x": 378,
+        "y": 90
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_a6c6ecd0-678f-47e0-833d-4ccb3a64b733",
+      "name": "CSV Input: feature codes file",
+      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "CSV Input: feature codes file",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "fs": {
+          "widgetType": "expression/storage-ref",
+          "widgetData": {
+            "name": ""
+          },
+          "code": "nil"
+        },
+        "file": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "${$config.vars.featureCodesFile}",
+            "dialogIntent": "openFile"
+          },
+          "code": "let {\n  string interpolation_0: $config.vars.featureCodesFile;\n}\ninterpolation_0"
+        },
+        "compression": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "expression/select/compression",
+            "value": "none"
+          },
+          "code": "'none'"
+        },
+        "charset": {
+          "widgetType": "expression/charset",
+          "widgetData": {
+            "value": "UTF-8"
+          },
+          "code": "'UTF-8'"
+        },
+        "textFileContent": {
+          "text": "",
+          "fetchButton": {
+            "value": "100"
+          },
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": true
+          }
+        },
+        "skipLines": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "0"
+          },
+          "code": "0"
+        },
+        "rowLimit": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": ""
+          },
+          "code": "nil"
+        },
+        "fieldSeparator": {
+          "widgetType": "expression/separator",
+          "widgetData": {
+            "value": "tab"
+          },
+          "code": "\"\\t\""
+        },
+        "fieldEncloser": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": "\""
+          },
+          "code": "'\"'"
+        },
+        "hasHeaderLine": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "class_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "0"
+                  },
+                  "code": "0"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "1"
+                  },
+                  "code": "1"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "2"
+                  },
+                  "code": "2"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 186,
+        "y": 1034
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_4a460106-7e3a-4339-aaba-37cd7436b572",
+      "name": "Stream Lookup",
+      "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Stream Lookup",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "keyFields": {
+          "fieldPairs": {
+            "list": [
+              {
+                "left": {
+                  "value": {
+                    "gate": "in",
+                    "name": "class"
+                  }
+                },
+                "right": {
+                  "value": {
+                    "gate": "lookup",
+                    "name": "class"
+                  }
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "lookup_class_description",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "results.lookup[:class_description] default nil",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "results.lookup[:class_description] default nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "fetchFields": {
+          "value": "lookup_"
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 874,
+        "y": 1034
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_e778bc1b-d74e-44ad-a388-1beb266fa626",
+      "name": "CSV Input: feature classes file",
+      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "CSV Input: feature classes file",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "fs": {
+          "widgetType": "expression/storage-ref",
+          "widgetData": {
+            "name": ""
+          },
+          "code": "nil"
+        },
+        "file": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "${$config.vars.featureClassesFile}",
+            "dialogIntent": "openFile"
+          },
+          "code": "let {\n  string interpolation_0: $config.vars.featureClassesFile;\n}\ninterpolation_0"
+        },
+        "compression": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "expression/select/compression",
+            "value": "none"
+          },
+          "code": "'none'"
+        },
+        "charset": {
+          "widgetType": "expression/charset",
+          "widgetData": {
+            "value": "UTF-8"
+          },
+          "code": "'UTF-8'"
+        },
+        "textFileContent": {
+          "text": "",
+          "fetchButton": {
+            "value": "100"
+          },
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": true
+          }
+        },
+        "skipLines": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "0"
+          },
+          "code": "0"
+        },
+        "rowLimit": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": ""
+          },
+          "code": "nil"
+        },
+        "fieldSeparator": {
+          "widgetType": "expression/separator",
+          "widgetData": {
+            "value": "tab"
+          },
+          "code": "\"\\t\""
+        },
+        "fieldEncloser": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": "\""
+          },
+          "code": "'\"'"
+        },
+        "hasHeaderLine": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "class",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "0"
+                  },
+                  "code": "0"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "class_description",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/number",
+                  "widgetData": {
+                    "text": "1"
+                  },
+                  "code": "1"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 874,
+        "y": 1210
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.calculator_39f63be7-cea6-4535-9177-1b6334069f77",
+      "name": "Calculator",
+      "type": "com.twineworks.tweakstreet.library.steps.map.calculator",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Calculator",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "class",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "strings.substring(in.class_code,0,1)",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "strings.substring(in.class_code,0,1)"
+                }
+              },
+              {
+                "name": "code",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "strings.substring(in.class_code,2)",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "strings.substring(in.class_code,2)"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": true,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 666,
+        "y": 1034
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.bool.filter_029f4099-7ea1-44f0-9a50-aeeab6f61e3c",
+      "name": "Filter: valid codes",
+      "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Filter: valid codes",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "condition": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "in.class_code!=\"null\" && in.class_code!=\"\"",
+            "size": {
+              "width": 0,
+              "height": 36
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "in.class_code!=\"null\" && in.class_code!=\"\""
+        },
+        "editor": {
+          "showEntryVariables": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 426,
+        "y": 1034
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.dummy_690002c5-4216-4dab-870d-2ce499df3054",
+      "name": "Dummy",
+      "type": "com.twineworks.tweakstreet.library.steps.map.dummy",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Dummy",
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": ""
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "editor": {
+                "collapsed": true
+              }
+            }
+          },
+          "showingComment": false
+        },
+        "editor": {}
+      },
+      "pos": {
+        "x": 426,
+        "y": 1210
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_5f29b228-e608-4664-bae3-b5996573f4c3",
+      "name": "SQL Insert: features",
+      "type": "com.twineworks.tweakstreet.library.steps.output.sqlinsert",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "SQL Insert: features",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "schema": {
+          "widgetType": "expression/database-schema",
+          "widgetData": {
+            "interpolation": true,
+            "text": ""
+          },
+          "code": "''"
+        },
+        "table": {
+          "widgetType": "expression/database-table",
+          "widgetData": {
+            "interpolation": true,
+            "text": "feature"
+          },
+          "code": "'feature'"
+        },
+        "batchSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1000"
+          },
+          "code": "1000"
+        },
+        "commitSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1000"
+          },
+          "code": "1000"
+        },
+        "getGeneratedKeys": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "pkField": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": "class_code"
+          },
+          "code": "'class_code'"
+        },
+        "fieldMode": {
+          "value": "fixed"
+        },
+        "dataDrivenColumns": {
+          "widgetType": "expression/data-grid",
+          "widgetData": {
+            "fields": [
+              {
+                "id": "type",
+                "name": "type"
+              },
+              {
+                "id": "name",
+                "name": "name"
+              }
+            ],
+            "gen": {
+              "as": "rows",
+              "of": "dict",
+              "meta": false
+            },
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "dataDrivenValues": {
+          "widgetType": "expression/field-value-ref",
+          "widgetData": {
+            "fieldSelect": {
+              "value": null
+            }
+          },
+          "code": "nil"
+        },
+        "writeFields": {
+          "writeFields": {
+            "list": [
+              {
+                "name": "class_code",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "class_code"
+                      }
+                    }
+                  },
+                  "code": "::in.class_code"
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "name"
+                      }
+                    }
+                  },
+                  "code": "::in.name"
+                }
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "description"
+                      }
+                    }
+                  },
+                  "code": "::in.description"
+                }
+              },
+              {
+                "name": "class",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "class"
+                      }
+                    }
+                  },
+                  "code": "::in.class"
+                }
+              },
+              {
+                "name": "code",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "code"
+                      }
+                    }
+                  },
+                  "code": "::in.code"
+                }
+              },
+              {
+                "name": "class_description",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "lookup_class_description"
+                      }
+                    }
+                  },
+                  "code": "::in.lookup_class_description"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "sqlEditor": {
+          "text": "CREATE TABLE feature (\n  class_code VARCHAR(255) NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  description VARCHAR(255),\n  class VARCHAR(255),\n  code VARCHAR(255),\n  class_description VARCHAR(255)\n)",
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showWriteFields": true,
+          "showSqlEditor": true,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1194,
+        "y": 1034
       }
     }
   ],
@@ -4408,6 +5403,96 @@
       "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_e5e9efc7-08ea-47b2-9c0d-65a0939f737d",
       "fromGate": "out",
       "toGate": "lookup",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "83a164c1-6665-4444-ad32-d581cc61caa1",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.calculator_39f63be7-cea6-4535-9177-1b6334069f77",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_4a460106-7e3a-4339-aaba-37cd7436b572",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "78d34fba-f667-4152-9da6-3f76c5646e99",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_e778bc1b-d74e-44ad-a388-1beb266fa626",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_4a460106-7e3a-4339-aaba-37cd7436b572",
+      "fromGate": "out",
+      "toGate": "lookup",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "1942d849-ed90-4d12-8204-466e8ae373c2",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_a6c6ecd0-678f-47e0-833d-4ccb3a64b733",
+      "toStep": "com.twineworks.tweakstreet.library.steps.bool.filter_029f4099-7ea1-44f0-9a50-aeeab6f61e3c",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "5744d9c8-c6a4-4266-93a0-d07060c00593",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_029f4099-7ea1-44f0-9a50-aeeab6f61e3c",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.calculator_39f63be7-cea6-4535-9177-1b6334069f77",
+      "fromGate": "yes",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "5d012b6e-39c8-4cf4-8ee2-7d6ef5ae5971",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_029f4099-7ea1-44f0-9a50-aeeab6f61e3c",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_690002c5-4216-4dab-870d-2ce499df3054",
+      "fromGate": "no",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "f48a322f-9070-4e7e-9f1e-8528d8303b92",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_4a460106-7e3a-4339-aaba-37cd7436b572",
+      "toStep": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_5f29b228-e608-4664-bae3-b5996573f4c3",
+      "fromGate": "out",
+      "toGate": "in",
       "disabled": false,
       "partitioner": {
         "widgetType": "expression/code",

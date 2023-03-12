@@ -9,5 +9,6 @@ match(g:Geoname)-[r:isPartOf]->(c:Country)-[r2:inContinent]->(co:Continent) wher
 # match one geoname, return 
 match(c:Country)<-[r2:isPartOf]-(g:Geoname)-[r:isTypeOf]->(f:Feature) where g.name="Hohn" return c.code, g.name, f.code, f.name;
 
-match(c:Country)<-[r2:isPartOf]-(g:Geoname)-[r:isTypeOf]->(f:Feature) where c.code='DE' and f.code='S.AIRP' return count(r) as numberOfAirports;
+macth feature Airport in country Germany, return number of airports
+match(c:Country)<-[r2:isPartOf]-(g:Geoname)-[r:isTypeOf]->(f:Feature) where c.code='DE' and f.code='AIRP' return count(r) as numberOfAirports;
 
