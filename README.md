@@ -88,16 +88,20 @@ To run the ETL process, in the Tweakstreet ETL tool right click the canvas and s
 
 At this point you can run the cypher script (adjust the path info according to your needs) to import the data like this:
 
+```
 ./kuzu -i [database path] < create_nodes_and_relations.cyp
+```
 
 Some statictics (using the current files from geonames.org):
 - Node table Geoname: 11842832
 - Node Table Feature: 680
 - Node table Country: 193
+- Node table Continent: 7
 - Node table AdminDivision: 515024
 - Relation table isTypeOf: 11747765
 - Relation table isPartOf: 11734891
 - Relation table belongsTo: 21863415
+- Relation table inContinent: 193
 
 Let me know if you find bug but also if you want to participate in further extending the idea.
 
