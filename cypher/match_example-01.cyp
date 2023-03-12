@@ -1,4 +1,13 @@
 
-match(g:Geoname)-[r:belongsTo]->(d:AdminDivision {feature_code:"ADM1",name: "Schleswig-Holstein"}), (g)-[r2:isTypeOf]->(f:Feature {code: "P.PPLA4"}), (g)-[r3:belongsTo]->(d2:AdminDivision) where g.name="Hohn" return g.name, d2.name, d2.feature_code;
 
+# match one geoname, return all admin divisions
+match(g:Geoname)-[r:belongsTo]->(ad:AdminDivision) where g.geonameid=2900899 return g.name, ad.name, ad.feature_code;
+
+# match one geoname, return country and continent
+match(g:Geoname)-[r:isPartOf]->(c:Country)-[r2:inContinent]->(co:Continent) where g.geonameid=2900899 return g.name, c.code, co.name;
+
+# match one geoname, return 
+match(c:Country)<-[r2:isPartOf]-(g:Geoname)-[r:isTypeOf]->(f:Feature) where g.name="Hohn" return c.code, g.name, f.code, f.name;
+
+match(c:Country)<-[r2:isPartOf]-(g:Geoname)-[r:isTypeOf]->(f:Feature) where c.code='DE' and f.code='S.AIRP' return count(r) as numberOfAirports;
 
