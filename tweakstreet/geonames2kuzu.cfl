@@ -938,11 +938,11 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.map.sqlscript_89a87d80-836e-484b-9633-ee5722992d08",
-      "name": "SQL Script: delete all tables",
+      "name": "SQL Script: empty all tables",
       "type": "com.twineworks.tweakstreet.library.steps.map.sqlscript",
       "data": {
         "meta": {
-          "name": "SQL Script: delete all tables",
+          "name": "SQL Script: empty all tables",
           "showingComment": false,
           "comment": {
             "markdown": {
