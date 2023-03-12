@@ -133,38 +133,6 @@
             }
           },
           {
-            "name": "admin1codesFile",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.admin1codesFile",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.admin1codesFile"
-            }
-          },
-          {
-            "name": "admin2codesFile",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.admin2codesFile",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.admin2codesFile"
-            }
-          },
-          {
             "name": "admin5codesFile",
             "type": "any",
             "value": {
@@ -1221,23 +1189,6 @@
                 }
               },
               {
-                "name": "name",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/string",
-                  "widgetData": {
-                    "interpolation": true,
-                    "text": "name"
-                  },
-                  "code": "'name'"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
                 "name": "country_code",
                 "type": "string",
                 "mapping": {
@@ -1664,7 +1615,7 @@
       },
       "pos": {
         "x": 906,
-        "y": 762
+        "y": 586
       }
     },
     {
@@ -1767,23 +1718,6 @@
                     "text": "geonameid"
                   },
                   "code": "'geonameid'"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
-                "name": "name",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/string",
-                  "widgetData": {
-                    "interpolation": true,
-                    "text": "name"
-                  },
-                  "code": "'name'"
                 },
                 "conversion": {
                   "widgetType": "expression/nil",
@@ -1961,7 +1895,21 @@
                 "left": {
                   "value": {
                     "gate": "in",
-                    "name": "fullAdmin1Code"
+                    "name": "country_code"
+                  }
+                },
+                "right": {
+                  "value": {
+                    "gate": "lookup",
+                    "name": "country_code"
+                  }
+                }
+              },
+              {
+                "left": {
+                  "value": {
+                    "gate": "in",
+                    "name": "admin1_code"
                   }
                 },
                 "right": {
@@ -1994,14 +1942,14 @@
                 "value": {
                   "widgetType": "expression/code",
                   "widgetData": {
-                    "text": "results.lookup[:geonameid_adm1] default nil",
+                    "text": "results.lookup[:geonameid] default nil",
                     "size": {
                       "width": 0,
                       "height": 36
                     },
                     "syntax": "tweakflow"
                   },
-                  "code": "results.lookup[:geonameid_adm1] default nil"
+                  "code": "results.lookup[:geonameid] default nil"
                 }
               }
             ]
@@ -2023,276 +1971,6 @@
       "pos": {
         "x": 426,
         "y": 762
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_70cfceed-cebe-41a7-ab2a-c140f0282431",
-      "name": "CSV Input: ADM1",
-      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
-      "instanceCount": {
-        "widgetType": "expression/number",
-        "widgetData": {
-          "text": "1"
-        },
-        "code": "1"
-      },
-      "data": {
-        "meta": {
-          "name": "CSV Input: ADM1",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "tabs": {},
-        "fs": {
-          "widgetType": "expression/storage-ref",
-          "widgetData": {
-            "name": ""
-          },
-          "code": "nil"
-        },
-        "file": {
-          "widgetType": "expression/code",
-          "widgetData": {
-            "text": "$config.vars.admin1codesFile",
-            "size": {
-              "width": 0,
-              "height": 36
-            },
-            "syntax": "tweakflow"
-          },
-          "code": "$config.vars.admin1codesFile"
-        },
-        "compression": {
-          "widgetType": "expression/select",
-          "widgetData": {
-            "family": "expression/select/compression",
-            "value": "none"
-          },
-          "code": "'none'"
-        },
-        "charset": {
-          "widgetType": "expression/charset",
-          "widgetData": {
-            "value": "UTF-8"
-          },
-          "code": "'UTF-8'"
-        },
-        "textFileContent": {
-          "text": "",
-          "fetchButton": {
-            "value": "100"
-          },
-          "size": {
-            "width": 0,
-            "height": 180
-          },
-          "editor": {
-            "collapsed": true
-          }
-        },
-        "skipLines": {
-          "widgetType": "expression/number",
-          "widgetData": {
-            "text": "0"
-          },
-          "code": "0"
-        },
-        "rowLimit": {
-          "widgetType": "expression/number",
-          "widgetData": {
-            "text": ""
-          },
-          "code": "nil"
-        },
-        "fieldSeparator": {
-          "widgetType": "expression/separator",
-          "widgetData": {
-            "value": "tab"
-          },
-          "code": "\"\\t\""
-        },
-        "fieldEncloser": {
-          "widgetType": "expression/string",
-          "widgetData": {
-            "interpolation": true,
-            "text": ""
-          },
-          "code": "''"
-        },
-        "hasHeaderLine": {
-          "widgetType": "expression/checkbox-boolean",
-          "widgetData": {
-            "value": false
-          },
-          "code": "false"
-        },
-        "readFields": {
-          "readFields": {
-            "list": [
-              {
-                "name": "admin1_code",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "0"
-                  },
-                  "code": "0"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
-                "name": "admin1_name",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "1"
-                  },
-                  "code": "1"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
-                "name": "admin1_description",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "2"
-                  },
-                  "code": "2"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
-                "name": "geonameid_adm1",
-                "type": "long",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "3"
-                  },
-                  "code": "3"
-                },
-                "conversion": {
-                  "widgetType": "expression/parse-number",
-                  "widgetData": {
-                    "pattern": {
-                      "widgetType": "expression/number-pattern",
-                      "widgetData": {
-                        "value": "0"
-                      },
-                      "code": "'0'"
-                    },
-                    "locale": {
-                      "widgetType": "expression/locale",
-                      "widgetData": {
-                        "value": "en-US"
-                      },
-                      "code": "'en-US'"
-                    },
-                    "trim": {
-                      "widgetType": "expression/checkbox-boolean",
-                      "widgetData": {
-                        "value": true
-                      },
-                      "code": "true"
-                    },
-                    "nilValue": {
-                      "widgetType": "expression/string",
-                      "widgetData": {
-                        "interpolation": true,
-                        "text": ""
-                      },
-                      "code": "''"
-                    },
-                    "parseDecimal": {
-                      "widgetType": "expression/checkbox-boolean",
-                      "widgetData": {
-                        "value": false
-                      },
-                      "code": "false"
-                    },
-                    "editor": {
-                      "collapsed": true
-                    },
-                    "model": {}
-                  },
-                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
-                }
-              }
-            ]
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "resultVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "editor": {
-          "showEntryVariables": false,
-          "showResultVariables": false,
-          "showOutputFields": false
-        },
-        "model": {}
-      },
-      "pos": {
-        "x": 426,
-        "y": 954
       }
     },
     {
@@ -2343,38 +2021,6 @@
           "outputFields": {
             "list": [
               {
-                "name": "fullAdmin1Code",
-                "type": "any",
-                "value": {
-                  "widgetType": "expression/code",
-                  "widgetData": {
-                    "text": "in.country_code .. \".\" .. in.admin1_code",
-                    "size": {
-                      "width": 0,
-                      "height": 36
-                    },
-                    "syntax": "tweakflow"
-                  },
-                  "code": "in.country_code .. \".\" .. in.admin1_code"
-                }
-              },
-              {
-                "name": "fullAdmin2Code",
-                "type": "any",
-                "value": {
-                  "widgetType": "expression/code",
-                  "widgetData": {
-                    "text": "in.country_code .. \".\" .. in.admin1_code .. \".\" .. in.admin2_code",
-                    "size": {
-                      "width": 0,
-                      "height": 36
-                    },
-                    "syntax": "tweakflow"
-                  },
-                  "code": "in.country_code .. \".\" .. in.admin1_code .. \".\" .. in.admin2_code"
-                }
-              },
-              {
                 "name": "fullFeatureCode",
                 "type": "any",
                 "value": {
@@ -2398,283 +2044,14 @@
         },
         "editor": {
           "showEntryVariables": true,
-          "showOutputFields": true
+          "showOutputFields": true,
+          "dialogWidth": "stretch"
         },
         "model": {}
       },
       "pos": {
         "x": 426,
         "y": 586
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_3e9c146c-e6fb-4a61-ae45-836664ab546e",
-      "name": "CSV Input: ADM2",
-      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
-      "instanceCount": {
-        "widgetType": "expression/number",
-        "widgetData": {
-          "text": "1"
-        },
-        "code": "1"
-      },
-      "data": {
-        "meta": {
-          "name": "CSV Input: ADM2",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "tabs": {},
-        "fs": {
-          "widgetType": "expression/storage-ref",
-          "widgetData": {
-            "name": ""
-          },
-          "code": "nil"
-        },
-        "file": {
-          "widgetType": "expression/code",
-          "widgetData": {
-            "text": "$config.vars.admin2codesFile",
-            "size": {
-              "width": 0,
-              "height": 36
-            },
-            "syntax": "tweakflow"
-          },
-          "code": "$config.vars.admin2codesFile"
-        },
-        "compression": {
-          "widgetType": "expression/select",
-          "widgetData": {
-            "family": "expression/select/compression",
-            "value": "none"
-          },
-          "code": "'none'"
-        },
-        "charset": {
-          "widgetType": "expression/charset",
-          "widgetData": {
-            "value": "UTF-8"
-          },
-          "code": "'UTF-8'"
-        },
-        "textFileContent": {
-          "text": "",
-          "fetchButton": {
-            "value": "100"
-          },
-          "size": {
-            "width": 0,
-            "height": 180
-          },
-          "editor": {
-            "collapsed": true
-          }
-        },
-        "skipLines": {
-          "widgetType": "expression/number",
-          "widgetData": {
-            "text": "0"
-          },
-          "code": "0"
-        },
-        "rowLimit": {
-          "widgetType": "expression/number",
-          "widgetData": {
-            "text": ""
-          },
-          "code": "nil"
-        },
-        "fieldSeparator": {
-          "widgetType": "expression/separator",
-          "widgetData": {
-            "value": "tab"
-          },
-          "code": "\"\\t\""
-        },
-        "fieldEncloser": {
-          "widgetType": "expression/string",
-          "widgetData": {
-            "interpolation": true,
-            "text": ""
-          },
-          "code": "''"
-        },
-        "hasHeaderLine": {
-          "widgetType": "expression/checkbox-boolean",
-          "widgetData": {
-            "value": false
-          },
-          "code": "false"
-        },
-        "readFields": {
-          "readFields": {
-            "list": [
-              {
-                "name": "admin2_code",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "0"
-                  },
-                  "code": "0"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
-                "name": "admin2_name",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "1"
-                  },
-                  "code": "1"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
-                "name": "admin2_description",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "2"
-                  },
-                  "code": "2"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              },
-              {
-                "name": "geonameid_adm2",
-                "type": "long",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "3"
-                  },
-                  "code": "3"
-                },
-                "conversion": {
-                  "widgetType": "expression/parse-number",
-                  "widgetData": {
-                    "pattern": {
-                      "widgetType": "expression/number-pattern",
-                      "widgetData": {
-                        "value": "0"
-                      },
-                      "code": "'0'"
-                    },
-                    "locale": {
-                      "widgetType": "expression/locale",
-                      "widgetData": {
-                        "value": "en-US"
-                      },
-                      "code": "'en-US'"
-                    },
-                    "trim": {
-                      "widgetType": "expression/checkbox-boolean",
-                      "widgetData": {
-                        "value": true
-                      },
-                      "code": "true"
-                    },
-                    "nilValue": {
-                      "widgetType": "expression/string",
-                      "widgetData": {
-                        "interpolation": true,
-                        "text": ""
-                      },
-                      "code": "''"
-                    },
-                    "parseDecimal": {
-                      "widgetType": "expression/checkbox-boolean",
-                      "widgetData": {
-                        "value": false
-                      },
-                      "code": "false"
-                    },
-                    "editor": {
-                      "collapsed": true
-                    },
-                    "model": {}
-                  },
-                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
-                }
-              }
-            ]
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "resultVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "editor": {
-          "showEntryVariables": false,
-          "showResultVariables": false,
-          "showOutputFields": false
-        },
-        "model": {}
-      },
-      "pos": {
-        "x": 666,
-        "y": 954
       }
     },
     {
@@ -2728,7 +2105,35 @@
                 "left": {
                   "value": {
                     "gate": "in",
-                    "name": "fullAdmin2Code"
+                    "name": "country_code"
+                  }
+                },
+                "right": {
+                  "value": {
+                    "gate": "lookup",
+                    "name": "country_code"
+                  }
+                }
+              },
+              {
+                "left": {
+                  "value": {
+                    "gate": "in",
+                    "name": "admin1_code"
+                  }
+                },
+                "right": {
+                  "value": {
+                    "gate": "lookup",
+                    "name": "admin1_code"
+                  }
+                }
+              },
+              {
+                "left": {
+                  "value": {
+                    "gate": "in",
+                    "name": "admin2_code"
                   }
                 },
                 "right": {
@@ -2761,14 +2166,14 @@
                 "value": {
                   "widgetType": "expression/code",
                   "widgetData": {
-                    "text": "results.lookup[:geonameid_adm2] default nil",
+                    "text": "results.lookup[:geonameid] default nil",
                     "size": {
                       "width": 0,
                       "height": 36
                     },
                     "syntax": "tweakflow"
                   },
-                  "code": "results.lookup[:geonameid_adm2] default nil"
+                  "code": "results.lookup[:geonameid] default nil"
                 }
               }
             ]
@@ -2845,14 +2250,14 @@
                 "value": {
                   "widgetType": "expression/code",
                   "widgetData": {
-                    "text": "[\n  in.lookup_geonameid_adm1,\n  in.lookup_geonameid_adm2,\n  in.lookup_geonameid_adm3,\n  in.lookup_geonameid_adm4,\n  in.lookup_geonameid_adm5\n]",
+                    "text": "[\n  in.lookup_geonameid_adm1,\n  in.lookup_geonameid_adm2,\n  in.lookup_geonameid_adm3,\n  in.lookup_geonameid_adm4\n]",
                     "size": {
                       "width": 0,
                       "height": 214
                     },
                     "syntax": "tweakflow"
                   },
-                  "code": "[\n  in.lookup_geonameid_adm1,\n  in.lookup_geonameid_adm2,\n  in.lookup_geonameid_adm3,\n  in.lookup_geonameid_adm4,\n  in.lookup_geonameid_adm5\n]"
+                  "code": "[\n  in.lookup_geonameid_adm1,\n  in.lookup_geonameid_adm2,\n  in.lookup_geonameid_adm3,\n  in.lookup_geonameid_adm4\n]"
                 }
               }
             ]
@@ -3948,359 +3353,6 @@
       }
     },
     {
-      "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_139db797-72ea-47f6-97a7-e1beb3d2a21d",
-      "name": "Stream Lookup: ADM5",
-      "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
-      "instanceCount": {
-        "widgetType": "expression/number",
-        "widgetData": {
-          "text": "1"
-        },
-        "code": "1"
-      },
-      "data": {
-        "meta": {
-          "name": "Stream Lookup: ADM5",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "keyFields": {
-          "fieldPairs": {
-            "list": [
-              {
-                "left": {
-                  "value": {
-                    "gate": "in",
-                    "name": "geonameid"
-                  }
-                },
-                "right": {
-                  "value": {
-                    "gate": "lookup",
-                    "name": "geonameid"
-                  }
-                }
-              }
-            ]
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "resultVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": [
-              {
-                "name": "lookup_geonameid_adm5",
-                "type": "string",
-                "value": {
-                  "widgetType": "expression/code",
-                  "widgetData": {
-                    "text": "results.lookup[:geonameid_adm5] default nil",
-                    "size": {
-                      "width": 0,
-                      "height": 36
-                    },
-                    "syntax": "tweakflow"
-                  },
-                  "code": "results.lookup[:geonameid_adm5] default nil"
-                }
-              }
-            ]
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "fetchFields": {
-          "value": "lookup_"
-        },
-        "editor": {
-          "showEntryVariables": false,
-          "showResultVariables": false,
-          "showOutputFields": true
-        },
-        "model": {}
-      },
-      "pos": {
-        "x": 906,
-        "y": 586
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_13ec07ce-b366-4456-beab-06c52a2172c4",
-      "name": "CSV Input: ADM5",
-      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
-      "instanceCount": {
-        "widgetType": "expression/number",
-        "widgetData": {
-          "text": "1"
-        },
-        "code": "1"
-      },
-      "data": {
-        "meta": {
-          "name": "CSV Input: ADM5",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "tabs": {},
-        "fs": {
-          "widgetType": "expression/storage-ref",
-          "widgetData": {
-            "name": ""
-          },
-          "code": "nil"
-        },
-        "file": {
-          "widgetType": "expression/code",
-          "widgetData": {
-            "text": "$config.vars.admin5codesFile",
-            "size": {
-              "width": 0,
-              "height": 36
-            },
-            "syntax": "tweakflow"
-          },
-          "code": "$config.vars.admin5codesFile"
-        },
-        "compression": {
-          "widgetType": "expression/select",
-          "widgetData": {
-            "family": "expression/select/compression",
-            "value": "none"
-          },
-          "code": "'none'"
-        },
-        "charset": {
-          "widgetType": "expression/charset",
-          "widgetData": {
-            "value": "UTF-8"
-          },
-          "code": "'UTF-8'"
-        },
-        "textFileContent": {
-          "text": "",
-          "fetchButton": {
-            "value": "100"
-          },
-          "size": {
-            "width": 0,
-            "height": 180
-          },
-          "editor": {
-            "collapsed": true
-          }
-        },
-        "skipLines": {
-          "widgetType": "expression/number",
-          "widgetData": {
-            "text": "0"
-          },
-          "code": "0"
-        },
-        "rowLimit": {
-          "widgetType": "expression/number",
-          "widgetData": {
-            "text": ""
-          },
-          "code": "nil"
-        },
-        "fieldSeparator": {
-          "widgetType": "expression/separator",
-          "widgetData": {
-            "value": "tab"
-          },
-          "code": "\"\\t\""
-        },
-        "fieldEncloser": {
-          "widgetType": "expression/string",
-          "widgetData": {
-            "interpolation": true,
-            "text": ""
-          },
-          "code": "''"
-        },
-        "hasHeaderLine": {
-          "widgetType": "expression/checkbox-boolean",
-          "widgetData": {
-            "value": false
-          },
-          "code": "false"
-        },
-        "readFields": {
-          "readFields": {
-            "list": [
-              {
-                "name": "geonameid",
-                "type": "long",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "0"
-                  },
-                  "code": "0"
-                },
-                "conversion": {
-                  "widgetType": "expression/parse-number",
-                  "widgetData": {
-                    "pattern": {
-                      "widgetType": "expression/number-pattern",
-                      "widgetData": {
-                        "value": "0"
-                      },
-                      "code": "'0'"
-                    },
-                    "locale": {
-                      "widgetType": "expression/locale",
-                      "widgetData": {
-                        "value": "en-US"
-                      },
-                      "code": "'en-US'"
-                    },
-                    "trim": {
-                      "widgetType": "expression/checkbox-boolean",
-                      "widgetData": {
-                        "value": true
-                      },
-                      "code": "true"
-                    },
-                    "nilValue": {
-                      "widgetType": "expression/string",
-                      "widgetData": {
-                        "interpolation": true,
-                        "text": ""
-                      },
-                      "code": "''"
-                    },
-                    "parseDecimal": {
-                      "widgetType": "expression/checkbox-boolean",
-                      "widgetData": {
-                        "value": false
-                      },
-                      "code": "false"
-                    },
-                    "editor": {
-                      "collapsed": true
-                    },
-                    "model": {}
-                  },
-                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
-                }
-              },
-              {
-                "name": "geonameid_adm5",
-                "type": "string",
-                "mapping": {
-                  "widgetType": "expression/number",
-                  "widgetData": {
-                    "text": "1"
-                  },
-                  "code": "1"
-                },
-                "conversion": {
-                  "widgetType": "expression/nil",
-                  "widgetData": {},
-                  "code": "nil"
-                }
-              }
-            ]
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "resultVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "editor": {
-          "showEntryVariables": false,
-          "showResultVariables": false,
-          "showOutputFields": false
-        },
-        "model": {}
-      },
-      "pos": {
-        "x": 906,
-        "y": 394
-      }
-    },
-    {
       "id": "com.twineworks.tweakstreet.library.steps.map.dummy_461cd1fe-26ba-48e5-9163-732e68b698cc",
       "name": "Dummy",
       "type": "com.twineworks.tweakstreet.library.steps.map.dummy",
@@ -4773,6 +3825,373 @@
         "x": 1866,
         "y": 986
       }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.sqlinput_b72e3b9a-0f65-4eb3-98ba-da56b4cf7a9f",
+      "name": "SQL Input: ADM1",
+      "type": "com.twineworks.tweakstreet.library.steps.input.sqlinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "SQL Input: ADM1",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "fetchSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "10000"
+          },
+          "code": "10000"
+        },
+        "rowLimit": {
+          "widgetType": "expression/nil",
+          "widgetData": {},
+          "code": "nil"
+        },
+        "query": {
+          "widgetType": "expression/text",
+          "widgetData": {
+            "text": "select \n  geonameid,\n  name,\n  country_code,\n  admin1_code\nfrom\n  admindivision\nwhere\n  feature_code=\"ADM1\"\n",
+            "size": {
+              "width": 0,
+              "height": 276
+            },
+            "syntax": "sql",
+            "lineSeparator": "\n",
+            "interpolation": false
+          },
+          "code": "'select \n  geonameid,\n  name,\n  country_code,\n  admin1_code\nfrom\n  admindivision\nwhere\n  feature_code=\"ADM1\"\n'"
+        },
+        "jdbcParams": {
+          "widgetType": "expression/list",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "geonameid",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "geonameid"
+                  },
+                  "code": "'geonameid'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "country_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "country_code"
+                  },
+                  "code": "'country_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "admin1_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "admin1_code"
+                  },
+                  "code": "'admin1_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 426,
+        "y": 954
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.sqlinput_df821a49-3599-466e-8bab-3084ddb6db46",
+      "name": "SQL Input: ADM2",
+      "type": "com.twineworks.tweakstreet.library.steps.input.sqlinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "SQL Input: ADM2",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "fetchSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "10000"
+          },
+          "code": "10000"
+        },
+        "rowLimit": {
+          "widgetType": "expression/nil",
+          "widgetData": {},
+          "code": "nil"
+        },
+        "query": {
+          "widgetType": "expression/text",
+          "widgetData": {
+            "text": "select \n  geonameid,\n  name,\n  country_code,\n  admin1_code,\n  admin2_code\nfrom\n  admindivision\nwhere\n  feature_code=\"ADM2\"\n",
+            "size": {
+              "width": 0,
+              "height": 276
+            },
+            "syntax": "sql",
+            "lineSeparator": "\n",
+            "interpolation": false
+          },
+          "code": "'select \n  geonameid,\n  name,\n  country_code,\n  admin1_code,\n  admin2_code\nfrom\n  admindivision\nwhere\n  feature_code=\"ADM2\"\n'"
+        },
+        "jdbcParams": {
+          "widgetType": "expression/list",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "geonameid",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "geonameid"
+                  },
+                  "code": "'geonameid'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "country_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "country_code"
+                  },
+                  "code": "'country_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "admin1_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "admin1_code"
+                  },
+                  "code": "'admin1_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "admin2_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "admin2_code"
+                  },
+                  "code": "'admin2_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 666,
+        "y": 954
+      }
     }
   ],
   "hops": [
@@ -4822,21 +4241,6 @@
       }
     },
     {
-      "id": "d4d5573c-c3eb-4b15-8f9d-1282906731f0",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_70cfceed-cebe-41a7-ab2a-c140f0282431",
-      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_abcef398-8cd6-42f7-a5c7-e6ba803601a7",
-      "fromGate": "out",
-      "toGate": "lookup",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
       "id": "765a9d3a-55ff-4981-b766-558ce708ff07",
       "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_18e6a9a6-c742-456b-8f0b-3668c89f31f6",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.calculator_6f30fe16-8d5a-4a8a-886b-2b869eafabc9",
@@ -4857,21 +4261,6 @@
       "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_abcef398-8cd6-42f7-a5c7-e6ba803601a7",
       "fromGate": "out",
       "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
-      "id": "e83f7bc8-3713-468b-b172-06150ab5a500",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_3e9c146c-e6fb-4a61-ae45-836664ab546e",
-      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_ad82d000-d1a9-44ea-ad1b-125bebc2788c",
-      "fromGate": "out",
-      "toGate": "lookup",
       "disabled": false,
       "partitioner": {
         "widgetType": "expression/code",
@@ -5092,51 +4481,6 @@
       }
     },
     {
-      "id": "2da4f965-6fd6-42cc-85b2-96aa17c90d5b",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_fb669551-6ab7-469a-ac47-71c4678a6629",
-      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_139db797-72ea-47f6-97a7-e1beb3d2a21d",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
-      "id": "591fd6f4-9e12-4cca-be63-0ecb16c29c39",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_139db797-72ea-47f6-97a7-e1beb3d2a21d",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.calculator_6768b33c-8b7c-4c75-8b1f-ecdd9e423b70",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
-      "id": "044a5f58-66db-48cc-9826-e605cea7c066",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_13ec07ce-b366-4456-beab-06c52a2172c4",
-      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_139db797-72ea-47f6-97a7-e1beb3d2a21d",
-      "fromGate": "out",
-      "toGate": "lookup",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
       "id": "b87d0ae7-5eee-4d46-9575-c7391e141908",
       "fromStep": "com.twineworks.tweakstreet.library.steps.flatmap.getitems_a92e3b86-536e-4296-ad14-f5236c820906",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.dummy_461cd1fe-26ba-48e5-9163-732e68b698cc",
@@ -5157,6 +4501,51 @@
       "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_3ea9dcc5-2acb-4e96-a603-9e7516de0c7c",
       "fromGate": "out",
       "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "ab12c51b-3c9a-4557-bbf3-5965dc1955e2",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_fb669551-6ab7-469a-ac47-71c4678a6629",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.calculator_6768b33c-8b7c-4c75-8b1f-ecdd9e423b70",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "16d566e1-b6ed-4250-88d9-6fdc7978efe8",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_b72e3b9a-0f65-4eb3-98ba-da56b4cf7a9f",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_abcef398-8cd6-42f7-a5c7-e6ba803601a7",
+      "fromGate": "out",
+      "toGate": "lookup",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "85c26036-62e8-4426-9d4d-8e9bf34b4b2a",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_df821a49-3599-466e-8bab-3084ddb6db46",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_ad82d000-d1a9-44ea-ad1b-125bebc2788c",
+      "fromGate": "out",
+      "toGate": "lookup",
       "disabled": false,
       "partitioner": {
         "widgetType": "expression/code",

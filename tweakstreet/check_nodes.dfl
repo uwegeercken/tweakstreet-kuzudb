@@ -1,9 +1,8 @@
 {
-  "type": "module",
+  "type": "data-flow",
   "appVersion": "1.20.0",
   "properties": {
     "meta": {
-      "showingComment": true,
       "comment": {
         "markdown": {
           "text": {
@@ -24,7 +23,31 @@
           "collapsed": true
         }
       },
-      "role": "config"
+      "showingComment": true
+    },
+    "editor": {
+      "showParameters": true,
+      "showVariables": true,
+      "showServices": true,
+      "dialogWidth": "wide"
+    },
+    "imports": {
+      "code": "# import the standard library\n# import core, data, strings, time, math, fun, locale, regex, bin, decimals from 'std';\n",
+      "size": {
+        "width": 0,
+        "height": 102
+      },
+      "editor": {
+        "collapsed": false
+      }
+    },
+    "parameters": {
+      "parameters": {
+        "list": []
+      },
+      "editor": {
+        "collapsed": false
+      }
     },
     "variables": {
       "variables": {
@@ -33,12 +56,16 @@
             "name": "rootFolder",
             "type": "any",
             "value": {
-              "widgetType": "expression/string",
+              "widgetType": "expression/code",
               "widgetData": {
-                "interpolation": true,
-                "text": "/home/uwe/development/git/tweakstreet-kuzudb"
+                "text": "$config.vars.rootFolder",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
               },
-              "code": "'/home/uwe/development/git/tweakstreet-kuzudb'"
+              "code": "$config.vars.rootFolder"
             }
           },
           {
@@ -47,14 +74,14 @@
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "rootFolder .. \"/geonames\"",
+                "text": "$config.vars.geonamesFolder",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "rootFolder .. \"/geonames\""
+              "code": "$config.vars.geonamesFolder"
             }
           },
           {
@@ -63,14 +90,14 @@
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "geonamesFolder .. \"/allCountries.txt\"",
+                "text": "$config.vars.allCountriesFile",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "geonamesFolder .. \"/allCountries.txt\""
+              "code": "$config.vars.allCountriesFile"
             }
           },
           {
@@ -79,14 +106,14 @@
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "geonamesFolder .. \"/feature_classes.txt\"",
+                "text": "$config.vars.featureClassesFile",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "geonamesFolder .. \"/feature_classes.txt\""
+              "code": "$config.vars.featureClassesFile"
             }
           },
           {
@@ -95,14 +122,14 @@
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "geonamesFolder .. \"/continent_codes.txt\"",
+                "text": "$config.vars.continentCodesFile",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "geonamesFolder .. \"/continent_codes.txt\""
+              "code": "$config.vars.continentCodesFile"
             }
           },
           {
@@ -111,14 +138,14 @@
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "geonamesFolder .. \"/countryInfo.txt\"",
+                "text": "$config.vars.countryInfoFile",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "geonamesFolder .. \"/countryInfo.txt\""
+              "code": "$config.vars.countryInfoFile"
             }
           },
           {
@@ -127,14 +154,46 @@
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "geonamesFolder .. \"/feature_codes_en.txt\"",
+                "text": "$config.vars.featureCodesFile",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "geonamesFolder .. \"/feature_codes_en.txt\""
+              "code": "$config.vars.featureCodesFile"
+            }
+          },
+          {
+            "name": "admin1codesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.admin1codesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.admin1codesFile"
+            }
+          },
+          {
+            "name": "admin2codesFile",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.admin2codesFile",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.admin2codesFile"
             }
           },
           {
@@ -143,14 +202,14 @@
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "geonamesFolder .. \"/adminCode5.txt\"",
+                "text": "$config.vars.admin5codesFile",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "geonamesFolder .. \"/adminCode5.txt\""
+              "code": "$config.vars.admin5codesFile"
             }
           },
           {
@@ -159,14 +218,14 @@
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "rootFolder .. \"/data\"",
+                "text": "$config.vars.dataOutputFolder",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "rootFolder .. \"/data\""
+              "code": "$config.vars.dataOutputFolder"
             }
           },
           {
@@ -175,14 +234,14 @@
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "geonamesFolder .. \"/geonames-01.db\"",
+                "text": "$config.vars.geonamesDatabase",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "geonamesFolder .. \"/geonames-01.db\""
+              "code": "$config.vars.geonamesDatabase"
             }
           }
         ]
@@ -199,62 +258,16 @@
             "type": "any",
             "category": "jdbc",
             "value": {
-              "widgetType": "expression/database",
+              "widgetType": "expression/code",
               "widgetData": {
-                "type": "com.twineworks.tweakstreet.library.jdbc.generic",
-                "db": {
-                  "driverClass": {
-                    "widgetType": "expression/string",
-                    "widgetData": {
-                      "interpolation": true,
-                      "text": "org.sqlite.JDBC"
-                    },
-                    "code": "'org.sqlite.JDBC'"
-                  },
-                  "jdbcUrl": {
-                    "widgetType": "expression/string",
-                    "widgetData": {
-                      "interpolation": true,
-                      "text": "jdbc:sqlite:${vars.geonamesDatabase}"
-                    },
-                    "code": "let {\n  string literal_0: 'jdbc:sqlite:';\n  string interpolation_1: vars.geonamesDatabase;\n}\nliteral_0 .. interpolation_1"
-                  },
-                  "properties": {
-                    "widgetType": "expression/dict",
-                    "widgetData": {
-                      "table": {
-                        "list": []
-                      }
-                    },
-                    "code": "{}"
-                  },
-                  "defaultTz": {
-                    "widgetType": "expression/timezone",
-                    "widgetData": {
-                      "value": "Europe/Zurich"
-                    },
-                    "code": "'Europe/Zurich'"
-                  },
-                  "connectSql": {
-                    "widgetType": "expression/text",
-                    "widgetData": {
-                      "text": "",
-                      "size": {
-                        "width": 0,
-                        "height": 60
-                      },
-                      "syntax": "sql",
-                      "lineSeparator": "\n",
-                      "interpolation": false
-                    },
-                    "code": "''"
-                  },
-                  "editor": {},
-                  "model": {}
+                "text": "$config.services.`sqlite-geonames`",
+                "size": {
+                  "width": 0,
+                  "height": 36
                 },
-                "summary": true
+                "syntax": "tweakflow"
               },
-              "code": "{\n  :type 'com.twineworks.tweakstreet.library.jdbc.generic',\n  :db {\n    :driverClass 'org.sqlite.JDBC',\n    :jdbcUrl let {\n  string literal_0: 'jdbc:sqlite:';\n  string interpolation_1: vars.geonamesDatabase;\n}\nliteral_0 .. interpolation_1,\n    :properties {},\n    :defaultTz 'Europe/Zurich',\n    :connectSql ''\n  }\n}"
+              "code": "$config.services.`sqlite-geonames`"
             }
           }
         ]
@@ -262,22 +275,8 @@
       "editor": {
         "collapsed": false
       }
-    },
-    "imports": {
-      "code": "# import the standard library\nimport core, data, strings, time, math, fun, locale, regex, bin, decimals from 'std';\n",
-      "size": {
-        "width": 0,
-        "height": 102
-      },
-      "editor": {
-        "collapsed": false
-      }
-    },
-    "editor": {
-      "showVariables": true,
-      "showServices": true,
-      "dialogWidth": "wide"
-    },
-    "model": {}
-  }
+    }
+  },
+  "steps": [],
+  "hops": []
 }

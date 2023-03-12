@@ -165,38 +165,6 @@
             }
           },
           {
-            "name": "admin1codesFile",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.admin1codesFile",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.admin1codesFile"
-            }
-          },
-          {
-            "name": "admin2codesFile",
-            "type": "any",
-            "value": {
-              "widgetType": "expression/code",
-              "widgetData": {
-                "text": "$config.vars.admin2codesFile",
-                "size": {
-                  "width": 0,
-                  "height": 36
-                },
-                "syntax": "tweakflow"
-              },
-              "code": "$config.vars.admin2codesFile"
-            }
-          },
-          {
             "name": "admin5codesFile",
             "type": "any",
             "value": {
@@ -2726,6 +2694,23 @@
                 }
               },
               {
+                "name": "admin5_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "admin5_code"
+                  },
+                  "code": "'admin5_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
                 "name": "population",
                 "type": "long",
                 "mapping": {
@@ -3033,18 +3018,18 @@
                 }
               },
               {
-                "name": "feature_class",
+                "name": "asciiname",
                 "value": {
                   "widgetType": "expression/field-value-ref",
                   "widgetData": {
                     "fieldSelect": {
                       "value": {
                         "gate": "in",
-                        "name": "feature_class"
+                        "name": "asciiname"
                       }
                     }
                   },
-                  "code": "::in.feature_class"
+                  "code": "::in.asciiname"
                 },
                 "formatter": {
                   "widgetType": "expression/nil",
@@ -3053,18 +3038,38 @@
                 }
               },
               {
-                "name": "feature_code",
+                "name": "latitude",
                 "value": {
                   "widgetType": "expression/field-value-ref",
                   "widgetData": {
                     "fieldSelect": {
                       "value": {
                         "gate": "in",
-                        "name": "feature_code"
+                        "name": "latitude"
                       }
                     }
                   },
-                  "code": "::in.feature_code"
+                  "code": "::in.latitude"
+                },
+                "formatter": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "longitude",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "longitude"
+                      }
+                    }
+                  },
+                  "code": "::in.longitude"
                 },
                 "formatter": {
                   "widgetType": "expression/nil",
@@ -3117,6 +3122,120 @@
                     "model": {}
                   },
                   "code": "let {\n  make_formatter: (string pattern, string locale, string nilValue) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Formatters$number_formatter'};\n}\nmake_formatter('0', 'en-US', '')\n"
+                }
+              },
+              {
+                "name": "elevation",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "elevation"
+                      }
+                    }
+                  },
+                  "code": "::in.elevation"
+                },
+                "formatter": {
+                  "widgetType": "expression/format-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_formatter: (string pattern, string locale, string nilValue) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Formatters$number_formatter'};\n}\nmake_formatter('0', 'en-US', '')\n"
+                }
+              },
+              {
+                "name": "dem",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "dem"
+                      }
+                    }
+                  },
+                  "code": "::in.dem"
+                },
+                "formatter": {
+                  "widgetType": "expression/format-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_formatter: (string pattern, string locale, string nilValue) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Formatters$number_formatter'};\n}\nmake_formatter('0', 'en-US', '')\n"
+                }
+              },
+              {
+                "name": "timezone",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "timezone"
+                      }
+                    }
+                  },
+                  "code": "::in.timezone"
+                },
+                "formatter": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
                 }
               },
               {
