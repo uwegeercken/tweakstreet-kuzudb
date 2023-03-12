@@ -24,28 +24,49 @@ The processing of this data here is split into a main control flow and three dat
 
 The first part of the pipeline reads the allCountries.txt geonames file, filters the data by certain feature codes and stores the data in multiple tables in a local Sqlite database.
 
-Sqlite Tables:
-- admin
+### Load data
+Data from the following files:
+- allCountries.txt
+- feature_codes_en.txt
+- feature_classes.txt
+- adminCode5.txt
+- countryInfo.txt
+
+Note 1: The countryInfo.txt file has multiple lines of comments at the top. These need to be removed before processing (keep the header row).
+Note 2: The adminCode5.txt is from the adminCode5.zip file and needs to be extracted before processing.
+
+The data from the files is imported into Sqlite tables:
+- admindivision
 - continent
 - country
-- geonames
+- geoname
+- feature
 
-Data is devided into following categories:
-- Geoname entries of type "country"
-- Geoname entries of type "continent"
-- Geoname entries of type "admin division"
-- all other Geoname entries
+Data is devided during the ETL into following categories:
+- Geoname entries of type "country" - for the country table
+- Geoname entries of type "continent" - for the continent table
+- Geoname entries of type "admin division" - for the admindivision table
+- all other Geoname entries - for the geoname table
 
-The second part of the ETL pipeline prepares the data to produces node and relations information.
-- Data from the feature class and feature code text file is converted into nodes
-- Data from the admin table is converted into nodes
-- Data from the geonames table is converted into nodes
-- Data from the geonames table is matched against admin1 to admin4 divisions from the admin table to produce relations between geonames and admin divisions
-- Data from the geonames tables is matched against the country table to produce relations between geonames and allCountries
-- Data from the geonames tables is matched against the features table to produce relations between geonames and features
+### Create node files
+Data is read from the Sqlite tables and the relevant nodes files are generated:
+- node_feature.csv
+- node_admin_division.csv
+- node_country.csv
+- node_continent.csv
+- node_geoname.csv
+
+### Create relations files
+The last part of the ETL pipeline prepares the data to produces the relations.
+- data from the geoname and country table is used to output the relation of geonames to countries - for the relation_geoname_country.csv files
+- data from the country and continent table is used to output the relation of countries to continents - for the relation_country_continent.csv files
+- data from the geoname table is used to output the relation of geonames to features - for the relation_geoname_feature.csv file
+- data from the geoname and admindivision table is used to output the relation of geonames to admin divisions - for the relation_geoname_admin_division.csv file
 
 ## Cypher
 A cypher script is available which creates the schemas for the nodes and relations and them imports the data. There is an additional script to delete the structures in kuzudb.
+
+There are two scripts for counting the nodes and relations and one with some query examples.
 
 ![grafik](https://user-images.githubusercontent.com/6207140/222886182-171b3715-64fb-4a0c-b92e-76cae5a75d43.png)
 
@@ -54,18 +75,22 @@ First go to http://download.geonames.org/export/dump and download following file
 - allCountries.txt
 - feature_classes.txt
 - feature_codes_en.txt
-- admin1codes.csv
-- admin2codes.csv
+- countryInfo.txt
+- adminCode5.zip
 
-Put the data into a folder of your choice.
+Put the data into a folder of your choice. Unzip the adminCode5.zip file.
 
-To run the flows, you first need to install tweakstreet - it is available for Linux, Mac and WIndows. Once done, open the controlflow "geonames2kuzu.cfl". Connect the module "module.tsm" and open it. The module contains configuration details. Specifically you need to adjust the "rootFolder" variable to your needs. The "dataOutputFolder" variable defines where the resulting csv files will be generated.
+To run the flows, you first need to install tweakstreet - it is available for Linux, Mac and WIndows. Once done, open the controlflow "geonames2kuzu.cfl". Connect the module "module.tsm" (select "File" and then "Choose Config Module" from the menu). The module contains configuration details. Specifically you need to adjust the "rootFolder" variable to your needs. The "dataOutputFolder" variable defines where the resulting csv files will be generated.
 
 ![grafik](https://user-images.githubusercontent.com/6207140/222886105-5033ec86-59f6-41ef-a1eb-d4010a10d161.png)
 
-Now run the control flow and wait until it finishes - hopefully without issues. At this point you can run the cypher script (adjust the path info according to your needs) to import the data.
+To run the ETL process, in the Tweakstreet ETL tool right click the canvas and select 'Run...') and check both parameters 'clearAndLoadDatabase' and 'createCsvFiles' and click the "Run" button. Wait until it finishes - hopefully without issues.
 
-Some statictics:
+At this point you can run the cypher script (adjust the path info according to your needs) to import the data like this:
+
+./kuzu -i [database path] < create_nodes_and_relations.cyp
+
+Some statictics (using the current files from geonames.org):
 - Node table Geoname: 11842832
 - Node Table Feature: 680
 - Node table Country: 193
@@ -74,7 +99,6 @@ Some statictics:
 - Relation table isPartOf: 11734891
 - Relation table belongsTo: 21863415
 
-
 Let me know if you find bug but also if you want to participate in further extending the idea.
 
-last update: uwe.geercken@web.de - 2023-03-04
+last update: uwe.geercken@web.de - 2023-03-12
