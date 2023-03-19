@@ -1,11 +1,19 @@
+match(n:Geoname) return label(n), count(n) as total
+union
+match(n:AdminDivision) return label(n), count(n) as total
+union
+match(n:Country) return label(n), count(n) as total
+union
+match(n:Continent) return label(n), count(n) as total
+union
+match(n:Feature) return label(n), count(n) as total;
 
-match(n:Geoname) return count(n) as total_nodes_geonames;
-match(n:AdminDivision) return count(n) as total_nodes_admindivisions;
-match(n:Country) return count(n) as total_nodes_countries;
-match(n:Continent) return count(n) as total_nodes_continents;
-match(n:Feature) return count(n) as total_nodes_features;
-match()-[r:belongsTo]->() return count(r) as total_relations_belongsTo;
-match()-[r:isPartOf]->() return count(r) as total_relations_isPartOf;
-match()-[r:isTypeOf]->() return count(r) as total_relations_isTypeOf;
-match()-[r:inContinent]->() return count(r) as total_relations_inContinent;
+
+match()-[r:belongsTo]->() return label(r), count(r) as total
+union
+match()-[r:isPartOf]->() return label(r), count(r) as total
+union
+match()-[r:isTypeOf]->() return label(r), count(r) as total
+union
+match()-[r:inContinent]->() return label(r), count(r) as total;
 
