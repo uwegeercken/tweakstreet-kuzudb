@@ -7,10 +7,10 @@ create node table AdminDivision(geonameid int64, name string, feature_class stri
 create node table Country(geonameid int64, name string, code string, population int64, modification_date date, primary key(geonameid));
 create node table Continent(geonameid int64, name string, code string, population int64, modification_date date, primary key(geonameid));
 
-create rel table belongsTo(from Geoname to AdminDivision);
-create rel table isTypeOf(from Geoname to Feature);
-create rel table isPartOf(from Geoname to Country);
-create rel table inContinent(from Country to Continent);
+create rel table belongsTo(from Geoname to AdminDivision, MANY_MANY);
+create rel table isTypeOf(from Geoname to Feature, MANY_ONE);
+create rel table isPartOf(from Geoname to Country, MANY_ONE);
+create rel table inContinent(from Country to Continent, MANY_ONE);
 
 copy AdminDivision from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_admin_division.csv";
 copy Country from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_country.csv";
