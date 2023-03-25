@@ -18,6 +18,10 @@ match(c:Country)<-[:isPartOf]-(g:Geoname)
 where c.code='DE' 
 return max(g.elevation);
 
+# get the highest month of all modification dates in 2023
+match(g:Geoname) where date_part('year',g.modification_date) = 2023
+return max(date_part('month',g.modification_date));
+
 # match top 5 populated places for the selected country
 match(c:Country)<-[:isPartOf]-(g:Geoname)-[]->(f:Feature)
 where c.code='DE' and f.code=~ 'PPL.'
@@ -36,11 +40,11 @@ with c, count(r) as numberOfAirports
 where numberOfAirports >100
 return c.name as country, numberOfAirports;
 
-# match feature of type Airport, then match the continents, return number of airports per continent
-match(c:Country)<-[:isPartOf]-(:Geoname)-[r:isTypeOf]->(f:Feature) 
+# match feature of type Airport and match the continents, return number of airports per continent
+match(co:Continent)<-[r3:inContinent]-(c:Country)<-[r2:isPartOf]-(g:Geoname)-[r:isTypeOf]->(f:Feature)   
 where f.code='AIRP'
-with c,r
-match (co:Continent)<-[:inContinent]-(c)
-return co.name, count(r) as numberOfAirports;
+with co,count(r) as numberOfAirports
+return co.name, numberOfAirports
+order by co.name;
 
 
