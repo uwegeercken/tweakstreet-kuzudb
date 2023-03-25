@@ -1,4 +1,4 @@
-:thread 24
+:thread 6
 :logging_level debug
 
 create node table Geoname(geonameid int64, name string, asciiname string, latitude double, longitude double, population int64, elevation int64, dem string, timezone string, modification_date date, primary key(geonameid));
@@ -12,11 +12,11 @@ create rel table isTypeOf(from Geoname to Feature, MANY_ONE);
 create rel table isPartOf(from Geoname to Country, MANY_ONE);
 create rel table inContinent(from Country to Continent, MANY_ONE);
 
+copy Geoname from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_geoname.csv";
 copy AdminDivision from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_admin_division.csv";
+copy Feature from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_feature.csv";
 copy Country from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_country.csv";
 copy Continent from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_continent.csv";
-copy Feature from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_feature.csv";
-copy Geoname from "/home/uwe/development/git/tweakstreet-kuzudb/data/node_geoname.csv";
 
 copy belongsTo from "/home/uwe/development/git/tweakstreet-kuzudb/data/relation_geoname_admin_division.csv";
 copy isPartOf from "/home/uwe/development/git/tweakstreet-kuzudb/data/relation_geoname_country.csv";
