@@ -35,15 +35,15 @@ Relations created:
 threads: 6
 logging level: info
 
-copy Geoname: 43720.56ms (executing)
-copy AdminDivision: 1208.92ms (executing)
-copy Feature: 61.79ms (executing)
-copy Country: 48.12ms (executing)
-copy Continent: 14.44ms (executing)
+- copy Geoname: 43720.56ms (executing)
+- copy AdminDivision: 1208.92ms (executing)
+- copy Feature: 61.79ms (executing)
+- copy Country: 48.12ms (executing)
+- copy Continent: 14.44ms (executing)
 
-copy belongsTo: 29060.51ms (executing)
-copy isPartOf: 20576.44ms (executing)
-copy isTypeOf: 28328.69ms (executing)
-copy inContinent: 57.87ms (executing)
+- copy belongsTo: 29060.51ms (executing)
+- copy isPartOf: 20576.44ms (executing)
+- copy isTypeOf: 28328.69ms (executing)
+- copy inContinent: 57.87ms (executing)
 
 
