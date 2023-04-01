@@ -1,5 +1,5 @@
 # tweakstreet-kuzudb
-Tweakstreet ETL to load data to Kuzudb.
+Tweakstreet ETL to load geonames.org geographic data to Kuzudb.
 
 ## General
 The main fokus is on loading data into Kuzudb using the command client. The Tweakstreet ETL tool - https://tweakstreet.io - is used to prepare the https://www.geonames.org data, so it can efficiently be imported into Kuzudb - https://kuzudb.com.
@@ -105,4 +105,4 @@ Some statictics (using the current files from geonames.org):
 
 Let me know if you find bug but also if you want to participate in further extending the idea.
 
-last update: uwe.geercken@web.de - 2023-03-12
+last update: uwe.geercken@web.de - 2023-04-01
