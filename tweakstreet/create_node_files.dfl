@@ -1,6 +1,6 @@
 {
   "type": "data-flow",
-  "appVersion": "1.20.0",
+  "appVersion": "1.21.0",
   "properties": {
     "meta": {
       "comment": {
@@ -1216,7 +1216,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.input.sqlinput_6e7699a4-961f-4a8f-aba6-ad276b3f2b2c",
-      "name": "SQL Input: Countries",
+      "name": "SQL Input: All Countries",
       "type": "com.twineworks.tweakstreet.library.steps.input.sqlinput",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -1227,7 +1227,7 @@
       },
       "data": {
         "meta": {
-          "name": "SQL Input: Countries",
+          "name": "SQL Input: All Countries",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -1842,7 +1842,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.input.sqlinput_59093094-5d6c-4107-a059-e676d622b2ab",
-      "name": "SQL Input: geoname",
+      "name": "SQL Input: All Geonames",
       "type": "com.twineworks.tweakstreet.library.steps.input.sqlinput",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -1853,7 +1853,7 @@
       },
       "data": {
         "meta": {
-          "name": "SQL Input: geoname",
+          "name": "SQL Input: All Geonames",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -2809,7 +2809,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.input.sqlinput_f1382627-2aa6-43b5-9016-aac36086bb60",
-      "name": "SQL Input: Continents",
+      "name": "SQL Input: All Continents",
       "type": "com.twineworks.tweakstreet.library.steps.input.sqlinput",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -2820,7 +2820,7 @@
       },
       "data": {
         "meta": {
-          "name": "SQL Input: Continents",
+          "name": "SQL Input: All Continents",
           "showingComment": false,
           "comment": {
             "markdown": {

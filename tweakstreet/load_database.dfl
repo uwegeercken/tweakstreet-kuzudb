@@ -1,6 +1,6 @@
 {
   "type": "data-flow",
-  "appVersion": "1.20.0",
+  "appVersion": "1.21.0",
   "properties": {
     "meta": {
       "comment": {
@@ -2108,7 +2108,7 @@
         "model": {}
       },
       "pos": {
-        "x": 170,
+        "x": 138,
         "y": 266
       }
     },
@@ -3121,7 +3121,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_79276d41-ed33-43f0-8691-94e5562cb7f8",
-      "name": "Stream Lookup",
+      "name": "Stream Lookup: Country Info",
       "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3132,7 +3132,7 @@
       },
       "data": {
         "meta": {
-          "name": "Stream Lookup",
+          "name": "Stream Lookup: Country Info",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -3473,7 +3473,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_24b6553d-e95d-4194-bb60-9328cd2cff15",
-      "name": "Stream Lookup",
+      "name": "Stream Lookup: Continents",
       "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3484,7 +3484,7 @@
       },
       "data": {
         "meta": {
-          "name": "Stream Lookup",
+          "name": "Stream Lookup: Continents",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -3839,7 +3839,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_e5e9efc7-08ea-47b2-9c0d-65a0939f737d",
-      "name": "Stream Lookup",
+      "name": "Stream Lookup: ADM5",
       "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3850,7 +3850,7 @@
       },
       "data": {
         "meta": {
-          "name": "Stream Lookup",
+          "name": "Stream Lookup: ADM5",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -4402,7 +4402,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_4a460106-7e3a-4339-aaba-37cd7436b572",
-      "name": "Stream Lookup",
+      "name": "Stream Lookup: Feature Classes",
       "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -4413,7 +4413,7 @@
       },
       "data": {
         "meta": {
-          "name": "Stream Lookup",
+          "name": "Stream Lookup: Feature Classes",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -4511,7 +4511,7 @@
         "model": {}
       },
       "pos": {
-        "x": 874,
+        "x": 938,
         "y": 1034
       }
     },
@@ -4705,13 +4705,13 @@
         "model": {}
       },
       "pos": {
-        "x": 874,
-        "y": 1210
+        "x": 938,
+        "y": 1226
       }
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.map.calculator_39f63be7-cea6-4535-9177-1b6334069f77",
-      "name": "Calculator",
+      "name": "Calculator: Feature class/code",
       "type": "com.twineworks.tweakstreet.library.steps.map.calculator",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -4722,7 +4722,7 @@
       },
       "data": {
         "meta": {
-          "name": "Calculator",
+          "name": "Calculator: Feature class/code",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -4905,7 +4905,7 @@
       },
       "pos": {
         "x": 426,
-        "y": 1210
+        "y": 1226
       }
     },
     {
