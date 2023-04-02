@@ -1,0 +1,1 @@
+geonameid:ID(Geoname),name,asciiname,latitude:double,longitude:double,population:long,elevation:int,dem,timezone,modification_date:date
