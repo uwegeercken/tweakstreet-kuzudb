@@ -18,7 +18,7 @@ A.PCLH	historical political entity	a former political entity
 A.PCLI	independent political entity	
 A.PCLIX	section of independent political entity	
 A.PCLS	semi-independent political entity	
-PRSH.A	parish	an ecclesiastical district
+A.PRSH	parish	an ecclesiastical district
 A.TERR	territory	
 A.ZN	zone	
 A.ZNB	buffer zone	a zone recognized as a buffer between two nations in which military presence is minimal or absent

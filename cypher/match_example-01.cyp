@@ -18,9 +18,9 @@ match(c:Country)<-[:isPartOf]-(g:Geoname)
 where c.code='DE' 
 return max(g.elevation);
 
-# get the highest month of all modification dates in 2023
-match(g:Geoname) where date_part('year',g.modification_date) = 2023
-return max(date_part('month',g.modification_date));
+# get the highest modification dates
+match(g:Geoname) 
+return max(g.modification_date);
 
 # match top 5 populated places for the selected country
 match(c:Country)<-[:isPartOf]-(g:Geoname)-[]->(f:Feature)
@@ -47,4 +47,9 @@ with co,count(r) as numberOfAirports
 return co.name, numberOfAirports
 order by co.name;
 
+# match top 5 features in a country
+match(c:Country)<-[:isPartOf]-(:Geoname)-[isTypeOf]->(f:Feature)
+where c.code='DE'
+return f.class_code,count(f) as total
+order by total desc limit 10;
 
