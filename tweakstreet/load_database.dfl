@@ -1,6 +1,6 @@
 {
   "type": "data-flow",
-  "appVersion": "1.21.0",
+  "appVersion": "1.20.0",
   "properties": {
     "meta": {
       "comment": {
@@ -1328,7 +1328,7 @@
           }
         },
         "sqlEditor": {
-          "text": "CREATE TABLE geonames (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  asciiname VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(255),\n  modification_date TIMESTAMP\n)",
+          "text": "CREATE TABLE geonames (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  asciiname VARCHAR(200),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(20),\n  country_code VARCHAR(255),\n  cc2 VARCHAR(255),\n  admin1_code VARCHAR(20),\n  admin2_code VARCHAR(80),\n  admin3_code VARCHAR(20),\n  admin4_code VARCHAR(20),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(40),\n  modification_date TIMESTAMP\n)",
           "size": {
             "width": 0,
             "height": 180
@@ -2390,7 +2390,7 @@
           }
         },
         "sqlEditor": {
-          "text": "CREATE TABLE country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  continent_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+          "text": "CREATE TABLE country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(20),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
           "size": {
             "width": 0,
             "height": 180
@@ -2683,7 +2683,7 @@
           }
         },
         "sqlEditor": {
-          "text": "CREATE TABLE continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  code VARCHAR(255),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+          "text": "CREATE TABLE continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  code VARCHAR(2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(20),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
           "size": {
             "width": 0,
             "height": 180
@@ -3088,7 +3088,7 @@
           }
         },
         "sqlEditor": {
-          "text": "CREATE TABLE admin (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(255),\n  feature_code VARCHAR(255),\n  country_code VARCHAR(255),\n  admin1_code VARCHAR(255),\n  admin2_code VARCHAR(255),\n  admin3_code VARCHAR(255),\n  admin4_code VARCHAR(255),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+          "text": "CREATE TABLE admin (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(20),\n  country_code VARCHAR(2),\n  admin1_code VARCHAR(20),\n  admin2_code VARCHAR(80),\n  admin3_code VARCHAR(20),\n  admin4_code VARCHAR(20),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
           "size": {
             "width": 0,
             "height": 180
@@ -4396,7 +4396,7 @@
         "model": {}
       },
       "pos": {
-        "x": 186,
+        "x": 122,
         "y": 1034
       }
     },
@@ -4867,7 +4867,7 @@
         "model": {}
       },
       "pos": {
-        "x": 426,
+        "x": 458,
         "y": 1034
       }
     },
@@ -4904,7 +4904,7 @@
         "editor": {}
       },
       "pos": {
-        "x": 426,
+        "x": 458,
         "y": 1226
       }
     },
@@ -5044,6 +5044,22 @@
           "writeFields": {
             "list": [
               {
+                "name": "generated_id",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "generated_id"
+                      }
+                    }
+                  },
+                  "code": "::in.generated_id"
+                }
+              },
+              {
                 "name": "class_code",
                 "type": "string",
                 "value": {
@@ -5154,7 +5170,7 @@
           }
         },
         "sqlEditor": {
-          "text": "CREATE TABLE feature (\n  class_code VARCHAR(255) NOT NULL PRIMARY KEY,\n  name VARCHAR(255),\n  description VARCHAR(255),\n  class VARCHAR(255),\n  code VARCHAR(255),\n  class_description VARCHAR(255)\n)",
+          "text": "CREATE TABLE feature (\n  generated_id INTEGER NOT NULL PRIMARY KEY,\n  class_code VARCHAR(22) NOT NULL,\n  name VARCHAR(200),\n  description VARCHAR(200),\n  class VARCHAR(1),\n  code VARCHAR(20),\n  class_description VARCHAR(200)\n)",
           "size": {
             "width": 0,
             "height": 180
@@ -5182,6 +5198,117 @@
       },
       "pos": {
         "x": 1194,
+        "y": 1034
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.features.core.steps.counter_b8fd2294-fd98-47ec-b6de-db411efb8403",
+      "name": "Counter",
+      "type": "com.twineworks.tweakstreet.features.core.steps.counter",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Counter",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "generated_id",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/result-ref",
+                  "widgetData": {
+                    "value": "::results.counter"
+                  },
+                  "code": "::results.counter"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "startAt": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1000"
+          },
+          "code": "1000"
+        },
+        "increment": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1"
+          },
+          "code": "1"
+        },
+        "resetWhen": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "false",
+            "size": {
+              "width": 0,
+              "height": 36
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "false"
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showWriteFields": true,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 314,
         "y": 1034
       }
     }
@@ -5443,21 +5570,6 @@
       }
     },
     {
-      "id": "1942d849-ed90-4d12-8204-466e8ae373c2",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_a6c6ecd0-678f-47e0-833d-4ccb3a64b733",
-      "toStep": "com.twineworks.tweakstreet.library.steps.bool.filter_029f4099-7ea1-44f0-9a50-aeeab6f61e3c",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
       "id": "5744d9c8-c6a4-4266-93a0-d07060c00593",
       "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_029f4099-7ea1-44f0-9a50-aeeab6f61e3c",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.calculator_39f63be7-cea6-4535-9177-1b6334069f77",
@@ -5491,6 +5603,36 @@
       "id": "f48a322f-9070-4e7e-9f1e-8528d8303b92",
       "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_4a460106-7e3a-4339-aaba-37cd7436b572",
       "toStep": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_5f29b228-e608-4664-bae3-b5996573f4c3",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "060b1a86-03ad-48ed-9895-c6582d4196f3",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_a6c6ecd0-678f-47e0-833d-4ccb3a64b733",
+      "toStep": "com.twineworks.tweakstreet.features.core.steps.counter_b8fd2294-fd98-47ec-b6de-db411efb8403",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "91466e93-dec8-43b8-ae05-339601c84bc2",
+      "fromStep": "com.twineworks.tweakstreet.features.core.steps.counter_b8fd2294-fd98-47ec-b6de-db411efb8403",
+      "toStep": "com.twineworks.tweakstreet.library.steps.bool.filter_029f4099-7ea1-44f0-9a50-aeeab6f61e3c",
       "fromGate": "out",
       "toGate": "in",
       "disabled": false,

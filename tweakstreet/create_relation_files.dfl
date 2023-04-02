@@ -1,6 +1,6 @@
 {
   "type": "data-flow",
-  "appVersion": "1.21.0",
+  "appVersion": "1.20.0",
   "properties": {
     "meta": {
       "comment": {
@@ -2977,18 +2977,18 @@
                 }
               },
               {
-                "name": "fullFeatureCode",
+                "name": "generated_id",
                 "value": {
                   "widgetType": "expression/field-value-ref",
                   "widgetData": {
                     "fieldSelect": {
                       "value": {
                         "gate": "in",
-                        "name": "fullFeatureCode"
+                        "name": "lookup_generated_id"
                       }
                     }
                   },
-                  "code": "::in.fullFeatureCode"
+                  "code": "::in.lookup_generated_id"
                 },
                 "formatter": {
                   "widgetType": "expression/nil",
@@ -3056,7 +3056,7 @@
         "model": {}
       },
       "pos": {
-        "x": 1578,
+        "x": 1834,
         "y": 890
       }
     },
@@ -4637,6 +4637,279 @@
         "x": 906,
         "y": 522
       }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.sqlinput_6bb2b8b6-c0e9-472b-a8ca-e35516ef7b52",
+      "name": "SQL Input: feature",
+      "type": "com.twineworks.tweakstreet.library.steps.input.sqlinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "SQL Input: feature",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "connection": {
+          "widgetType": "expression/database-ref",
+          "widgetData": {
+            "name": "sqlite-geonames"
+          },
+          "code": "::flow.services.`sqlite-geonames`"
+        },
+        "fetchSize": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "10000"
+          },
+          "code": "10000"
+        },
+        "rowLimit": {
+          "widgetType": "expression/nil",
+          "widgetData": {},
+          "code": "nil"
+        },
+        "query": {
+          "widgetType": "expression/text",
+          "widgetData": {
+            "text": "select \n  generated_id,\n  class_code\nfrom\n  feature\n",
+            "size": {
+              "width": 0,
+              "height": 291
+            },
+            "syntax": "sql",
+            "lineSeparator": "\n",
+            "interpolation": false
+          },
+          "code": "'select \n  generated_id,\n  class_code\nfrom\n  feature\n'"
+        },
+        "jdbcParams": {
+          "widgetType": "expression/list",
+          "widgetData": {
+            "table": {
+              "list": []
+            }
+          },
+          "code": "[]"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "generated_id",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "generated_id"
+                  },
+                  "code": "'generated_id'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "class_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "class_code"
+                  },
+                  "code": "'class_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1546,
+        "y": 1082
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_878bc960-fb69-496e-a715-d94a86017608",
+      "name": "Stream Lookup: feature",
+      "type": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Stream Lookup: feature",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "keyFields": {
+          "fieldPairs": {
+            "list": [
+              {
+                "left": {
+                  "value": {
+                    "gate": "in",
+                    "name": "fullFeatureCode"
+                  }
+                },
+                "right": {
+                  "value": {
+                    "gate": "lookup",
+                    "name": "class_code"
+                  }
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "lookup_generated_id",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "results.lookup[:generated_id] default nil",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "results.lookup[:generated_id] default nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "fetchFields": {
+          "value": "lookup_"
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1546,
+        "y": 890
+      }
     }
   ],
   "hops": [
@@ -4749,21 +5022,6 @@
       "id": "d205afe2-a33a-4b26-bc07-fee0ef7507a0",
       "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_6b7d5aa6-2309-4116-b40f-6641168beaf7",
       "toStep": "com.twineworks.tweakstreet.library.steps.flatmap.getitems_a92e3b86-536e-4296-ad14-f5236c820906",
-      "fromGate": "out",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
-      "id": "69162b77-dcf0-4b6f-8189-43cf331d3132",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_1f65d87d-f165-41ac-bd54-fd16af9636e7",
-      "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_b00677d9-d64c-43a2-a762-8de34baef868",
       "fromGate": "out",
       "toGate": "in",
       "disabled": false,
@@ -5019,6 +5277,51 @@
       "id": "ea6c4a6f-6bdc-461c-8f04-668a84496769",
       "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_6f6d54c7-09ea-4d3f-96bf-d33bcf80fc43",
       "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_3a6a9586-b55d-4694-b63b-970c6a02420b",
+      "fromGate": "out",
+      "toGate": "lookup",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "0693a694-e86c-4afe-bc6f-3a70199f6b59",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_1f65d87d-f165-41ac-bd54-fd16af9636e7",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_878bc960-fb69-496e-a715-d94a86017608",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "986cb62f-21d4-4205-a892-a669cb18746d",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_878bc960-fb69-496e-a715-d94a86017608",
+      "toStep": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_b00677d9-d64c-43a2-a762-8de34baef868",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "eca7a6cd-9ff6-4e2c-b6fd-55321f668766",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.sqlinput_6bb2b8b6-c0e9-472b-a8ca-e35516ef7b52",
+      "toStep": "com.twineworks.tweakstreet.library.steps.streamlookup.streamlookup_878bc960-fb69-496e-a715-d94a86017608",
       "fromGate": "out",
       "toGate": "lookup",
       "disabled": false,
