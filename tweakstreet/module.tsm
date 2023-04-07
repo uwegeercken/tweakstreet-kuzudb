@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "appVersion": "1.20.0",
+  "appVersion": "1.21.0",
   "properties": {
     "meta": {
       "showingComment": true,
@@ -127,14 +127,14 @@
             "value": {
               "widgetType": "expression/code",
               "widgetData": {
-                "text": "geonamesFolder .. \"/feature_codes_en.txt\"",
+                "text": "geonamesFolder .. \"/featureCodes_en.txt\"",
                 "size": {
                   "width": 0,
                   "height": 36
                 },
                 "syntax": "tweakflow"
               },
-              "code": "geonamesFolder .. \"/feature_codes_en.txt\""
+              "code": "geonamesFolder .. \"/featureCodes_en.txt\""
             }
           },
           {
