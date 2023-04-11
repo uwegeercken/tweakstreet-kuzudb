@@ -1,5 +1,5 @@
 :thread 6
-:logging_level debug
+:logging_level info
 
 create node table Geoname(geonameid int64, name string, asciiname string, latitude double, longitude double, population int64, elevation int64, dem string, timezone string, modification_date date, primary key(geonameid));
 create node table Feature(generated_id int64, class_code string, class string, class_description string, code string, name string, description string, primary key(generated_id));

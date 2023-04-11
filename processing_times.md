@@ -31,7 +31,7 @@ Relations created:
 - Geoname to Feature (isTypeOf): 11.843.522
 - Countries to Continent (inContinent): 193
 
-#### Kuzu Data load
+#### Kuzu Data Load v0.0.2
 threads: 6
 
 logging level: info
@@ -47,4 +47,21 @@ logging level: info
 - copy isTypeOf: 28328.69ms (executing)
 - copy inContinent: 57.87ms (executing)
 
+### 2023-04-11
+
+#### Kuzu Data Load v0.0.3
+threads: 6
+
+logging level: info
+
+- copy Geoname: 36182.34ms (executing)
+- copy AdminDivision: 1197.55ms (executing)
+- copy Feature: 22.33ms (executing)
+- copy Country: 20.09ms (executing)
+- copy Continent: 3.15ms (executing)
+
+- copy belongsTo: 26286.85ms (executing)
+- copy isPartOf: 16888.43ms (executing)
+- copy isTypeOf: 24123.68ms (executing)
+- copy inContinent: 37.53ms (executing)
 
