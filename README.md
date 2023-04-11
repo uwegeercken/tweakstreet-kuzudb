@@ -4,6 +4,8 @@ Tweakstreet ETL to load geonames.org geographic data to Kuzudb.
 ## General
 The main fokus is on loading data into Kuzudb using the command client. The Tweakstreet ETL tool - https://tweakstreet.io - is used to prepare the https://www.geonames.org data, so it can efficiently be imported into Kuzudb - https://kuzudb.com.
 
+Additionally, there is a script available, which imports the same files and data into a Neo4j database. Import can be done using cypher (slow) or using the admin-client tool (fast) of Neo4j.
+
 From the goenames data following nodes are created:
 - Geoname
 - Country

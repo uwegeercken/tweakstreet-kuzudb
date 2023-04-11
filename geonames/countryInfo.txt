@@ -1,4 +1,4 @@
-#ISO	ISO3	ISO-Numeric	fips	Country	Capital	Area(in sq km)	Population	Continent	tld	CurrencyCode	CurrencyName	Phone	Postal Code Format	Postal Code Regex	Languages	geonameid	neighbours	EquivalentFipsCode
+ISO	ISO3	ISO-Numeric	fips	Country	Capital	Area(in sq km)	Population	Continent	tld	CurrencyCode	CurrencyName	Phone	Postal Code Format	Postal Code Regex	Languages	geonameid	neighbours	EquivalentFipsCode
 AD	AND	020	AN	Andorra	Andorra la Vella	468	77006	EU	.ad	EUR	Euro	376	AD###	^(?:AD)*(\d{3})$	ca	3041565	ES,FR	
 AE	ARE	784	AE	United Arab Emirates	Abu Dhabi	82880	9630959	AS	.ae	AED	Dirham	971			ar-AE,fa,en,hi,ur	290557	SA,OM	
 AF	AFG	004	AF	Afghanistan	Kabul	647500	37172386	AS	.af	AFN	Afghani	93			fa-AF,ps,uz-AF,tk	1149361	TM,CN,IR,TJ,PK,UZ	
@@ -251,4 +251,3 @@ ZM	ZMB	894	ZA	Zambia	Lusaka	752614	17351822	AF	.zm	ZMW	Kwacha	260	#####	^(\d{5})
 ZW	ZWE	716	ZI	Zimbabwe	Harare	390580	14439018	AF	.zw	ZWL	Dollar	263			en-ZW,sn,nr,nd	878675	ZA,MZ,BW,ZM	
 CS	SCG	891	YI	Serbia and Montenegro	Belgrade	102350	10829175	EU	.cs	RSD	Dinar	381	#####	^(\d{5})$	cu,hu,sq,sr	8505033	AL,HU,MK,RO,HR,BA,BG	
 AN	ANT	530	NT	Netherlands Antilles	Willemstad	960	300000	NA	.an	ANG	Guilder	599			nl-AN,en,es	8505032	GP	
-

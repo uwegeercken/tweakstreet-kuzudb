@@ -1,6 +1,6 @@
 {
   "type": "data-flow",
-  "appVersion": "1.20.0",
+  "appVersion": "1.21.0",
   "properties": {
     "meta": {
       "comment": {
@@ -368,8 +368,8 @@
         "model": {}
       },
       "pos": {
-        "x": 218,
-        "y": 154
+        "x": 202,
+        "y": 138
       }
     },
     {
@@ -647,8 +647,8 @@
         "model": {}
       },
       "pos": {
-        "x": 730,
-        "y": 154
+        "x": 810,
+        "y": 138
       }
     },
     {
@@ -1094,7 +1094,7 @@
         "model": {}
       },
       "pos": {
-        "x": 218,
+        "x": 202,
         "y": 714
       }
     },
@@ -3062,7 +3062,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.bool.filter_e83fee65-c461-4686-8cf6-1d06317651ce",
-      "name": "Filter: valid id value",
+      "name": "Filter: valid geonameid/item",
       "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3073,7 +3073,7 @@
       },
       "data": {
         "meta": {
-          "name": "Filter: valid id value",
+          "name": "Filter: valid geonameid/item",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -3268,7 +3268,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.bool.filter_f49a9c66-25e8-41f6-b6d6-95157dd02f9b",
-      "name": "Filter: valid id value",
+      "name": "Filter: valid geonameid/countryid",
       "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3279,7 +3279,7 @@
       },
       "data": {
         "meta": {
-          "name": "Filter: valid id value",
+          "name": "Filter: valid geonameid/countryid",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -3328,8 +3328,8 @@
         "model": {}
       },
       "pos": {
-        "x": 442,
-        "y": 154
+        "x": 490,
+        "y": 138
       }
     },
     {
@@ -3365,7 +3365,7 @@
         "editor": {}
       },
       "pos": {
-        "x": 442,
+        "x": 490,
         "y": 330
       }
     },
@@ -3561,7 +3561,7 @@
       },
       "pos": {
         "x": 1162,
-        "y": 154
+        "y": 138
       }
     },
     {
@@ -3839,8 +3839,8 @@
         "model": {}
       },
       "pos": {
-        "x": 1530,
-        "y": 154
+        "x": 1546,
+        "y": 138
       }
     },
     {
