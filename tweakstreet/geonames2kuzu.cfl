@@ -45,7 +45,7 @@
       "parameters": {
         "list": [
           {
-            "name": "clearAndloadDatabase",
+            "name": "clearAndLoadDatabase",
             "description": "If the data should be wiped and then imported to the database",
             "type": "boolean",
             "defaultValue": {
