@@ -243,6 +243,22 @@
               },
               "code": "$config.vars.geonamesDatabase"
             }
+          },
+          {
+            "name": "allCountriesFileDuckdb",
+            "type": "any",
+            "value": {
+              "widgetType": "expression/code",
+              "widgetData": {
+                "text": "$config.vars.allCountriesFileDuckdb",
+                "size": {
+                  "width": 0,
+                  "height": 36
+                },
+                "syntax": "tweakflow"
+              },
+              "code": "$config.vars.allCountriesFileDuckdb"
+            }
           }
         ]
       },
