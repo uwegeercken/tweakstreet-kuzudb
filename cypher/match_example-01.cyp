@@ -15,11 +15,11 @@ return c.code, g.name, f.code, f.name;
 
 # match geoname return the max elevation for one country
 match(c:Country)<-[:isPartOf]-(g:Geoname)
-where c.code='DE' 
+where c.code='DE'
 return max(g.elevation);
 
 # get the highest modification dates
-match(g:Geoname) 
+match(g:Geoname)
 return max(g.modification_date);
 
 # match top 5 populated places for the selected country
@@ -41,15 +41,18 @@ where numberOfAirports >100
 return c.name as country, numberOfAirports;
 
 # match feature of type Airport and match the continents, return number of airports per continent
-match(co:Continent)<-[r3:inContinent]-(c:Country)<-[r2:isPartOf]-(g:Geoname)-[r:isTypeOf]->(f:Feature)   
+match(co:Continent)<-[r3:inContinent]-(c:Country)<-[r2:isPartOf]-(g:Geoname)-[r:isTypeOf]->(f:Feature)
 where f.code='AIRP'
 with co,count(r) as numberOfAirports
 return co.name, numberOfAirports
 order by co.name;
 
-# match top 5 features in a country
+# match top 10 features in a country
 match(c:Country)<-[:isPartOf]-(:Geoname)-[isTypeOf]->(f:Feature)
 where c.code='DE'
-return f.class_code,count(f) as total
+return f.class_code, f.description, count(f) as total
 order by total desc limit 10;
 
+# match continents and countries, return continent and number fo countries
+match(c:Country)-[]->(co:Continent)
+return co.name as continent, len(collect(c.code)) as numberOfCountries;
