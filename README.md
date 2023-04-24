@@ -6,7 +6,7 @@ The main fokus is on loading data into Kuzudb using the command client. The Twea
 
 Additionally, there is a script available, which imports the same files and data into a Neo4j database. Import can be done using cypher (slow) or using the admin-client tool (fast) of Neo4j.
 
-Additionally, the is an ETL Dataflow "transform4duckdb.dfl", which generates a csvfile, that can be imported into a duckdb database. The script "create_geonames_table.sql" in the "duckdb" folder creates the table structure and imports the data. This data is (almost) a 1-to-1 copy of the original data in the "allCountries.txt" file. Only some simple cleanup has been applied to be able to load the "alternatenames" column (which is an array of names) into duckdb. I use a duckdb database to compare the numbers I find in Kuzudb for quality reasons. 
+Additionally, the is an ETL Dataflow "transform4duckdb.dfl", which generates a csvfile, that can be imported into a duckdb database. The script "create_geonames_table.sql" in the "duckdb" folder creates the table structure and imports the data. This data is (almost) a 1-to-1 copy of the original data in the "allCountries.txt" file. Only some simple cleanup has been applied to be able to load the "alternatenames" column (which is an array of names) into duckdb. I use a duckdb database to compare the numbers I find in Kuzudb for quality reasons.
 
 From the goenames data following nodes are created:
 - Geoname
@@ -97,6 +97,8 @@ At this point you can run the cypher script (adjust the path info according to y
 ```
 
 Some statictics (using the current files from geonames.org):
+- allCountries.txt file linecount: 12373097
+- allCountries4duckdb.csv file linecount: 12373097
 - Node table Geoname: 11842832
 - Node Table Feature: 680
 - Node table Country: 193
