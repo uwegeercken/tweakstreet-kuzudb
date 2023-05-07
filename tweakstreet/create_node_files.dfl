@@ -1564,14 +1564,14 @@
         "file": {
           "widgetType": "expression/code",
           "widgetData": {
-            "text": "$config.vars.dataOutputFolder .. \"/node_country.csv\"",
+            "text": "$config.vars.dataOutputFolder .. \"/node_politicalentity.csv\"",
             "size": {
               "width": 0,
               "height": 36
             },
             "syntax": "tweakflow"
           },
-          "code": "$config.vars.dataOutputFolder .. \"/node_country.csv\""
+          "code": "$config.vars.dataOutputFolder .. \"/node_politicalentity.csv\""
         },
         "charset": {
           "widgetType": "expression/charset",
