@@ -1,6 +1,6 @@
 {
   "type": "data-flow",
-  "appVersion": "1.20.0",
+  "appVersion": "1.21.0",
   "properties": {
     "meta": {
       "comment": {
@@ -236,7 +236,72 @@
         },
         "entryVariables": {
           "variables": {
-            "list": []
+            "list": [
+              {
+                "name": "feature_class_code",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "in.feature_code .. \".\" .. in.feature_code",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "in.feature_code .. \".\" .. in.feature_code"
+                }
+              },
+              {
+                "name": "isAdminDivision",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "strings.starts_with?(feature_class_code,\"A.ADM\")",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "strings.starts_with?(feature_class_code,\"A.ADM\")"
+                }
+              },
+              {
+                "name": "isPoliticalEntity",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "strings.starts_with?(feature_class_code,\"A.PC\")",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "strings.starts_with?(feature_class_code,\"A.PC\")"
+                }
+              },
+              {
+                "name": "isContinent",
+                "type": "any",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "feature_class_code==\"L.CONT\"",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "feature_class_code==\"L.CONT\""
+                }
+              }
+            ]
           },
           "editor": {
             "collapsed": false
@@ -263,17 +328,17 @@
         "gate": {
           "widgetType": "expression/code",
           "widgetData": {
-            "text": "if in.feature_code==\"CONT\" then 'continent'\nelse if in.feature_code==\"PCLI\" then \"country\"\nelse if in.feature_code==\"ADM1\" \n    || in.feature_code==\"ADM2\"\n    || in.feature_code==\"ADM3\"\n    || in.feature_code==\"ADM4\"\n    || in.feature_code==\"ADM5\" then \"admin\"\nelse \"geoname\"",
+            "text": "if entry_vars.isContinent then 'continent'\nelse if entry_vars.isPoliticalEntity then \"politicalentity\"\nelse if entry_vars.isAdminDivision then \"admin\"\nelse \"geoname\"",
             "size": {
               "width": 0,
               "height": 477
             },
             "syntax": "tweakflow"
           },
-          "code": "if in.feature_code==\"CONT\" then 'continent'\nelse if in.feature_code==\"PCLI\" then \"country\"\nelse if in.feature_code==\"ADM1\" \n    || in.feature_code==\"ADM2\"\n    || in.feature_code==\"ADM3\"\n    || in.feature_code==\"ADM4\"\n    || in.feature_code==\"ADM5\" then \"admin\"\nelse \"geoname\""
+          "code": "if entry_vars.isContinent then 'continent'\nelse if entry_vars.isPoliticalEntity then \"politicalentity\"\nelse if entry_vars.isAdminDivision then \"admin\"\nelse \"geoname\""
         },
         "editor": {
-          "showEntryVariables": false
+          "showEntryVariables": true
         },
         "model": {}
       },
@@ -2114,7 +2179,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.output.sqlinsert_1b2c7db7-cc6e-4992-b684-7405e37b69d0",
-      "name": "SQL Insert: countries",
+      "name": "SQL Insert: politicalentities",
       "type": "com.twineworks.tweakstreet.library.steps.output.sqlinsert",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -2125,7 +2190,7 @@
       },
       "data": {
         "meta": {
-          "name": "SQL Insert: countries",
+          "name": "SQL Insert: politicalentities",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -2175,9 +2240,9 @@
           "widgetType": "expression/database-table",
           "widgetData": {
             "interpolation": true,
-            "text": "country"
+            "text": "politicalentity"
           },
-          "code": "'country'"
+          "code": "'politicalentity'"
         },
         "batchSize": {
           "widgetType": "expression/number",
@@ -2390,7 +2455,7 @@
           }
         },
         "sqlEditor": {
-          "text": "CREATE TABLE country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(20),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+          "text": "CREATE TABLE politicalentity (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(20),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
           "size": {
             "width": 0,
             "height": 180

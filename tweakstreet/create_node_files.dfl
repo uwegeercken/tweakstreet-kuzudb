@@ -1,6 +1,6 @@
 {
   "type": "data-flow",
-  "appVersion": "1.20.0",
+  "appVersion": "1.21.0",
   "properties": {
     "meta": {
       "comment": {
@@ -1252,7 +1252,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.input.sqlinput_6e7699a4-961f-4a8f-aba6-ad276b3f2b2c",
-      "name": "SQL Input: All Countries",
+      "name": "SQL Input: All Politicalentities",
       "type": "com.twineworks.tweakstreet.library.steps.input.sqlinput",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -1263,7 +1263,7 @@
       },
       "data": {
         "meta": {
-          "name": "SQL Input: All Countries",
+          "name": "SQL Input: All Politicalentities",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -1317,7 +1317,7 @@
         "query": {
           "widgetType": "expression/text",
           "widgetData": {
-            "text": "select *\nfrom country",
+            "text": "select *\nfrom politicalentity",
             "size": {
               "width": 0,
               "height": 200
@@ -1326,7 +1326,7 @@
             "lineSeparator": "\n",
             "interpolation": false
           },
-          "code": "'select *\nfrom country'"
+          "code": "'select *\nfrom politicalentity'"
         },
         "jdbcParams": {
           "widgetType": "expression/list",
@@ -1512,7 +1512,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_d52ef079-7b45-4a4a-a698-0d55a75b16ab",
-      "name": "CSV Output: node Country",
+      "name": "CSV Output: node PoliticalEntity",
       "type": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -1523,7 +1523,7 @@
       },
       "data": {
         "meta": {
-          "name": "CSV Output: node Country",
+          "name": "CSV Output: node PoliticalEntity",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -1711,6 +1711,46 @@
                     }
                   },
                   "code": "::in.country_code"
+                },
+                "formatter": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "feature_class",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "feature_class"
+                      }
+                    }
+                  },
+                  "code": "::in.feature_class"
+                },
+                "formatter": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "feature_code",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "feature_code"
+                      }
+                    }
+                  },
+                  "code": "::in.feature_code"
                 },
                 "formatter": {
                   "widgetType": "expression/nil",

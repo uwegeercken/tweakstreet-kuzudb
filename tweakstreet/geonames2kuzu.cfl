@@ -730,7 +730,7 @@
                   "value": {
                     "widgetType": "expression/text",
                     "widgetData": {
-                      "text": "CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
+                      "text": "CREATE TABLE if not exists politicalentity (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)",
                       "size": {
                         "width": 0,
                         "height": 224
@@ -739,7 +739,7 @@
                       "lineSeparator": "\n",
                       "interpolation": false
                     },
-                    "code": "'CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
+                    "code": "'CREATE TABLE if not exists politicalentity (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)'"
                   }
                 },
                 {
@@ -793,7 +793,7 @@
               ]
             }
           },
-          "code": "['CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  asciiname VARCHAR(200),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  cc2 VARCHAR(200),\n  admin1_code VARCHAR(20),\n  admin2_code VARCHAR(20),\n  admin3_code VARCHAR(20),\n  admin4_code VARCHAR(20),\n  admin5_code VARCHAR(20),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(40),\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists country (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(40),\n  code VARCHAR(2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(80),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  admin1_code VARCHAR(20),\n  admin2_code VARCHAR(80),\n  admin3_code VARCHAR(20),\n  admin4_code VARCHAR(20),\n  admin5_code VARCHAR(20),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists feature (\n  generated_id INTEGER NOT NULL PRIMARY KEY,\n  class_code VARCHAR(22) NOT NULL,\n  name VARCHAR(200),\n  description VARCHAR(200),\n  class VARCHAR(1),\n  code VARCHAR(20),\n  class_description VARCHAR(200)\n)']"
+          "code": "['CREATE TABLE if not exists geoname (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  asciiname VARCHAR(200),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  cc2 VARCHAR(200),\n  admin1_code VARCHAR(20),\n  admin2_code VARCHAR(20),\n  admin3_code VARCHAR(20),\n  admin4_code VARCHAR(20),\n  admin5_code VARCHAR(20),\n  population INTEGER,\n  elevation INTEGER,\n  dem INTEGER,\n  timezone VARCHAR(40),\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists politicalentity (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(200),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  continent_code VARCHAR(2),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists continent (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(40),\n  code VARCHAR(2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists admindivision (\n  geonameid INTEGER NOT NULL PRIMARY KEY,\n  name VARCHAR(80),\n  latitude DECIMAL(10,2),\n  longitude DECIMAL(10,2),\n  feature_class VARCHAR(1),\n  feature_code VARCHAR(10),\n  country_code VARCHAR(2),\n  admin1_code VARCHAR(20),\n  admin2_code VARCHAR(80),\n  admin3_code VARCHAR(20),\n  admin4_code VARCHAR(20),\n  admin5_code VARCHAR(20),\n  population INTEGER,\n  modification_date TIMESTAMP\n)', 'CREATE TABLE if not exists feature (\n  generated_id INTEGER NOT NULL PRIMARY KEY,\n  class_code VARCHAR(22) NOT NULL,\n  name VARCHAR(200),\n  description VARCHAR(200),\n  class VARCHAR(1),\n  code VARCHAR(20),\n  class_description VARCHAR(200)\n)']"
         },
         "jdbcParams": {
           "widgetType": "expression/list",
@@ -1005,7 +1005,7 @@
                   "value": {
                     "widgetType": "expression/text",
                     "widgetData": {
-                      "text": "delete from country;",
+                      "text": "delete from politicalentity;",
                       "size": {
                         "width": 0,
                         "height": 36
@@ -1014,7 +1014,7 @@
                       "lineSeparator": "\n",
                       "interpolation": false
                     },
-                    "code": "'delete from country;'"
+                    "code": "'delete from politicalentity;'"
                   }
                 },
                 {
@@ -1052,7 +1052,7 @@
               ]
             }
           },
-          "code": "['delete from geoname;', 'delete from admindivision;\n', 'delete from country;', 'delete from continent;', 'delete from feature;']"
+          "code": "['delete from geoname;', 'delete from admindivision;\n', 'delete from politicalentity;', 'delete from continent;', 'delete from feature;']"
         },
         "jdbcParams": {
           "widgetType": "expression/list",

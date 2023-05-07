@@ -5,6 +5,5 @@ drop table inContinent;
 drop table Geoname;
 drop table AdminDivision;
 drop table Feature;
-drop table Country;
+drop table PoliticalEntity;
 drop table Continent;
-

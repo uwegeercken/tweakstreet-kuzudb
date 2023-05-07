@@ -1,6 +1,6 @@
 {
   "type": "data-flow",
-  "appVersion": "1.20.0",
+  "appVersion": "1.21.0",
   "properties": {
     "meta": {
       "comment": {
@@ -264,7 +264,7 @@
   "steps": [
     {
       "id": "com.twineworks.tweakstreet.library.steps.input.sqlinput_cb6649bd-5ad0-4524-9a28-d457dd35bf42",
-      "name": "SQL Input: geoname and country",
+      "name": "SQL Input: geoname and politicalentity",
       "type": "com.twineworks.tweakstreet.library.steps.input.sqlinput",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -275,7 +275,7 @@
       },
       "data": {
         "meta": {
-          "name": "SQL Input: geoname and country",
+          "name": "SQL Input: geoname and politicalentity",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -329,7 +329,7 @@
         "query": {
           "widgetType": "expression/text",
           "widgetData": {
-            "text": "select \n  geoname.geonameid as geonameId,\n  country.geonameid as countryId\nfrom\n  geoname,\n  country\nwhere \n  geoname.country_code = country.country_code",
+            "text": "select \n  geoname.geonameid as geonameId,\n  politicalentity.geonameid as politicalentityId\nfrom\n  geoname,\n  politicalentity\nwhere \n  geoname.country_code = politicalentity.country_code",
             "size": {
               "width": 0,
               "height": 252
@@ -338,7 +338,7 @@
             "lineSeparator": "\n",
             "interpolation": false
           },
-          "code": "'select \n  geoname.geonameid as geonameId,\n  country.geonameid as countryId\nfrom\n  geoname,\n  country\nwhere \n  geoname.country_code = country.country_code'"
+          "code": "'select \n  geoname.geonameid as geonameId,\n  politicalentity.geonameid as politicalentityId\nfrom\n  geoname,\n  politicalentity\nwhere \n  geoname.country_code = politicalentity.country_code'"
         },
         "jdbcParams": {
           "widgetType": "expression/list",
@@ -370,15 +370,15 @@
                 }
               },
               {
-                "name": "countryId",
+                "name": "politicalentityId",
                 "type": "long",
                 "mapping": {
                   "widgetType": "expression/string",
                   "widgetData": {
                     "interpolation": true,
-                    "text": "countryId"
+                    "text": "politicalentityId"
                   },
-                  "code": "'countryId'"
+                  "code": "'politicalentityId'"
                 },
                 "conversion": {
                   "widgetType": "expression/nil",
@@ -474,14 +474,14 @@
         "file": {
           "widgetType": "expression/code",
           "widgetData": {
-            "text": "$config.vars.dataOutputFolder .. \"/relation_geoname_country.csv\"",
+            "text": "$config.vars.dataOutputFolder .. \"/relation_geoname_politicalentity.csv\"",
             "size": {
               "width": 0,
               "height": 36
             },
             "syntax": "tweakflow"
           },
-          "code": "$config.vars.dataOutputFolder .. \"/relation_geoname_country.csv\""
+          "code": "$config.vars.dataOutputFolder .. \"/relation_geoname_politicalentity.csv\""
         },
         "charset": {
           "widgetType": "expression/charset",
@@ -589,18 +589,18 @@
                 }
               },
               {
-                "name": "countryId",
+                "name": "politicalentityId",
                 "value": {
                   "widgetType": "expression/field-value-ref",
                   "widgetData": {
                     "fieldSelect": {
                       "value": {
                         "gate": "in",
-                        "name": "countryId"
+                        "name": "politicalentityId"
                       }
                     }
                   },
-                  "code": "::in.countryId"
+                  "code": "::in.politicalentityId"
                 },
                 "formatter": {
                   "widgetType": "expression/format-number",
@@ -3316,7 +3316,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.bool.filter_f49a9c66-25e8-41f6-b6d6-95157dd02f9b",
-      "name": "Filter: valid geonameid/countryid",
+      "name": "Filter: valid geonameId/politicalentityId",
       "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3327,7 +3327,7 @@
       },
       "data": {
         "meta": {
-          "name": "Filter: valid geonameid/countryid",
+          "name": "Filter: valid geonameId/politicalentityId",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -3361,14 +3361,14 @@
         "condition": {
           "widgetType": "expression/code",
           "widgetData": {
-            "text": "in.geonameId!=nil && in.countryId!=nil",
+            "text": "in.geonameId!=nil && in.politicalentityId!=nil",
             "size": {
               "width": 0,
               "height": 36
             },
             "syntax": "tweakflow"
           },
-          "code": "in.geonameId!=nil && in.countryId!=nil"
+          "code": "in.geonameId!=nil && in.politicalentityId!=nil"
         },
         "editor": {
           "showEntryVariables": false
@@ -3456,7 +3456,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.input.sqlinput_e6e6d3a7-2706-4fad-96d9-4c019d0628dc",
-      "name": "SQL Input: country and continent",
+      "name": "SQL Input: politicalentity and continent",
       "type": "com.twineworks.tweakstreet.library.steps.input.sqlinput",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3467,7 +3467,7 @@
       },
       "data": {
         "meta": {
-          "name": "SQL Input: country and continent",
+          "name": "SQL Input: politicalentity and continent",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -3521,7 +3521,7 @@
         "query": {
           "widgetType": "expression/text",
           "widgetData": {
-            "text": "select \n  country.geonameid as geonameId,\n  continent.geonameid as continentId\nfrom\n  country,\n  continent\nwhere \n  country.continent_code = continent.code",
+            "text": "select \n  politicalentity.geonameid as geonameId,\n  continent.geonameid as continentId\nfrom\n  politicalentity,\n  continent\nwhere \n  politicalentity.continent_code = continent.code",
             "size": {
               "width": 0,
               "height": 252
@@ -3530,7 +3530,7 @@
             "lineSeparator": "\n",
             "interpolation": false
           },
-          "code": "'select \n  country.geonameid as geonameId,\n  continent.geonameid as continentId\nfrom\n  country,\n  continent\nwhere \n  country.continent_code = continent.code'"
+          "code": "'select \n  politicalentity.geonameid as geonameId,\n  continent.geonameid as continentId\nfrom\n  politicalentity,\n  continent\nwhere \n  politicalentity.continent_code = continent.code'"
         },
         "jdbcParams": {
           "widgetType": "expression/list",
@@ -3614,7 +3614,7 @@
     },
     {
       "id": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput_3ea9dcc5-2acb-4e96-a603-9e7516de0c7c",
-      "name": "CSV Output: relation countries continents",
+      "name": "CSV Output: relation politicalentities continents",
       "type": "com.twineworks.tweakstreet.library.steps.stringoutput.csvoutput",
       "instanceCount": {
         "widgetType": "expression/number",
@@ -3625,7 +3625,7 @@
       },
       "data": {
         "meta": {
-          "name": "CSV Output: relation countries continents",
+          "name": "CSV Output: relation politicalentities continents",
           "showingComment": false,
           "comment": {
             "markdown": {
@@ -3666,14 +3666,14 @@
         "file": {
           "widgetType": "expression/code",
           "widgetData": {
-            "text": "$config.vars.dataOutputFolder .. \"/relation_country_continent.csv\"",
+            "text": "$config.vars.dataOutputFolder .. \"/relation_politicalentity_continent.csv\"",
             "size": {
               "width": 0,
               "height": 36
             },
             "syntax": "tweakflow"
           },
-          "code": "$config.vars.dataOutputFolder .. \"/relation_country_continent.csv\""
+          "code": "$config.vars.dataOutputFolder .. \"/relation_politicalentity_continent.csv\""
         },
         "charset": {
           "widgetType": "expression/charset",
