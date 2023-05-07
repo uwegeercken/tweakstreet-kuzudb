@@ -900,14 +900,14 @@
         "gate": {
           "widgetType": "expression/code",
           "widgetData": {
-            "text": "if flow.params.clearAndloadDatabase==true then 'yes' else 'no'",
+            "text": "if flow.params.clearAndLoadDatabase==true then 'yes' else 'no'",
             "size": {
               "width": 0,
               "height": 36
             },
             "syntax": "tweakflow"
           },
-          "code": "if flow.params.clearAndloadDatabase==true then 'yes' else 'no'"
+          "code": "if flow.params.clearAndLoadDatabase==true then 'yes' else 'no'"
         },
         "editor": {
           "showEntryVariables": false
