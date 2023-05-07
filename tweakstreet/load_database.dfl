@@ -343,8 +343,8 @@
         "model": {}
       },
       "pos": {
-        "x": 586,
-        "y": 90
+        "x": 618,
+        "y": 74
       }
     },
     {
@@ -5380,21 +5380,6 @@
   ],
   "hops": [
     {
-      "id": "33124654-1629-4fd7-b9a9-a5ae1045f29e",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_fc82fbd8-455e-4903-a3da-74ae6ae8f276",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_987e5ff0-3680-43a0-a805-99d5375640ea",
-      "fromGate": "country",
-      "toGate": "in",
-      "disabled": false,
-      "partitioner": {
-        "widgetType": "expression/code",
-        "widgetData": {
-          "text": ""
-        },
-        "code": "nil"
-      }
-    },
-    {
       "id": "2ee5d971-4624-4a35-968d-2d16dd56166d",
       "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_fc82fbd8-455e-4903-a3da-74ae6ae8f276",
       "toStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_435ccd27-84f0-4f5b-b293-278a2266a602",
@@ -5699,6 +5684,21 @@
       "fromStep": "com.twineworks.tweakstreet.features.core.steps.counter_b8fd2294-fd98-47ec-b6de-db411efb8403",
       "toStep": "com.twineworks.tweakstreet.library.steps.bool.filter_029f4099-7ea1-44f0-9a50-aeeab6f61e3c",
       "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "b2fefab0-a3e1-4625-85d2-dc26a1e639be",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.decision.decision_fc82fbd8-455e-4903-a3da-74ae6ae8f276",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.pickfields_987e5ff0-3680-43a0-a805-99d5375640ea",
+      "fromGate": "politicalentity",
       "toGate": "in",
       "disabled": false,
       "partitioner": {
