@@ -243,14 +243,14 @@
                 "value": {
                   "widgetType": "expression/code",
                   "widgetData": {
-                    "text": "in.feature_code .. \".\" .. in.feature_code",
+                    "text": "in.feature_class .. \".\" .. in.feature_code",
                     "size": {
                       "width": 0,
                       "height": 36
                     },
                     "syntax": "tweakflow"
                   },
-                  "code": "in.feature_code .. \".\" .. in.feature_code"
+                  "code": "in.feature_class .. \".\" .. in.feature_code"
                 }
               },
               {
@@ -317,7 +317,7 @@
                 "name": "admin"
               },
               {
-                "name": "country"
+                "name": "politicalentity"
               },
               {
                 "name": "continent"
